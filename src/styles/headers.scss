@@ -1,0 +1,60 @@
+@use "themes" as *;
+@import "mixins";
+
+header {
+    &.app-bar {
+        width: 100vw;
+        position: fixed;
+        top: 0;
+        height: $toolbar-height;
+        background-color: var(--primary-container);
+        display: flex;
+        align-items: center;
+
+        .leading {
+            margin-left: 1.5rem;
+            margin-right: 1rem;
+
+            .brand {
+                >button {
+                    background-color: transparent;
+                    cursor: pointer;
+                    padding: 0;
+                    height: max-content;
+                    width: max-content;
+                    margin: 0;
+                    border: none;
+                    @include border-radius($rounded);
+                    @include transition(background-color 0.2s linear);
+
+                    &:hover {
+                        background-color: var(--on-primary-container);
+
+                        >svg {
+
+                            >rect,
+                            path {
+                                fill: var(--primary-container);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .title {
+            >a {
+                font-weight: 700;
+                font-size: 22px;
+                line-height: 28px;
+                color: var(--on-primary-container);
+                text-decoration: none;
+                @include transition(color 0.1s linear);
+
+                &:hover {
+                    color: var(--hover-on-primary-container);
+                }
+            }
+        }
+    }
+}
