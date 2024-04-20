@@ -8,9 +8,10 @@ header {
         z-index: 50;
         top: 0;
         height: $toolbar-height;
-        background-color: var(--primary-container);
         display: flex;
         align-items: center;
+        background-color: transparent;
+        @include transition(background-color 0.2s linear, box-shadow 0.3s linear);
 
         .leading {
             margin-left: 1.5rem;
@@ -56,6 +57,11 @@ header {
                     color: var(--hover-on-primary-container);
                 }
             }
+        }
+
+        &.elevated {
+            background-color: var(--primary-container);
+            box-shadow: $shadow;
         }
     }
 }

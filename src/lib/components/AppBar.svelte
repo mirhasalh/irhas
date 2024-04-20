@@ -1,8 +1,12 @@
 <script>
   import BrandLogo from '$components/BrandLogo.svelte'
+
+  $: y = 0
 </script>
 
-<header class={`app-bar`}>
+<svelte:window bind:scrollY={y} />
+
+<header class={`app-bar`} class:elevated={y > 60}>
   <div class={`leading`}>
     <div class={`brand`}>
       <button type="button">

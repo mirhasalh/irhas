@@ -1,6 +1,6 @@
 ---
 title: I start my career with this terminal setup
-date: 2022-12-14
+date: 2024-04-20
 ---
 
 As a programmer, you spend a significant amount of time in the terminal. So why not make it an amazing and visually appealing experience? In this blog post, I'll share my minimum Powershell setup on Windows Terminal with [Oh My Posh](https://ohmyposh.dev/) and [Lazygit](https://github.com/jesseduffield/lazygit) to transform your command line interface into a powerful and customizable tool.
