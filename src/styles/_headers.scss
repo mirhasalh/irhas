@@ -5,6 +5,7 @@ header {
     &.app-bar {
         width: 100vw;
         position: fixed;
+        z-index: 50;
         top: 0;
         height: $toolbar-height;
         background-color: var(--primary-container);

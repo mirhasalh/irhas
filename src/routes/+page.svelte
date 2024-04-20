@@ -1,16 +1,13 @@
 <script lang="ts">
   import { browser } from '$app/environment'
-  // import { avatar, bio, github, name } from '$lib/info.js'
+  import { avatar, bio, github, name } from '$lib/info.js'
   import { format, parseISO } from 'date-fns'
-  import UnderConstructionIndicator from '$components/UnderConstructionIndicator.svelte'
   import GitHub from '$lib/icons/GitHub.svelte'
   import LinkedIn from '$lib/icons/LinkedIn.svelte'
   import Flutter from '$lib/icons/Flutter.svelte'
 
   /** @type {import('./$types').PageData} */
   export let data: any
-
-  let isUnderConstruction = true
 
   const onSocial = (to: string) => {
     if (!browser) return
@@ -19,7 +16,7 @@
         window.open('https://flutter.irhas.lol/', '_blank')
         break
       case 'github':
-        window.open('https://github.com/mirhasalh', '_blank')
+        window.open('https://github.com/' + github, '_blank')
         break
       case 'linkedin':
         window.open('https://www.linkedin.com/in/irhasdev/', '_blank')
@@ -31,22 +28,30 @@
   }
 </script>
 
-{#if isUnderConstruction}
-  <div class={`under-construction-wrapper`}>
-    <UnderConstructionIndicator />
-    <div class={`caption`}><small>This Irhas's site is currently<br />under construction!</small></div>
-    <hr />
-    <div class={`socials`}>
-      <button class={`raw`} type="button" data-sveltekit-preload-data="hover" on:click={() => onSocial('flutter')}><Flutter /></button>
-      <button class={`raw`} type="button" data-sveltekit-preload-data="hover" on:click={() => onSocial('github')}><GitHub /></button>
-      <button class={`raw`} type="button" data-sveltekit-preload-data="hover" on:click={() => onSocial('linkedin')}><LinkedIn /></button>
-    </div>
-  </div>
-{:else}
-  <div class="flex flex-col gap-16 md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
+<div class={`circle-avatar`}><img src={avatar} alt="Avatar" /></div>
+<p>{name}</p>
+<small>{bio}</small>
+<hr />
+<ul class={`socials`}>
+  <li>
+    <button class={`raw`} type="button" data-sveltekit-preload-data="hover" on:click={() => onSocial('flutter')}><Flutter /></button>
+  </li>
+  <li>
+    <button class={`raw`} type="button" data-sveltekit-preload-data="hover" on:click={() => onSocial('github')}><GitHub /></button>
+  </li>
+  <li>
+    <button class={`raw`} type="button" data-sveltekit-preload-data="hover" on:click={() => onSocial('linkedin')}><LinkedIn /></button>
+  </li>
+</ul>
+<hr />
+<div>
+  <h3>Blog posts</h3>
+  {#if data.posts.length === 0}
+    <p>Irhas haven't post anything yet.</p>
+  {:else}
     <a href="/posts">View All </a>
     {#each data.posts as post}
-      <article class="grid items-start grid-cols-4 gap-8">
+      <article class="">
         <time datetime={post.date}>
           {format(new Date(parseISO(post.date)), 'MMMM d, yyyy')}
         </time>
@@ -56,5 +61,5 @@
         <a href={`/post/${post.slug}`} data-sveltekit-prefetch>Visit</a>
       </article>
     {/each}
-  </div>
-{/if}
+  {/if}
+</div>

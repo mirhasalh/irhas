@@ -11,6 +11,6 @@
     </div>
   </div>
   <div class={`title home-url`}>
-    <a href="https://www.irhas.lol/">Irhas's webpage</a>
+    <a href="https://www.irhas.lol/">Welcome 👋</a>
   </div>
 </header>
