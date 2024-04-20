@@ -19,4 +19,21 @@ button {
     overflow: hidden;
     @include border-radius($rounded);
     outline: none;
+
+    &.raw {
+        margin: 0px;
+        border-radius: 0px;
+        border: none;
+        background-color: transparent;
+
+        &:hover {
+            background-color: $on-background;
+
+            >svg {
+                path {
+                    fill: $background;
+                }
+            }
+        }
+    }
 }
