@@ -48,12 +48,7 @@
   <meta name="twitter:image" content={ogImage} />
 </svelte:head>
 
-<svelte:element this={canGoBack ? 'button' : 'a'} role={canGoBack ? 'button' : 'a'} href={canGoBack ? undefined : '/posts'} aria-label="Go back to posts" on:click={goBack} on:keydown={goBack}> ⬅ </svelte:element>
-
+<svelte:element this={canGoBack ? 'button' : 'a'} role={canGoBack ? 'button' : 'a'} href={canGoBack ? undefined : '/posts'} aria-label="Go back to posts" on:click={goBack} on:keydown={goBack}>← Back</svelte:element>
 <h1>{data.post.title}</h1>
-
 <small>{data.post.date}</small>
-
-<article>
-  <svelte:component this={data.component} />
-</article>
+<article><svelte:component this={data.component} /></article>

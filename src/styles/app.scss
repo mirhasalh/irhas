@@ -3,7 +3,16 @@
 @use "buttons";
 @use "headers";
 @use "indicators";
+@use "divider";
 @import "mixins";
+
+.shrink {
+    margin: 0
+}
+
+p {
+    line-height: 1.6;
+}
 
 svg {
 
@@ -14,8 +23,7 @@ svg {
 }
 
 .under-construction-wrapper {
-    background-color: var(--background);
-    opacity: 0.8;
+    background-color: var(--backdrop);
     position: fixed;
     z-index: 100;
     text-align: center;
@@ -37,11 +45,11 @@ svg {
 
 .app-shell {
     display: grid;
-    grid-template-columns: 20% auto 20%;
+    grid-template-columns: 20% 1fr 20%;
     margin-top: $toolbar-height;
 
     &.sm {
-        grid-template-columns: 0% 1fr 0%;
+        grid-template-columns: 0% 100vw 0%;
     }
 
     >main {
@@ -65,10 +73,56 @@ ul {
     height: 50px;
     width: 50px;
     overflow: hidden;
+    cursor: pointer;
 
     >img {
         width: inherit;
         height: inherit;
         object-fit: cover;
     }
+}
+
+.blog-post {
+    display: grid;
+    grid-template-columns: 30% 1fr;
+
+    .leading {
+        padding: 1.3em 0rem;
+    }
+
+    &.sm {
+        grid-template-columns: unset;
+
+        .leading {
+            display: flex;
+            align-items: end;
+            padding: 0;
+            margin-bottom: 0.5rem;
+            justify-content: space-between;
+        }
+    }
+
+    .preview {
+        background-color: var(--primary-container);
+        padding: 0px 1em 1em;
+        border-radius: $rounded-lg;
+    }
+}
+
+.section-header {
+    margin-bottom: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &.profiles {
+        align-items: start;
+    }
+}
+
+pre {
+    background-color: var(--primary-container);
+    border-radius: $rounded-lg;
+    padding: 2em;
+    overflow-x: auto;
 }

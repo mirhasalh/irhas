@@ -3,12 +3,14 @@ $on-background: #131314;
 $primary-container: #f0f4f8;
 $on-primary-container: #444746;
 $hover-on-primary-container: lighten($color: $on-primary-container, $amount: 3);
+$backdrop: rgba(248, 246, 248, 0.8);
 
 $background-dark: #131314;
 $on-background-dark: #ffffff;
 $primary-container-dark: #1e1f20;
 $on-primary-container-dark: #ffffff;
 $hover-on-primary-container-dark: darken($color: $on-primary-container-dark, $amount: 3);
+$backdrop-dark: rgba(19, 19, 20, 0.8);
 
 :root {
     --background: #{$background};
@@ -16,12 +18,14 @@ $hover-on-primary-container-dark: darken($color: $on-primary-container-dark, $am
     --primary-container: #{$primary-container};
     --on-primary-container: #{$on-primary-container};
     --hover-on-primary-container: #{$hover-on-primary-container};
+    --backdrop: #{$backdrop};
 
     --background-dark: #{$background-dark};
     --on-background-dark: #{$on-background-dark};
     --primary-container-dark: #{$primary-container-dark};
     --on-primary-container-dark: #{$on-primary-container-dark};
     --hover-on-primary-container-dark: #{$hover-on-primary-container-dark};
+    --backdrop-dark: #{$backdrop-dark};
 }
 
 @media (prefers-color-scheme: dark) {
@@ -31,11 +35,13 @@ $hover-on-primary-container-dark: darken($color: $on-primary-container-dark, $am
         --primary-container: var(--primary-container-dark);
         --on-primary-container: var(--on-primary-container-dark);
         --hover-on-primary-container: var(--hover-on-primary-container-dark);
+        --backdrop: var(--backdrop-dark);
     }
 }
 
 $toolbar-height: 60px;
 $rounded: 0.25rem;
+$rounded-lg: 0.5rem;
 $rounded-full: 9999px;
 $button-height: 43.0px;
 $shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
