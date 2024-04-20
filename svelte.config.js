@@ -20,9 +20,10 @@ const config = {
 			$icons: 'src/icons',
 			$stores: 'src/stores'
 		},
-		prerender: {
-			entries: ['*', '/sitemap.xml', '/rss.xml']
-		}
+		// Prerendering config
+		// prerender: {
+		// 	entries: ['*', '/sitemap.xml', '/rss.xml']
+		// }
 	}
 };
 
