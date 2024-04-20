@@ -52,7 +52,7 @@
 
 <h1>{data.post.title}</h1>
 
-<small>{data.post}</small>
+<small>{data.post.date}</small>
 
 <article>
   <svelte:component this={data.component} />

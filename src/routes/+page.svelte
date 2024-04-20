@@ -49,17 +49,13 @@
   {#if data.posts.length === 0}
     <p>Irhas haven't post anything yet.</p>
   {:else}
-    <a href="/posts">View All </a>
     {#each data.posts as post}
-      <article class="">
-        <time datetime={post.date}>
-          {format(new Date(parseISO(post.date)), 'MMMM d, yyyy')}
-        </time>
-        <div>
-          {@html post.preview.html}
-        </div>
+      <article>
+        <time datetime={post.date}>{format(new Date(parseISO(post.date)), 'MMMM d, yyyy')}</time>
+        <div>{@html post.preview.html}</div>
         <a href={`/post/${post.slug}`} data-sveltekit-prefetch>Visit</a>
       </article>
     {/each}
+    <a href="/posts">View All </a>
   {/if}
 </div>
