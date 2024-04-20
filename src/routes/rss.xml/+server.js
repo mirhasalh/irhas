@@ -1,7 +1,7 @@
 import { posts } from '$lib/data/posts'
 import { name, website } from '$lib/info'
 
-export const prerender = true
+export const prerender = false
 
 const websiteDescription = `${name}'s blog`
 const postsUrl = `${website}/posts`
