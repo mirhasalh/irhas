@@ -179,3 +179,50 @@ p {
         height: auto;
     }
 }
+
+footer {
+    background-color: #252429;
+    padding: 0.5em 1.5em;
+    color: $background;
+
+    .bottom-profile {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+
+        .socials {
+            button {
+                border: none;
+                border-radius: 0px;
+                background-color: transparent;
+
+                >svg {
+                    >path {
+                        fill: white;
+                    }
+
+                }
+
+                &:hover {
+                    >svg {
+                        >path {
+                            fill: $seed-color;
+                        }
+                    }
+                }
+            }
+
+            margin-bottom: 0.5em;
+        }
+    }
+
+    >p {
+        text-align: center;
+    }
+}
+
+.post-data {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}

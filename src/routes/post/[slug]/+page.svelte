@@ -1,6 +1,8 @@
 <script>
   import { website, name } from '$lib/info.js'
   import { afterNavigate } from '$app/navigation'
+  import { format, parseISO } from 'date-fns'
+  import { isMobile } from '$stores/isMobile'
 
   /** @type {import('./$types').PageData} */
   export let data
@@ -46,6 +48,10 @@
 {#if applyBack}
   <a href="/posts" on:click={goBack}>← Back</a>
 {/if}
+<div class={`post-data`}>
+  <p><small><time datetime={data.post.date}>{format(new Date(parseISO(data.post.date)), `${$isMobile ? 'MMM d, yyyy' : 'MMMM d, yyyy'}`)}</time></small></p>
+  <p><small>{data.post.readingTime}</small></p>
+</div>
+<hr />
 <h1>{data.post.title}</h1>
-<p>🗓️&nbsp;<small>{data.post.date}</small></p>
 <article><svelte:component this={data.component} /></article>

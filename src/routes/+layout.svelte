@@ -11,8 +11,12 @@
   import LinkedIn from '$lib/icons/LinkedIn.svelte'
   import Flutter from '$lib/icons/Flutter.svelte'
   import LightSwitch from '$components/LightSwitch.svelte'
+  import BrandLogo from '$components/BrandLogo.svelte'
 
-  let isUnderConstruction = true
+  const d = new Date()
+
+  let isUnderConstruction = true,
+    year = d.getFullYear()
 
   const getIsMobile = () => (innerWidth <= 1024 ? isMobile.set(true) : isMobile.set(false))
 
@@ -65,3 +69,15 @@
   <main><slot /></main>
   <section></section>
 </div>
+<footer>
+  <div class={`bottom-profile`}>
+    <BrandLogo color={`white`} />
+    <div class={`socials`}>
+      <button type="button" data-sveltekit-preload-data="hover" on:click={() => onSocial('flutter')}><Flutter /></button>
+      <button type="button" data-sveltekit-preload-data="hover" on:click={() => onSocial('github')}><GitHub /></button>
+      <button type="button" data-sveltekit-preload-data="hover" on:click={() => onSocial('linkedin')}><LinkedIn /></button>
+    </div>
+  </div>
+  <hr />
+  <p><small>© {year} Irhas A.</small></p>
+</footer>
