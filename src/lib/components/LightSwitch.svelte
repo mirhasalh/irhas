@@ -58,12 +58,14 @@
     }
   }
 
-  let isDarkMode = browser ? Boolean(document.documentElement.classList.contains('dark')) : false
+  $: themeMode = browser ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : 'light'
+
+  const toggleTheme = () => (themeMode = themeMode === 'light' ? 'dark' : 'light')
 
   const onLightSwicth = () => {
     if (browser) {
-      isDarkMode = !isDarkMode
-      const theme = isDarkMode ? colors.dark : colors.light
+      toggleTheme()
+      const theme = themeMode === 'dark' ? colors.dark : colors.light
       const root = document.documentElement
       root.style.setProperty('--primary', theme.primary)
       root.style.setProperty('--on-primary', theme.onPrimary)
@@ -93,7 +95,7 @@
   }
 </script>
 
-<button class={`raw icon`} role="switch" aria-label="Toggle Dark Mode" aria-checked={isDarkMode} type="button" on:click={onLightSwicth}>
-  <DarkMode active={!isDarkMode} />
-  <LightMode active={isDarkMode} />
+<button class={`raw icon`} role="switch" aria-label="Toggle Dark Mode" aria-checked={themeMode === 'dark'} type="button" on:click={onLightSwicth}>
+  <DarkMode active={themeMode === 'light'} />
+  <LightMode active={themeMode === 'dark'} />
 </button>
