@@ -45,7 +45,7 @@ svg {
 
 .app-shell {
     display: grid;
-    grid-template-columns: 20% 1fr 20%;
+    grid-template-columns: 20% 60% 20%;
     margin-top: $toolbar-height;
 
     &.sm {
@@ -125,4 +125,28 @@ pre {
     border-radius: $rounded-lg;
     padding: 2em;
     overflow-x: auto;
+}
+
+a {
+    @include transition(color 0.3s linear);
+    color: var(--primary);
+
+    &:link {
+        text-decoration: none;
+    }
+
+    &:visited {
+        text-decoration: none;
+        color: var(--secondary);
+    }
+
+    &:hover {
+        color: var(--secondary);
+        text-decoration: none;
+    }
+
+    &:active {
+        color: var(--secondary);
+        text-decoration: none;
+    }
 }

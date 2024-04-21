@@ -10,6 +10,7 @@
   import GitHub from '$lib/icons/GitHub.svelte'
   import LinkedIn from '$lib/icons/LinkedIn.svelte'
   import Flutter from '$lib/icons/Flutter.svelte'
+  import LightSwitch from '$components/LightSwitch.svelte'
 
   let isUnderConstruction = true
 
@@ -54,7 +55,11 @@
     </div>
   </div>
 {/if}
-<AppBar />
+<AppBar>
+  <svelte:fragment slot="actions">
+    <LightSwitch />
+  </svelte:fragment>
+</AppBar>
 <div class={`app-shell`} class:sm={$isMobile}>
   <section></section>
   <main><slot /></main>

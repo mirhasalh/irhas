@@ -16,6 +16,7 @@ button {
     transition-timing-function: cubic-bezier(.4, 0, .2, 1);
     transition-duration: .15s;
     height: $button-height;
+    position: relative;
     overflow: hidden;
     @include border-radius($rounded);
     outline: none;
@@ -48,9 +49,30 @@ button {
         }
     }
 
+    &.icon {
+        padding: 0px;
+        width: $button-height;
+        border-radius: $rounded-full;
+    }
+
     >svg {
         path {
             fill: var(--on-background);
+        }
+    }
+
+    &[role="switch"] {
+        >svg {
+            rotate: 90deg;
+            @include transition(transform 0.3s ease, rotate 0.1s ease);
+            position: absolute;
+            z-index: 10;
+            @include transform(translate(-60px, 0px));
+
+            &.active {
+                rotate: 0deg;
+                @include transform(translate(0px, 0px));
+            }
         }
     }
 }

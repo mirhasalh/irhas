@@ -24,3 +24,9 @@
     -ms-border-radius: $value;
     border-radius: $value;
 }
+
+@mixin transform($property) {
+    -webkit-transform: $property;
+    -ms-transform: $property;
+    transform: $property;
+}

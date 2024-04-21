@@ -17,7 +17,7 @@ const config = {
 		adapter: adapter(),
 		alias: {
 			$components: 'src/lib/components',
-			$icons: 'src/icons',
+			$icons: 'src/lib/icons',
 			$stores: 'src/stores'
 		},
 		// Prerendering config

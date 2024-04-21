@@ -1,3 +1,5 @@
+$primary: #6135ed;
+$secondary: #a14000;
 $background: #f8f6f8;
 $on-background: #131314;
 $primary-container: #f0f4f8;
@@ -5,6 +7,8 @@ $on-primary-container: #444746;
 $hover-on-primary-container: lighten($color: $on-primary-container, $amount: 3);
 $backdrop: rgba(248, 246, 248, 0.8);
 
+$primary-dark: #cabeff;
+$secondary-dark: #ffb694;
 $background-dark: #131314;
 $on-background-dark: #ffffff;
 $primary-container-dark: #1e1f20;
@@ -13,6 +17,8 @@ $hover-on-primary-container-dark: darken($color: $on-primary-container-dark, $am
 $backdrop-dark: rgba(19, 19, 20, 0.8);
 
 :root {
+    --primary: #{$primary};
+    --secondary: #{$secondary};
     --background: #{$background};
     --on-background: #{$on-background};
     --primary-container: #{$primary-container};
@@ -20,6 +26,8 @@ $backdrop-dark: rgba(19, 19, 20, 0.8);
     --hover-on-primary-container: #{$hover-on-primary-container};
     --backdrop: #{$backdrop};
 
+    --primary-dark: #{$primary-dark};
+    --secondary-dark: #{$secondary-dark};
     --background-dark: #{$background-dark};
     --on-background-dark: #{$on-background-dark};
     --primary-container-dark: #{$primary-container-dark};
@@ -30,6 +38,8 @@ $backdrop-dark: rgba(19, 19, 20, 0.8);
 
 @media (prefers-color-scheme: dark) {
     :root {
+        --primary: var(--primary-dark);
+        --secondary: var(--secondary-dark);
         --background: var(--background-dark);
         --on-background: var(--on-background-dark);
         --primary-container: var(--primary-container-dark);
