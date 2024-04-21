@@ -28,11 +28,11 @@ button {
         background-color: transparent;
 
         &:hover {
-            background-color: var(--on-primary-container);
+            background-color: var(--primary-container);
 
             >svg {
                 path {
-                    fill: var(--background);
+                    fill: var(--on-primary-container);
                 }
             }
         }
