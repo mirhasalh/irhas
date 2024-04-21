@@ -1,0 +1,31 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--on-background);
+
+    >a {
+        color: var(--on-background);
+
+        &:link {
+            text-decoration: none;
+        }
+
+        &:visited {
+            text-decoration: none;
+            color: var(--on-background);
+        }
+
+        &:hover {
+            color: var(--on-background);
+            text-decoration: none;
+        }
+
+        &:active {
+            color: var(--on-background);
+            text-decoration: none;
+        }
+    }
+}

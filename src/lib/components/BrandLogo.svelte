@@ -1,5 +1,5 @@
 <script>
-  export let color = 'var(--on-primary-container)',
+  export let color = 'var(--on-background)',
     width = 128,
     height = width
 </script>

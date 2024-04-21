@@ -47,5 +47,5 @@
   <a href="/posts" on:click={goBack}>← Back</a>
 {/if}
 <h1>{data.post.title}</h1>
-<small>{data.post.date}</small>
+<p><small>{data.post.date}</small></p>
 <article><svelte:component this={data.component} /></article>

@@ -1,6 +1,7 @@
 @use "themes" as *;
 @use "body";
 @use "buttons";
+@use "heading";
 @use "headers";
 @use "indicators";
 @use "divider";
@@ -57,13 +58,18 @@ svg {
     }
 }
 
-ul {
+ul,
+ol {
     &.socials {
         margin: 0;
         padding: 0;
         list-style-type: none;
         display: flex;
         position: relative;
+    }
+
+    >li {
+        margin: 0.5rem 0px;
     }
 }
 
@@ -103,7 +109,7 @@ ul {
     }
 
     .preview {
-        background-color: var(--primary-container);
+        background-color: var(--surface);
         padding: 0px 1em 1em;
         border-radius: $rounded-lg;
     }
@@ -125,11 +131,15 @@ pre {
     border-radius: $rounded-lg;
     padding: 2em;
     overflow-x: auto;
+
+    >code {
+        color: var(--on-primary-container);
+    }
 }
 
 a {
     @include transition(color 0.3s linear);
-    color: var(--primary);
+    color: rgb(var(--primary));
 
     &:link {
         text-decoration: none;
@@ -148,5 +158,24 @@ a {
     &:active {
         color: var(--secondary);
         text-decoration: none;
+    }
+}
+
+p {
+    >em {
+        color: rgb(var(--primary));
+    }
+
+    >code {
+        color: rgb(var(--primary));
+        background-color: rgba(var(--primary), 0.2);
+        border-radius: $rounded;
+        padding-left: .25rem;
+        padding-right: .25rem;
+    }
+
+    >img {
+        width: 100%;
+        height: auto;
     }
 }
