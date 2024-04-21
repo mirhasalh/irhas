@@ -70,7 +70,7 @@
   <section></section>
 </div>
 <footer>
-  <div class={`bottom-profile`}>
+  <div class={`bottom-profile`} class:sm={$isMobile}>
     <BrandLogo color={`white`} />
     <div class={`socials`}>
       <button type="button" data-sveltekit-preload-data="hover" on:click={() => onSocial('flutter')}><Flutter /></button>
