@@ -149,6 +149,8 @@ my_app/
 Currently, we have an entire Dart code inside our `main.dart`. So, let's follow the guide below, to separate the code inside `main.dart` into a new folder and files that we already created:
 
 ```dart title="lib/src/app.dart"
+// lib/src/app.dart
+
 import 'package:flutter/material.dart';
 
 import 'pages/home_page.dart';
@@ -171,6 +173,8 @@ class App extends StatelessWidget {
 ```
 
 ```dart title="lib/src/pages/home_page.dart"
+// lib/src/pages/home_page.dart
+
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -194,6 +198,8 @@ class _HomePageState extends State<HomePage> {
 ```
 
 ```dart title="lib/main.dart"
+// lib/main.dart
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -211,6 +217,8 @@ At this point, even though our `lib/src/apis.dart` is still empty, it's a good i
 Before we write code to fetch data, we need to create a model that can convert JSON into a Dart class, let's create a new fill inside `models` folder called `user.dart` because we're going to fetch a list of users. Below is the code you can copy and paste:
 
 ```dart title="lib/src/models/user.dart"
+// lib/src/models/user.dart
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'user.freezed.dart';
@@ -241,6 +249,8 @@ flutter_scripts run
 After we have a user model, let's update the `lib/src/apis.dart`. Here's the code to fetch data, you can copy and paste it:
 
 ```dart title="lib/src/apis.dart"
+// lib/src/apis.dart
+
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
@@ -266,6 +276,8 @@ Future<List<User>> getUsers() async {
 To utilize Riverpod, we are now going to create a provider that we can use as an async state and display the data on a page. Here's the code to declare a provider, you can copy and paste it:
 
 ```dart title="lib/src/providers.dart"
+// lib/src/providers.dart
+
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../models/user.dart';
@@ -285,6 +297,8 @@ Once again, run `flutter_scripts run` to generate files and fix all the red warn
 And finally, the last thing to do before we see some UI on our Flutter app. We're going to update our `home_page.dart` to finally consume the provider that we created recently. Update the `lib/src/pages/home_page.dart` with the code below:
 
 ```dart title="lib/src/pages/home_page.dart"
+// lib/src/pages/home_page.dart
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
