@@ -32,6 +32,8 @@
   }
 </script>
 
+<svelte:head><title>{name}</title></svelte:head>
+
 <div class={`section-header profiles`}>
   <div>
     <div role="none" class={`circle-avatar`} on:click={() => onAvatar()} on:keyup={() => {}}><img src={avatar} alt="Avatar" /></div>
