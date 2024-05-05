@@ -3,7 +3,6 @@
   import { page } from '$app/stores'
   import { isMobile } from '$stores/isMobile'
   import BrandLogo from '$components/BrandLogo.svelte'
-  import { fade } from 'svelte/transition'
 
   const getTitle = (str: string) => {
     const split = str.split('-')
@@ -37,12 +36,12 @@
       </button>
     </div>
   </div>
-  <div class={`title home-url`}>
+  <div class={`title`}>
     {#if path === 'post'}
       {#if $isMobile}
         <div />
       {:else if y > 100}
-        <a transition:fade={{ duration: 300 }} href="https://www.irhas.lol/">{title(`${$page.route.id}`)}</a>
+        <a class:pinned={y > 120} href="https://www.irhas.lol/">{title(`${$page.route.id}`)}</a>
       {:else}
         <div />
       {/if}
@@ -53,5 +52,5 @@
   <div class={`actions`}>
     <slot name="actions" />
   </div>
-  <div/>
+  <div />
 </header>

@@ -51,6 +51,9 @@ header {
         }
 
         .title {
+            position: relative;
+            height: $toolbar-height;
+
             >a {
                 margin-left: 1.5rem;
                 font-weight: 700;
@@ -58,7 +61,16 @@ header {
                 line-height: 28px;
                 color: var(--on-background);
                 text-decoration: none;
-                @include transition(color 0.1s linear);
+                @include transition(color 0.1s linear, transform 0.8s ease);
+                position: absolute;
+                z-index: 10;
+                top: 0;
+                left: 0;
+                transform: translate(0px, -60px);
+
+                &.pinned {
+                    transform: translate(0px, 16px);
+                }
 
                 &:hover {
                     color: rgb(var(--primary));
