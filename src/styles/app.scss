@@ -23,6 +23,11 @@ svg {
     }
 }
 
+img {
+    height: auto;
+    width: 100%;
+}
+
 .under-construction-wrapper {
     background-color: var(--backdrop);
     position: fixed;

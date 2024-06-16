@@ -13,7 +13,7 @@
   <title>{name} | Posts</title>
 </svelte:head>
 
-<div class="flex flex-col gap-16 md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
+<div>
   {#each data.posts as post, i}
     <Article {post} />
     {#if i !== data.posts.length - 1}

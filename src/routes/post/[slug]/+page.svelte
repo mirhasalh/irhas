@@ -9,7 +9,8 @@
 
   // Generated open-graph image for sharing on social media.
   // See https://og-image.vercel.app/ for more options.
-  const ogImage = `https://og-image.vercel.app/**${encodeURIComponent(data.post.title)}**?theme=light&md=1&fontSize=100px&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fhyper-color-logo.svg`
+  const ogImageVercel = `https://og-image.vercel.app/**${encodeURIComponent(data.post.title)}**?theme=light&md=1&fontSize=100px&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fhyper-color-logo.svg`
+  const ogImage = `${data.post.src}` !== 'n/a' ? `${data.post.src}` : ogImageVercel
 
   const url = `${website}/${data.post.slug}`
 
@@ -31,7 +32,7 @@
 
   <!-- Facebook meta tags -->
   <meta property="og:url" content={url} />
-  <meta property="og:type" content="website" />
+  <meta property="og:type" content="article" />
   <meta property="og:title" content={data.post.title} />
   <meta property="og:description" content={data.post.preview.text} />
   <meta property="og:image" content={ogImage} />
@@ -54,4 +55,7 @@
 </div>
 <hr />
 <h1>{data.post.title}</h1>
+{#if `${data.post.src}` !== 'n/a'}
+  <img src={data.post.src} alt={data.post.title}>
+{/if}
 <article><svelte:component this={data.component} /></article>

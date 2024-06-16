@@ -13,6 +13,9 @@
   </div>
   <div class={`preview`}>
     <h3>{post.title}</h3>
+    {#if `${post.src}` !== 'n/a'}
+      <img src={post.src} alt={post.title}>
+    {/if}
     <small>{@html post.preview.html}</small>
     <a href={`/post/${post.slug}`} data-sveltekit-prefetch><strong>Read →</strong></a>
   </div>
