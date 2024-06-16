@@ -237,3 +237,18 @@ footer {
     justify-content: space-between;
     align-items: end;
 }
+
+.blog-image-wrapper {
+    @include flex-center;
+
+    >img {
+        width: 80%;
+        height: auto;
+    }
+
+    &.sm {
+        >img {
+            width: 100%;
+        }
+    }
+}

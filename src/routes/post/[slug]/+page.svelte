@@ -56,6 +56,8 @@
 <hr />
 <h1>{data.post.title}</h1>
 {#if `${data.post.src}` !== 'n/a'}
-  <img src={data.post.src} alt={data.post.title} />
+  <div class={`blog-image-wrapper`} class:sm={$isMobile}>
+    <img src={data.post.src} alt={data.post.title} />
+  </div>
 {/if}
 <article><svelte:component this={data.component} /></article>
