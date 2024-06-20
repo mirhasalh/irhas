@@ -2,7 +2,7 @@
   import { onMount } from 'svelte'
   import '../styles/app.scss'
   import { browser } from '$app/environment'
-  import { github } from '$lib/info.js'
+  import { name, github, linkedin } from '$lib/info.js'
   import debounce from 'lodash/debounce'
   import AppBar from '$components/AppBar.svelte'
   import { isMobile } from '$stores/isMobile'
@@ -15,7 +15,7 @@
 
   const d = new Date()
 
-  let isUnderConstruction = true,
+  let isUnderConstruction = false,
     year = d.getFullYear()
 
   const getIsMobile = () => (innerWidth <= 1024 ? isMobile.set(true) : isMobile.set(false))
@@ -30,7 +30,7 @@
         window.open('https://github.com/' + github, '_blank')
         break
       case 'linkedin':
-        window.open('https://www.linkedin.com/in/irhasdev/', '_blank')
+        window.open(`https://www.linkedin.com/in/${linkedin}/`, '_blank')
         break
       default:
         window.open('/', '_self')
@@ -79,5 +79,5 @@
     </div>
   </div>
   <hr />
-  <p><small>© {year} Irhas A.</small></p>
+  <p><small>© {year} {name}</small></p>
 </footer>

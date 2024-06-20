@@ -52,7 +52,7 @@
     </li>
   </ul>
 </div>
-<small>{bio}</small>
+<p><small>{@html bio.replace(/\n/g, '<br>')}</small></p>
 <hr class={`md`} />
 <div>
   <div class={`section-header`}>
