@@ -1,7 +1,7 @@
 ---
 title: Less code with Riverpod
 date: 2024-04-24
-src: https://i.ibb.co/WvVQXvp/IMG-20240616-192303.png
+src: IMG_20240616-192303.png
 ---
 
 In Flutter app development, there's no one-size-fits-all state management solution, or organizing its architecture. The best choice depends on your project's specific needs. For instance, BLoC may be suitable for a casual game, GetX for a simpler app, and Riverpod for a complex one with many pages and APIs. Remember, recommendations should be approached cautiously—ultimately, the decision rests with you, tailored to your project's unique demands.
