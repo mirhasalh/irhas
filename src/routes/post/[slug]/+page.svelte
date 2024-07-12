@@ -10,7 +10,7 @@
   // Generated open-graph image for sharing on social media.
   // See https://og-image.vercel.app/ for more options.
   const ogImageVercel = `https://og-image.vercel.app/**${encodeURIComponent(data.post.title)}**?theme=light&md=1&fontSize=100px&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fhyper-color-logo.svg`,
-    ogImage = `${data.post.src}` !== 'n/a' ? `${data.post.src}` : ogImageVercel,
+    ogImage = `${data.post.preview}` !== 'n/a' ? `${data.post.preview}` : ogImageVercel,
     url = `${website}/${data.post.slug}`
 
   let applyBack = false
