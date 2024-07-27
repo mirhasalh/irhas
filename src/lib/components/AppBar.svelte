@@ -38,9 +38,7 @@
   </div>
   <div class={`title`}>
     {#if path === 'post'}
-      {#if $isMobile}
-        <div />
-      {:else if y > 100}
+      {#if y > 100}
         <a class:pinned={y > 120} href="https://www.irhas.lol/">{title(`${$page.route.id}`)}</a>
       {:else}
         <div />

@@ -67,6 +67,10 @@ header {
                 top: 0;
                 left: 0;
                 transform: translate(0px, -60px);
+                overflow: hidden;
+                white-space: nowrap;
+                width: 85%;
+                text-overflow: ellipsis;
 
                 &.pinned {
                     transform: translate(0px, 16px);
