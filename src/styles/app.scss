@@ -114,9 +114,42 @@ ol {
     }
 
     .preview {
+        cursor: pointer;
         background-color: var(--surface);
-        padding: 0px 1em 1em;
         border-radius: $rounded-lg;
+        padding-bottom: 1rem;
+        width: 100%;
+        height: min-content;
+        @include transition(box-shadow 0.3s ease-in-out);
+
+        >h3,
+        p,
+        a {
+            margin: 1rem;
+        }
+
+        >p {
+            font-size: 0.85rem;
+        }
+
+        .image {
+            overflow: hidden;
+            @include flex-center;
+
+            >img {
+                transform-origin: center;
+                @include transition(scale 0.2s ease-in-out);
+            }
+        }
+
+        &:hover {
+            box-shadow: $shadow-lg;
+            .image {
+                >img {
+                    scale: 1.03;
+                }
+            }
+        }
     }
 }
 
