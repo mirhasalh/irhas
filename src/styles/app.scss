@@ -11,6 +11,10 @@
     -webkit-tap-highlight-color: transparent;
 }
 
+main {
+    background-color: var(--surface);
+}
+
 .shrink {
     margin: 0
 }
@@ -124,6 +128,7 @@ ol {
         padding-bottom: 1rem;
         width: 100%;
         height: min-content;
+        box-shadow: $shadow;
         @include transition(box-shadow 0.3s ease-in-out);
 
         >h3,
@@ -170,13 +175,13 @@ ol {
 }
 
 pre {
-    background-color: var(--primary-container);
+    background-color: var(--disabled);
     border-radius: $rounded-lg;
     padding: 2em;
     overflow-x: auto;
 
     >code {
-        color: var(--on-primary-container);
+        color: var(--on-surface-variant);
     }
 }
 
@@ -224,7 +229,7 @@ p {
 }
 
 footer {
-    background-color: #252429;
+    background-color: $on-surface;
     padding: 0.5em 1.5em;
     color: $background;
 
@@ -289,4 +294,11 @@ footer {
             width: 100%;
         }
     }
+}
+
+.empty-area {
+    height: 100%;
+    width: 100%;
+    background-color: var(--disabled);
+    @include transition(box-shadow 0.3s linear);
 }
