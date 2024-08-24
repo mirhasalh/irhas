@@ -25,6 +25,7 @@ $outline: #79757f;
 $surface-variant: #e6e0ec;
 $on-surface-variant: #48454e;
 $backdrop: rgba(248, 246, 248, 0.8);
+$disabled: #f6f6f6;
 
 $primary-dark: 202, 190, 255;
 $on-primary-dark: #320099;
@@ -43,13 +44,14 @@ $on-error-dark: #690005;
 $error-container-dark: #93000a;
 $on-error-container-dark: #ffdad6;
 $background-dark: #1c1b1e;
-$on-background-dark: #e6e1e6;
+$on-background-dark: #ffffff;
 $surface-dark: #252429;
-$on-surface-dark: #e6e1e6;
+$on-surface-dark: #ffffff;
 $outline-dark: #938f99;
 $surface-variant-dark: #48454e;
 $on-surface-variant-dark: #e6e1e6;
 $backdrop-dark: rgba(19, 19, 20, 0.8);
+$disabled-dark: #2b2b2b;
 
 :root {
     --primary: #{$primary};
@@ -76,6 +78,7 @@ $backdrop-dark: rgba(19, 19, 20, 0.8);
     --surface-variant: #{$surface-variant};
     --on-surface-variant: #{$on-surface-variant};
     --backdrop: #{$backdrop};
+    --disabled: #{$disabled};
 
     --primary-dark: #{$primary-dark};
     --on-primary-dark: #{$on-primary-dark};
@@ -101,6 +104,7 @@ $backdrop-dark: rgba(19, 19, 20, 0.8);
     --surface-variant-dark: #{$surface-variant-dark};
     --on-surface-variant-dark: #{$on-surface-variant-dark};
     --backdrop-dark: #{$backdrop-dark};
+    --disabled-dark: #{$disabled-dark};
 }
 
 @media (prefers-color-scheme: dark) {
@@ -129,6 +133,7 @@ $backdrop-dark: rgba(19, 19, 20, 0.8);
         --surface-variant: #{$surface-variant-dark};
         --on-surface-variant: #{$on-surface-variant-dark};
         --backdrop: var(--backdrop-dark);
+        --disabled: var(--disabled-dark);
     }
 }
 

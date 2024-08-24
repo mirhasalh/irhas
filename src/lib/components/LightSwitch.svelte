@@ -28,7 +28,8 @@
       outline: '#79757f',
       surfaceVariant: '#e6e0ec',
       onSurfaceVariant: '#48454e',
-      backdrop: 'rgba(248, 246, 248, 0.8)'
+      backdrop: 'rgba(248, 246, 248, 0.8)',
+      disabled: '#f6f6f6'
     },
     dark: {
       primary: '202, 190, 255',
@@ -48,13 +49,14 @@
       errorContainer: '#93000a',
       onErrorContainer: '#ffdad6',
       background: '#1c1b1e',
-      onBackground: '#e6e1e6',
+      onBackground: '#ffffff',
       surface: '#252429',
-      onSurface: '#e6e1e6',
+      onSurface: '#ffffff',
       outline: '#938f99',
       surfaceVariant: '#48454e',
       onSurfaceVariant: '#e6e1e6',
-      backdrop: 'rgba(19, 19, 20, 0.8)'
+      backdrop: 'rgba(19, 19, 20, 0.8)',
+      disabled: '#2b2b2b'
     }
   }
 
@@ -91,6 +93,7 @@
       root.style.setProperty('--surface-variant', theme.surfaceVariant)
       root.style.setProperty('--on-surface-variant', theme.onSurfaceVariant)
       root.style.setProperty('--backdrop', theme.backdrop)
+      root.style.setProperty('--disabled', theme.disabled)
     }
   }
 </script>
