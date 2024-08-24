@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte'
+  import { goto } from '$app/navigation'
   import '../styles/app.scss'
   import { browser } from '$app/environment'
   import { name, github, linkedin } from '$lib/info.js'
@@ -71,7 +72,9 @@
 </div>
 <footer>
   <div class={`bottom-profile`} class:sm={$isMobile}>
-    <BrandLogo color={`white`} />
+    <button class={`brand`} type="button" on:click={() => goto('/')}>
+      <BrandLogo color={`white`} />
+    </button>
     <div class={`socials`}>
       <button type="button" data-sveltekit-preload-data="hover" on:click={() => onSocial('flutter')}><Flutter /></button>
       <button type="button" data-sveltekit-preload-data="hover" on:click={() => onSocial('github')}><GitHub /></button>

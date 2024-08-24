@@ -13,12 +13,12 @@
     <small>{post.readingTime}</small>
   </div>
   <div class={`preview`}>
-    <h3>{post.title}</h3>
     {#if `${post.src}` !== 'n/a'}
       <div class={`image`}>
         <img src={post.src} alt={post.title} />
       </div>
     {/if}
+    <h3>{post.title}</h3>
     {@html post.preview.html}
     <a href={`/post/${post.slug}`} data-sveltekit-prefetch><strong>Read →</strong></a>
   </div>

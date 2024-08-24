@@ -79,6 +79,7 @@ ol {
         list-style-type: none;
         display: flex;
         position: relative;
+        gap: 0.5rem;
     }
 
     >li {
@@ -129,12 +130,17 @@ ol {
         width: 100%;
         height: min-content;
         box-shadow: $shadow-lg;
+        overflow: hidden;
         @include transition(box-shadow 0.3s ease-in-out);
 
-        >h3,
-        p,
+        >h3 {
+            margin-left: 1.5rem;
+            margin-right: 1.5rem;
+        }
+
+        >p,
         a {
-            margin: 1.5rem;
+            margin: 1rem 1.5rem;
         }
 
         >p {
@@ -242,6 +248,34 @@ footer {
             flex-direction: column;
             align-items: center;
             justify-content: center;
+        }
+
+        >button {
+            background-color: transparent;
+            outline: none;
+            border: none;
+
+            &.brand {
+                height: max-content;
+                width: max-content;
+                margin: 0;
+                padding: 0;
+            }
+
+            >svg {
+                >path {
+                    fill: white;
+                }
+
+            }
+
+            &:hover {
+                >svg {
+                    >path {
+                        fill: $seed-color;
+                    }
+                }
+            }
         }
 
         .socials {

@@ -51,6 +51,8 @@ git config core.sshCommand "ssh -i C:\Users\tony\.ssh\id_rsa_tony"
 git config core.sshCommand
 ```
 
+Now you know the command to check the path of the SSH key at both the global and repository levels. I hope you're checking those configurations more frequently.
+
 ## A file naming habit
 
 Technically, this habit is not directly related to SSH configuration, but there's a specific reason why it makes sense. This habit helps prevent conflicts when creating multiple SSH keys. By default, when you run the command from the official Git documentation, the generated key is named:
