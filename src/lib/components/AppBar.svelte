@@ -15,7 +15,7 @@
   $: y = 0
   $: innerWidth = 0
   $: title = (route: string) => {
-    if (route === '/') return "Irhas's blog"
+    if (route === '/') return 'Blog posts'
     const split = route.split('/')
     path = split[1]
     if (path === 'post') {

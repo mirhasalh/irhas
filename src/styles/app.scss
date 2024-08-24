@@ -125,16 +125,16 @@ ol {
         cursor: pointer;
         background-color: var(--surface);
         border-radius: $rounded-lg;
-        padding-bottom: 1rem;
+        padding-bottom: 1.5rem;
         width: 100%;
         height: min-content;
-        box-shadow: $shadow;
+        box-shadow: $shadow-lg;
         @include transition(box-shadow 0.3s ease-in-out);
 
         >h3,
         p,
         a {
-            margin: 1rem;
+            margin: 1.5rem;
         }
 
         >p {
@@ -152,7 +152,7 @@ ol {
         }
 
         &:hover {
-            box-shadow: $shadow-lg;
+            box-shadow: $shadow;
 
             .image {
                 >img {
@@ -176,12 +176,12 @@ ol {
 
 pre {
     background-color: var(--disabled);
-    border-radius: $rounded-lg;
+    border-radius: $rounded-md;
     padding: 2em;
     overflow-x: auto;
 
     >code {
-        color: var(--on-surface-variant);
+        color: var(--outline);
     }
 }
 
