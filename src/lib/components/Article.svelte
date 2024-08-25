@@ -20,6 +20,6 @@
     {/if}
     <h3>{post.title}</h3>
     {@html post.preview.html}
-    <a href={`/post/${post.slug}`} data-sveltekit-prefetch><strong>Read →</strong></a>
+    <a class={`end`} href={`/post/${post.slug}`} data-sveltekit-prefetch><strong>Read →</strong></a>
   </div>
 </article>

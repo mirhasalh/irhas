@@ -36,27 +36,6 @@ img {
     width: 100%;
 }
 
-.under-construction-wrapper {
-    background-color: var(--backdrop);
-    position: fixed;
-    z-index: 100;
-    text-align: center;
-    height: 100dvh;
-    width: 100vw;
-    @include flex-center;
-    flex-direction: column;
-
-    >.caption {
-        margin: $toolbar-height 0px $toolbar-height 0px;
-    }
-
-    .socials {
-        position: fixed;
-        bottom: 2rem;
-        z-index: 20;
-    }
-}
-
 .app-shell {
     display: grid;
     grid-template-columns: 20% 60% 20%;
@@ -87,7 +66,7 @@ ol {
     }
 }
 
-.circle-avatar {
+.circular-avatar {
     background-color: var(--primary-container);
     border-radius: $rounded-full;
     height: 50px;
@@ -138,13 +117,16 @@ ol {
             margin-right: 1.5rem;
         }
 
-        >p,
-        a {
+        >p {
             margin: 1rem 1.5rem;
         }
 
         >p {
             font-size: 0.85rem;
+        }
+
+        .end {
+            margin-left: 1.5rem;
         }
 
         .image {
@@ -170,14 +152,10 @@ ol {
 }
 
 .section-header {
-    margin-bottom: 1em;
+    margin-bottom: 1.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    &.profiles {
-        align-items: start;
-    }
 }
 
 pre {
@@ -279,6 +257,9 @@ footer {
         }
 
         .socials {
+            display: flex;
+            gap: 0.5rem;
+
             button {
                 border: none;
                 border-radius: 0px;
@@ -335,4 +316,57 @@ footer {
     width: 100%;
     background-color: var(--disabled);
     @include transition(box-shadow 0.3s linear, background-color 0.3s linear);
+}
+
+.card {
+    overflow: hidden;
+    box-shadow: $shadow;
+    border-radius: $rounded-lg;
+
+    .banner {
+        position: relative;
+
+        .avatar-wrapper {
+            position: absolute;
+            z-index: 10;
+            padding-left: 1.5rem;
+            bottom: calc($button-height * -0.5);
+
+            .circular-avatar {
+                border: 0.125rem solid var(--surface);
+            }
+        }
+
+        >ul {
+            &.socials {
+                position: absolute;
+                z-index: 10;
+                bottom: 0.25rem;
+                right: 1.5rem;
+
+                >li {
+                    >button {
+                        >svg {
+                            >path {
+                                fill: $surface;
+                            }
+                        }
+
+                        &:hover {
+                            >svg {
+                                >path {
+                                    fill: $seed-color;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    >p {
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
+    }
 }

@@ -7,7 +7,6 @@
   import debounce from 'lodash/debounce'
   import AppBar from '$components/AppBar.svelte'
   import { isMobile } from '$stores/isMobile'
-  import UnderConstructionIndicator from '$components/UnderConstructionIndicator.svelte'
   import GitHub from '$lib/icons/GitHub.svelte'
   import LinkedIn from '$lib/icons/LinkedIn.svelte'
   import Flutter from '$lib/icons/Flutter.svelte'
@@ -16,8 +15,7 @@
 
   const d = new Date()
 
-  let isUnderConstruction = false,
-    year = d.getFullYear()
+  let year = d.getFullYear()
 
   const getIsMobile = () => (innerWidth <= 1024 ? isMobile.set(true) : isMobile.set(false))
 
@@ -48,18 +46,6 @@
 
 <svelte:window on:resize={onResize} />
 
-{#if isUnderConstruction}
-  <div class={`under-construction-wrapper`}>
-    <UnderConstructionIndicator />
-    <div class={`caption`}><small>This Irhas's site is currently<br />under construction!</small></div>
-    <button class={`primary rounded`} type="button" on:click={() => (isUnderConstruction = false)}><strong>Proceed anyway</strong></button>
-    <div class={`socials`}>
-      <button class={`raw`} type="button" data-sveltekit-preload-data="hover" on:click={() => onSocial('flutter')}><Flutter /></button>
-      <button class={`raw`} type="button" data-sveltekit-preload-data="hover" on:click={() => onSocial('github')}><GitHub /></button>
-      <button class={`raw`} type="button" data-sveltekit-preload-data="hover" on:click={() => onSocial('linkedin')}><LinkedIn /></button>
-    </div>
-  </div>
-{/if}
 <AppBar>
   <svelte:fragment slot="actions">
     <LightSwitch />
@@ -67,7 +53,9 @@
 </AppBar>
 <div class={`app-shell`} class:sm={$isMobile}>
   <section class={`empty-area`}></section>
-  <main><slot /></main>
+  <main>
+    <slot />
+  </main>
   <section class={`empty-area`}></section>
 </div>
 <footer>
@@ -76,9 +64,15 @@
       <BrandLogo color={`white`} />
     </button>
     <div class={`socials`}>
-      <button type="button" data-sveltekit-preload-data="hover" on:click={() => onSocial('flutter')}><Flutter /></button>
-      <button type="button" data-sveltekit-preload-data="hover" on:click={() => onSocial('github')}><GitHub /></button>
-      <button type="button" data-sveltekit-preload-data="hover" on:click={() => onSocial('linkedin')}><LinkedIn /></button>
+      <button class={`raw icon`} type="button" data-sveltekit-preload-data="hover" on:click={() => onSocial('flutter')}>
+        <Flutter />
+      </button>
+      <button class={`raw icon`} type="button" data-sveltekit-preload-data="hover" on:click={() => onSocial('github')}>
+        <GitHub />
+      </button>
+      <button class={`raw icon`} type="button" data-sveltekit-preload-data="hover" on:click={() => onSocial('linkedin')}>
+        <LinkedIn />
+      </button>
     </div>
   </div>
   <hr />
