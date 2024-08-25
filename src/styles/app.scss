@@ -334,5 +334,5 @@ footer {
     height: 100%;
     width: 100%;
     background-color: var(--disabled);
-    @include transition(box-shadow 0.3s linear);
+    @include transition(box-shadow 0.3s linear, background-color 0.3s linear);
 }

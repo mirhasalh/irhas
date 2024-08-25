@@ -1,5 +1,5 @@
 ---
-title: Managing multiple ssh keys
+title: Managing multiple SSH keys
 date: 2024-08-26
 src: IMG_20240824-001111.png
 coverPreview: 'https://irhas.lol/IMG_20240824-001111.png'
@@ -31,27 +31,29 @@ git config user.name
 git config user.email
 ```
 
-However, I feel that these commands are often overlooked by people:
+However, the following commands for setting the SSH key path are often overlooked:
 
 ```bash
-# To globally pointing the path of our SSH key for Mac and Linux
+# To globally set the path of our SSH key for Mac and Linux
 git config --global core.sshCommand "ssh -i ~/.ssh/id_rsa_tony"
+
 # For Windows
 git config --global core.sshCommand "ssh -i C:\Users\tony\.ssh\id_rsa_tony"
 
-# To display the current path of our global SSH key
+# To display the current global SSH key path
 git config --global core.sshCommand
 
-# To pointing the path of our SSH key on a Mac and Linux on a specific repository
+# To set the SSH key path on a specific repository for Mac and Linux
 git config core.sshCommand "ssh -i ~/.ssh/id_rsa_tony"
+
 # For Windows
 git config core.sshCommand "ssh -i C:\Users\tony\.ssh\id_rsa_tony"
 
-# To display the current path of our SSH key on a specific repository
+# To display the current SSH key path for a specific repository
 git config core.sshCommand
 ```
 
-Now you know the command to check the path of the SSH key at both the global and repository levels. I hope you're checking those configurations more frequently.
+Now you know how to check the SSH key path at both the global and repository levels. Make a habit of checking these configurations more frequently!
 
 ## A file naming habit
 
@@ -103,11 +105,11 @@ Host gitlab.com
     Port 22
 ```
 
-Lastly, here’s a command for cloning with a specific SSH key, which can save you a lot of time.
+Updating the config file helps automate the process of connecting to the correct Git host with the appropriate SSH key.
 
 ## The clone command with a specific SSH key
 
-Here's a command to clone a repository using a specific SSH key:
+Lastly, here’s a command for cloning with a specific SSH key, which can save you a lot of time. Here's a command to clone a repository using a specific SSH key:
 
 ```bash
 # For Mac and Linux
@@ -116,3 +118,5 @@ git clone git@gitlab.com:avengers/stark.git --config core.sshCommand="ssh -i ~/.
 # For Windows
 git clone git@gitlab.com:avengers/stark.git --config core.sshCommand="ssh -i C:\Users\tony\.ssh\id_rsa_tony_gitlab"
 ```
+
+With these steps, managing multiple SSH keys becomes much easier. No more headaches from conflicting SSH keys—just smooth sailing on your Git adventures!
