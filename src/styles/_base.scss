@@ -1,0 +1,77 @@
+@use "themes" as *;
+@import "mixins";
+
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
+main {
+    background-color: var(--surface);
+}
+
+p {
+    line-height: 1.6;
+}
+
+svg {
+
+    >rect,
+    path {
+        @include transition(fill 0.2s linear);
+    }
+}
+
+img {
+    height: auto;
+    width: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: var(--background);
+    color: var(--on-background);
+}
+
+pre {
+    background-color: var(--disabled);
+    border-radius: $rounded-md;
+    padding: 2em;
+    overflow-x: auto;
+
+    >code {
+        color: var(--outline);
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--on-background);
+
+    >a {
+        color: var(--on-background);
+
+        &:link {
+            text-decoration: none;
+        }
+
+        &:visited {
+            text-decoration: none;
+            color: var(--on-background);
+        }
+
+        &:hover {
+            color: var(--on-background);
+            text-decoration: none;
+        }
+
+        &:active {
+            color: var(--on-background);
+            text-decoration: none;
+        }
+    }
+}

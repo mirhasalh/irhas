@@ -1,39 +1,13 @@
 @use "themes" as *;
-@use "body";
+@use "base";
 @use "buttons";
-@use "heading";
 @use "headers";
 @use "indicators";
 @use "divider";
 @import "mixins";
 
-* {
-    -webkit-tap-highlight-color: transparent;
-}
-
-main {
-    background-color: var(--surface);
-}
-
 .shrink {
     margin: 0
-}
-
-p {
-    line-height: 1.6;
-}
-
-svg {
-
-    >rect,
-    path {
-        @include transition(fill 0.2s linear);
-    }
-}
-
-img {
-    height: auto;
-    width: 100%;
 }
 
 .app-shell {
@@ -156,17 +130,6 @@ ol {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-pre {
-    background-color: var(--disabled);
-    border-radius: $rounded-md;
-    padding: 2em;
-    overflow-x: auto;
-
-    >code {
-        color: var(--outline);
-    }
 }
 
 a {
@@ -334,6 +297,11 @@ footer {
 
             .circular-avatar {
                 border: 0.125rem solid var(--surface);
+                @include transition(border 0.3s ease);
+
+                &:hover {
+                    border-color: var(--tertiary-container);
+                }
             }
         }
 
@@ -353,6 +321,8 @@ footer {
                         }
 
                         &:hover {
+                            background-color: $primary-container;
+
                             >svg {
                                 >path {
                                     fill: $seed-color;
@@ -368,5 +338,41 @@ footer {
     >p {
         margin-left: 1.5rem;
         margin-right: 1.5rem;
+    }
+}
+
+.wave {
+    display: inline-block;
+    animation: wave 2s infinite;
+    transform-origin: 70% 70%;
+}
+
+@keyframes wave {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    10% {
+        transform: rotate(-10deg);
+    }
+
+    20% {
+        transform: rotate(12deg);
+    }
+
+    30% {
+        transform: rotate(-10deg);
+    }
+
+    40% {
+        transform: rotate(9deg);
+    }
+
+    50% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
     }
 }

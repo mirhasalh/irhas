@@ -6,6 +6,7 @@
   import Flutter from '$lib/icons/Flutter.svelte'
   import Article from '$components/Article.svelte'
   import ProfileCard from '$components/ProfileCard.svelte'
+  import Sanitized from '$components/Sanitized.svelte'
 
   /** @type {import('./$types').PageData} */
   export let data: any
@@ -47,7 +48,7 @@
       <button class={`raw icon`} type="button" data-sveltekit-preload-data="hover" on:click={() => onSocial('linkedin')}><LinkedIn /></button>
     </li>
   </svelte:fragment>
-  <p><small>{@html bio.replace(/\n/g, '<br>')}</small></p>
+  <Sanitized html={bio} />
 </ProfileCard>
 <hr class={`md transparent`} />
 <header class={`section-header`}>
