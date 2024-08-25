@@ -38,7 +38,7 @@ However, the following commands for setting the SSH key path are often overlooke
 git config --global core.sshCommand "ssh -i ~/.ssh/id_rsa_tony"
 
 # For Windows
-git config --global core.sshCommand "ssh -i C:\Users\tony\.ssh\id_rsa_tony"
+git config --global core.sshCommand "ssh -i C:\\Users\tony\\.ssh\\id_rsa_tony"
 
 # To display the current global SSH key path
 git config --global core.sshCommand
@@ -47,7 +47,7 @@ git config --global core.sshCommand
 git config core.sshCommand "ssh -i ~/.ssh/id_rsa_tony"
 
 # For Windows
-git config core.sshCommand "ssh -i C:\Users\tony\.ssh\id_rsa_tony"
+git config core.sshCommand "ssh -i C:\\Users\tony\\.ssh\\id_rsa_tony"
 
 # To display the current SSH key path for a specific repository
 git config core.sshCommand
@@ -109,14 +109,14 @@ Updating the config file helps automate the process of connecting to the correct
 
 ## The clone command with a specific SSH key
 
-Lastly, here’s a command for cloning with a specific SSH key, which can save you a lot of time. Here's a command to clone a repository using a specific SSH key:
+Lastly, here’s a command for cloning with a specific SSH key, which can save you a lot of time:
 
 ```bash
 # For Mac and Linux
 git clone git@gitlab.com:avengers/stark.git --config core.sshCommand="ssh -i ~/.ssh/id_rsa_tony_gitlab"
 
 # For Windows
-git clone git@gitlab.com:avengers/stark.git --config core.sshCommand="ssh -i C:\Users\tony\.ssh\id_rsa_tony_gitlab"
+git clone git@gitlab.com:avengers/stark.git --config core.sshCommand="ssh -i C:\\Users\tony\\.ssh\\id_rsa_tony_gitlab"
 ```
 
 With these steps, managing multiple SSH keys becomes much easier. No more headaches from conflicting SSH keys—just smooth sailing on your Git adventures!
