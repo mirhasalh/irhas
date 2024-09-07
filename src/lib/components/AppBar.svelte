@@ -44,7 +44,6 @@
     <div class={`actions`}>
       <slot name="actions" />
     </div>
-    <div />
   </section>
   <section class={`empty-area`}></section>
 </header>

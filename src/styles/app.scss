@@ -14,6 +14,7 @@
     display: grid;
     grid-template-columns: 20% 60% 20%;
     margin-top: $toolbar-height;
+    @include transition(grid-template-columns 0.3s ease);
 
     &.sm {
         grid-template-columns: 0% 100vw 0%;
@@ -58,13 +59,14 @@ ol {
 .blog-post {
     display: grid;
     grid-template-columns: 30% 1fr;
+    @include transition(grid-template-columns 0.3s ease);
 
     .leading {
         padding: 1.3em 0rem;
     }
 
     &.sm {
-        grid-template-columns: unset;
+        grid-template-columns: 1fr;
 
         .leading {
             display: flex;
@@ -263,6 +265,7 @@ footer {
     @include flex-center;
 
     >img {
+        @include transition(width 0.3s ease);
         width: 80%;
         height: auto;
     }
@@ -294,6 +297,7 @@ footer {
             z-index: 10;
             padding-left: 1.5rem;
             bottom: calc($button-height * -0.5);
+            display: flex;
 
             .circular-avatar {
                 border: 0.125rem solid var(--surface);
