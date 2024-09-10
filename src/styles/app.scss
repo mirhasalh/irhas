@@ -133,7 +133,7 @@ ol {
         scale: .8;
         animation: fade-in ease-out forwards;
         animation-timeline: view();
-        animation-range: 200px 400px;
+        animation-range: entry -200px;
     }
 }
 
