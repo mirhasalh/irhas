@@ -127,6 +127,23 @@ ol {
     }
 }
 
+@media (prefers-reduced-motion: no-preference) {
+    .blog-post {
+        opacity: 0;
+        scale: .8;
+        animation: fade-in ease-out forwards;
+        animation-timeline: view();
+        animation-range: 200px 400px;
+    }
+}
+
+@keyframes fade-in {
+    to {
+        scale: 1;
+        opacity: 1
+    }
+}
+
 .section-header {
     margin-bottom: 1.5rem;
     display: flex;
