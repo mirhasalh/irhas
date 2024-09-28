@@ -11,6 +11,12 @@
     align-items: center;
 }
 
+@mixin flex-start {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
 @mixin box-shadow($property) {
     -webkit-box-shadow: $property;
     -moz-box-shadow: $property;

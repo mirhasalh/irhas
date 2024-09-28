@@ -13,16 +13,16 @@
   <title>{name} | Posts</title>
 </svelte:head>
 
-<div>
+<section>
   {#each data.posts as post, i}
     <Article {post} />
     {#if i !== data.posts.length - 1}
       <hr class={`transparent`} />
     {/if}
   {/each}
-</div>
+</section>
 
-<div>
+<section class={`main-padding`}>
   {#if !isFirstPage}
     <a href={`/posts/${data.page - 1}`} data-sveltekit-prefetch> Previous </a>
   {:else}
@@ -32,4 +32,4 @@
   {#if hasNextPage}
     <a href={`/posts/${data.page + 1}`} data-sveltekit-prefetch>Next </a>
   {/if}
-</div>
+</section>

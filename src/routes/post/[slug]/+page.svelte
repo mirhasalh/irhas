@@ -47,17 +47,23 @@
 </svelte:head>
 
 {#if applyBack}
-  <a href="/posts" on:click={goBack}>← Back</a>
+  <section class={`main-padding`}>
+    <a href="/posts" on:click={goBack}>← Back</a>
+  </section>
 {/if}
 <div class={`post-data`}>
   <p><small><time datetime={data.post.date}>{format(new Date(parseISO(data.post.date)), `${$isMobile ? 'MMM d, yyyy' : 'MMMM d, yyyy'}`)}</time></small></p>
   <p><small>{data.post.readingTime}</small></p>
 </div>
-<hr />
-<h1>{data.post.title}</h1>
+<section class={`main-padding horizontal`}>
+  <hr />
+  <h1>{data.post.title}</h1>
+</section>
 {#if `${data.post.src}` !== 'n/a'}
   <div class={`blog-image-wrapper`} class:sm={$isMobile}>
     <img src={`../${data.post.src}`} alt={data.post.title} />
   </div>
 {/if}
-<article><svelte:component this={data.component} /></article>
+<section class={`main-padding`}>
+  <article><svelte:component this={data.component} /></article>
+</section>

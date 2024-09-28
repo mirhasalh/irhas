@@ -56,7 +56,9 @@
   <a href="/posts"><strong>View all →</strong></a>
 </header>
 {#if data.posts.length === 0}
-  <p>Irhas haven't post anything yet.</p>
+  <section class={`main-padding`}>
+    <p>Irhas haven't post anything yet.</p>
+  </section>
 {:else}
   {#each data.posts as post, i}
     <Article {post} />

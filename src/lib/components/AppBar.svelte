@@ -28,9 +28,8 @@
 
 <svelte:window bind:scrollY={y} bind:innerWidth />
 
-<header class={`app-bar`} class:elevated={y > 60} class:sm={$isMobile}>
-  <section class={`empty-area`}></section>
-  <section class={`child`}>
+<header class={`app-bar-wrapper`}>
+  <div class={`app-bar`} class:elevated={y > 60} class:sm={$isMobile}>
     <div class={`leading`}>
       <div class={`brand`}>
         <button type="button" on:click={() => goto('/')}>
@@ -44,6 +43,5 @@
     <div class={`actions`}>
       <slot name="actions" />
     </div>
-  </section>
-  <section class={`empty-area`}></section>
+  </div>
 </header>

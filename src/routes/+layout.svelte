@@ -52,11 +52,9 @@
   </svelte:fragment>
 </AppBar>
 <div class={`app-shell`} class:sm={$isMobile}>
-  <section class={`empty-area`}></section>
   <main>
     <slot />
   </main>
-  <section class={`empty-area`}></section>
 </div>
 <footer>
   <div class={`bottom-profile`} class:sm={$isMobile}>
