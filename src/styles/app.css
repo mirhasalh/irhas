@@ -1,0 +1,16 @@
+@import url("./base.css");
+@import url("./app-bar.css");
+@import url("./avatar.css");
+@import url("./article.css");
+@import url("./divider.css");
+@import url("./list.css");
+@import url("./post.css");
+@import url("./logo.css");
+
+.shrink {
+    margin: 0;
+}
+
+.h-paddings {
+    padding: 0 16px;
+}

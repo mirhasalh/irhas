@@ -1,0 +1,21 @@
+:root {
+    --primary-color: 10, 105, 218;
+    --primary-highlight-color: 221, 244, 255;
+    --secondary-color: 161, 64, 0;
+    --bg-color: 245, 245, 247;
+    --surface-color: 255, 255, 255;
+    --surface-highlight-color: 249, 249, 249;
+    --on-surface-color: 27, 27, 27;
+    --subtitle-color: 110, 110, 115;
+
+    --primary-color-dark: 68, 147, 248;
+    --primary-highlight-color-dark: 19, 29, 46;
+    --secondary-color-dark: 255, 181, 151;
+    --bg-color-dark: 2, 4, 10;
+    --surface-color-dark: 13, 17, 22;
+    --surface-highlight-color-dark: 21, 27, 35;
+    --on-surface-color-dark: 255, 255, 255;
+    --subtitle-color-dark: 240, 246, 252;
+
+    --md: 768px;
+}

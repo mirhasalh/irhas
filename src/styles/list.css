@@ -1,0 +1,23 @@
+li.list-item {
+    list-style: none;
+}
+
+ul.list {
+    align-items: stretch;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    gap: 1em;
+}
+
+@media screen and (min-width: 1024px) {
+    .list .list-item.post {
+        flex: 1 1;
+    }
+
+    .list .list-item.post:first-child {
+        flex-basis: 100%;
+    }
+}

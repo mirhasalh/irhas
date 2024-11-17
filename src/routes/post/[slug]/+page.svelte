@@ -1,69 +1,38 @@
-<script>
-  import { website, name } from '$lib/info.js'
-  import { afterNavigate } from '$app/navigation'
-  import { format, parseISO } from 'date-fns'
-  import { isMobile } from '$stores/isMobile'
+<script lang="ts">
+  import type { PageData } from './$types'
+  import Sanitized from '$lib/components/Sanitized.svelte'
+  import { website } from '$lib'
 
-  /** @type {import('./$types').PageData} */
-  export let data
-
-  // Generated open-graph image for sharing on social media.
-  // See https://og-image.vercel.app/ for more options.
-  const ogImageVercel = `https://og-image.vercel.app/**${encodeURIComponent(data.post.title)}**?theme=light&md=1&fontSize=100px&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fhyper-color-logo.svg`,
-    ogImage = `${data.post.coverPreview}` !== 'n/a' ? `${data.post.coverPreview}` : ogImageVercel,
-    url = `${website}/${data.post.slug}`
-
-  let applyBack = false
-
-  afterNavigate(({ from }) => {
-    if (from && from.url.pathname.startsWith('/posts')) applyBack = true
-  })
-
-  const goBack = () => {
-    if (applyBack) history.back()
-  }
+  let { data }: { data: PageData } = $props()
 </script>
 
 <svelte:head>
-  <title>{data.post.title} - {name}</title>
-  <meta name="description" content={data.post.preview.text} />
-  <meta name="author" content={name} />
+  <!-- Basic metadata -->
+  <title>{data.post.title}</title>
+  <meta name="description" content={data.post.excerpt} />
+  <meta name="keywords" content={data.post.tags.join(', ')} />
 
-  <!-- Facebook meta tags -->
-  <meta property="og:url" content={url} />
-  <meta property="og:type" content="article" />
+  <!-- Open graph metadata -->
   <meta property="og:title" content={data.post.title} />
-  <meta property="og:description" content={data.post.preview.text} />
-  <meta property="og:image" content={ogImage} />
-  <meta property="article:published_time" content={format(new Date(parseISO(data.post.date)), "yyyy-MM-dd'T'HH:mm:ssXXX")} />
+  <meta property="og:description" content={data.post.excerpt} />
+  <meta property="og:image" content={data.post.imageUrl} />
+  <meta property="og:url" content={`${website}/post/${data.post.slug}`} />
+  <meta property="og:type" content="article" />
+  <meta property="article:published_time" content={data.post.publishedAt} />
+  <meta property="article:tag" content={data.post.tags.join(', ')} />
 
-  <!-- Twitter meta tags -->
+  <!-- Twitter cards -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta property="twitter:domain" content={website} />
-  <meta property="twitter:url" content={url} />
   <meta name="twitter:title" content={data.post.title} />
-  <meta name="twitter:description" content={data.post.preview.text} />
-  <meta name="twitter:image" content={ogImage} />
+  <meta name="twitter:description" content={data.post.excerpt} />
+  <meta name="twitter:image" content={data.post.imageUrl} />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href={`${website}/post/${data.post.slug}`} />
 </svelte:head>
 
-{#if applyBack}
-  <section class={`main-padding`}>
-    <a href="/posts" on:click={goBack}>← Back</a>
-  </section>
-{/if}
-<div class={`post-data`}>
-  <p><small><time datetime={data.post.date}>{format(new Date(parseISO(data.post.date)), `${$isMobile ? 'MMM d, yyyy' : 'MMMM d, yyyy'}`)}</time></small></p>
-  <p><small>{data.post.readingTime}</small></p>
-</div>
-<section class={`main-padding horizontal`}>
-  <hr />
+<article>
   <h1>{data.post.title}</h1>
-</section>
-{#if `${data.post.src}` !== 'n/a'}
-  <div class={`blog-image-wrapper`} class:sm={$isMobile}>
-    <img src={`../${data.post.src}`} alt={data.post.title} />
-  </div>
-{/if}
-<section class={`main-padding`}>
-  <article><svelte:component this={data.component} /></article>
-</section>
+  <img src={data.post.imageUrl} alt={data.post.title} width="100%" />
+  <Sanitized html={data.code} />
+</article>

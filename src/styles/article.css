@@ -1,0 +1,63 @@
+@import url("./variables.css");
+
+article {
+    background-color: rgba(var(--surface-color), 1);
+    padding-bottom: 24px;
+    padding-top: 24px;
+    color: rgba(var(--on-surface-color), 1);
+}
+
+article h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+pre {
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
+article p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+article pre {
+    margin-bottom: 16px;
+}
+
+pre {
+    font-family: 'JetBrains Mono', monospace;
+    background-color: rgba(var(--bg-color), 1);
+    overflow-x: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 24px;
+    border-radius: 12px;
+    color: rgba(var(--subtitle-color), 1);
+}
+
+pre code {
+    margin: 0;
+}
+
+@media screen and (min-width: 1024px) {
+    article {
+        max-width: var(--md);
+        margin: 0 auto;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    article {
+        background-color: rgba(var(--surface-color-dark), 1);
+        color: rgba(var(--on-surface-color-dark), 1);
+    }
+
+    pre {
+        background-color: rgba(var(--bg-color-dark), 1);
+        color: rgba(var(--subtitle-color-dark), 1);
+    }
+}

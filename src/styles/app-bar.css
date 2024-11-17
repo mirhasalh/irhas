@@ -1,0 +1,49 @@
+@import url("./variables.css");
+
+header.app-bar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    height: 50px;
+    background-color: gray;
+}
+
+header.glass {
+    background: rgba(var(--surface-color), 0.7);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.app-bar-contraint {
+    height: 100%;
+    max-width: var(--md);
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 12px 0 8px;
+}
+
+.app-bar-contraint a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.app-bar-actions {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+@media screen and (min-width: 1024px) {
+    .app-bar-contraint {
+        padding: 0;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    header.glass {
+        background: rgba(var(--surface-color-dark), 0.5);
+    }
+}

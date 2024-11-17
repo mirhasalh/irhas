@@ -1,69 +1,38 @@
 <script lang="ts">
-  import { browser } from '$app/environment'
-  import { avatar, bio, github, name } from '$lib/info.js'
-  import GitHub from '$lib/icons/GitHub.svelte'
-  import LinkedIn from '$lib/icons/LinkedIn.svelte'
-  import Flutter from '$lib/icons/Flutter.svelte'
-  import Article from '$components/Article.svelte'
-  import ProfileCard from '$components/ProfileCard.svelte'
-  import Sanitized from '$components/Sanitized.svelte'
+  import type { LayoutData } from './$types'
+  import Posts from '$lib/components/Posts.svelte'
+  import { website } from '$lib'
 
-  /** @type {import('./$types').PageData} */
-  export let data: any
+  let { data }: { data: LayoutData } = $props()
 
-  const onSocial = (to: string) => {
-    if (!browser) return
-    switch (to) {
-      case 'flutter':
-        window.open('https://flutter.irhas.lol/', '_blank')
-        break
-      case 'github':
-        window.open('https://github.com/' + github, '_blank')
-        break
-      case 'linkedin':
-        window.open('https://www.linkedin.com/in/irhasdev/', '_blank')
-        break
-      default:
-        window.open('/', '_self')
-        break
-    }
-  }
-
-  const onAvatar = () => {
-    if (browser) window.open(avatar, '_blank')
-  }
+  const obj: any = data as any,
+    posts: App.Post[] = obj.posts as App.Post[]
 </script>
 
-<svelte:head><title>{name}</title></svelte:head>
+<svelte:head>
+  <!-- Basic metadata -->
+  <title>Irhas' dev blog | Code, coffee, and casual chats</title>
+  <meta name="description" content="Relax and read fun takes on coding, web dev, and tech stuff—no stress, just vibes." />
+  <meta name="keywords" content="blog, chill, web dev, coding, fun, tech tips" />
+  <meta name="author" content="Irhas" />
+  <link rel="canonical" href={website} />
 
-<ProfileCard {avatar} alt={`Irhas's avatar`} {onAvatar}>
-  <svelte:fragment slot="socials">
-    <li>
-      <button class={`raw icon`} type="button" data-sveltekit-preload-data="hover" on:click={() => onSocial('flutter')}><Flutter /></button>
-    </li>
-    <li>
-      <button class={`raw icon`} type="button" data-sveltekit-preload-data="hover" on:click={() => onSocial('github')}><GitHub /></button>
-    </li>
-    <li>
-      <button class={`raw icon`} type="button" data-sveltekit-preload-data="hover" on:click={() => onSocial('linkedin')}><LinkedIn /></button>
-    </li>
-  </svelte:fragment>
-  <Sanitized html={bio} />
-</ProfileCard>
-<hr class={`md transparent`} />
-<header class={`section-header`}>
-  <h2 class={`shrink`}>Blog posts</h2>
-  <a href="/posts"><strong>View all →</strong></a>
-</header>
-{#if data.posts.length === 0}
-  <section class={`main-padding`}>
-    <p>Irhas haven't post anything yet.</p>
-  </section>
-{:else}
-  {#each data.posts as post, i}
-    <Article {post} />
-    {#if i !== data.posts.length - 1}
-      <hr class={`transparent`} />
-    {/if}
-  {/each}
-{/if}
+  <!-- Open graph metadata -->
+  <meta property="og:title" content="Irhas' dev blog" />
+  <meta property="og:description" content="Kick back and enjoy lighthearted insights on web dev and tech!" />
+  <meta property="og:image" content={`${website}/og-image.jpg`} />
+  <meta property="og:url" content={website} />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter metadata -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Irhas' dev blog" />
+  <meta name="twitter:description" content="Kick back and enjoy lighthearted insights on web dev and tech!" />
+  <meta name="twitter:image" content={`${website}/twitter-image.jpg`} />
+  <meta name="twitter:site" content="@irhasdev" />
+</svelte:head>
+
+<section class={`h-paddings`}>
+  <hr class={`transparent`} />
+  <Posts {posts} />
+</section>
