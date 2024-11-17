@@ -2,9 +2,8 @@ import { PUBLIC_CMS } from '$env/static/public'
 import { error } from '@sveltejs/kit'
 
 export const website = 'https://irhas.lol'
-export const githubUsername = 'mirhasalh'
-export const github = `https://github.com/${githubUsername}`
-export const avatar = `https://github.com/${githubUsername}.png`
+export const github = `https://github.com`
+export const accounts = ['mirhasalh', 'irhasalh']
 
 export const getEnvVar = (data: string) => {
     try {

@@ -2,6 +2,7 @@
 @import url("./app-bar.css");
 @import url("./avatar.css");
 @import url("./article.css");
+@import url("./chip.css");
 @import url("./divider.css");
 @import url("./list.css");
 @import url("./post.css");
@@ -13,4 +14,10 @@
 
 .h-paddings {
     padding: 0 16px;
+}
+
+.flex-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
 }

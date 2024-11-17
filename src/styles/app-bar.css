@@ -36,6 +36,11 @@ header.glass {
     height: 100%;
 }
 
+.app-bar-actions nav {
+    display: flex;
+    gap: 4px;
+}
+
 @media screen and (min-width: 1024px) {
     .app-bar-contraint {
         padding: 0;

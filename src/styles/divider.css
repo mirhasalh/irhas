@@ -1,3 +1,7 @@
 hr.transparent {
     border-color: transparent;
 }
+
+hr.md {
+    margin: 12px 0;
+}

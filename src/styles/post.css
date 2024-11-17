@@ -52,10 +52,7 @@
     .post:first-child a {
         display: flex;
         height: 320px;
-    }
-
-    .post:first-child a .title-media {
-        flex-grow: 0;
+        justify-content: space-between;
     }
 
     .post:first-child a .title-media img {
@@ -63,9 +60,24 @@
         height: 100%;
     }
 
+    .post:first-child a .tile-description .title-head h2 {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        line-clamp: 4;
+        -webkit-line-clamp: 4;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .post:first-child a .tile-description .title-head {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
     .post:first-child a .tile-description {
         height: auto;
-        flex-basis: 0;
+        width: fit-content;
     }
 }
 
