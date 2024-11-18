@@ -5,11 +5,11 @@ label.choice-chip {
     transition: background-color 0.1s linear;
     background-color: rgba(var(--primary-highlight-color), 0.5);
     color: rgba(var(--primary-color), 1);
-    border-radius: 4px;
+    border-radius: 9999px;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 4px 8px;
+    padding: 4px 12px;
     cursor: pointer;
 }
 
@@ -30,7 +30,7 @@ label.choice-chip:hover {
 
 .choice-chip:has(input:checked) {
     background-color: rgba(var(--primary-color), 1);
-    color: rgba(var(--on-surface-color), 1);
+    color: rgba(var(--on-primary-color), 1);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -49,6 +49,6 @@ label.choice-chip:hover {
 
     .choice-chip:has(input:checked) {
         background-color: rgba(var(--primary-color-dark), 1);
-        color: rgba(var(--on-surface-color-dark), 1);
+        color: rgba(var(--on-primary-color-dark), 1);
     }
 }
