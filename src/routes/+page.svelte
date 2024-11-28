@@ -13,7 +13,7 @@
   <!-- Basic metadata -->
   <title>Irhas' dev blog | Code, coffee, and casual chats</title>
   <meta name="description" content="Relax and read fun takes on coding, web dev, and tech stuff—no stress, just vibes." />
-  <meta name="keywords" content="blog, chill, web dev, coding, fun, tech tips" />
+  <meta name="keywords" content="irhas blog, irhas, blog, chill, web dev, coding, fun, tech tips" />
   <meta name="author" content="Irhas" />
   <link rel="canonical" href={website} />
 
