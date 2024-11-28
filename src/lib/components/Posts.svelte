@@ -1,15 +1,19 @@
 <script lang="ts">
-  import { formatDate } from '$lib'
+  import { formatDate, initFadeInAnimation } from '$lib'
 
   let { posts }: { posts: App.Post[] } = $props()
 
   let selectedCategory = $state('all')
 
   const categories = Array.from(new Set(posts.flatMap((post) => post.categories || [])))
+
+  $effect(() => {
+    if (selectedCategory) initFadeInAnimation()
+  })
 </script>
 
-<h1>Latest posts</h1>
-<div class={`flex-wrap`}>
+<h1 class={`animated-fade-in`}>Latest posts</h1>
+<div class={`flex-wrap animated-fade-in`}>
   <label class={`choice-chip`} for={`all`}>
     <input type="radio" id={`all`} name={`all`} value={`all`} bind:group={selectedCategory} />
     <small>All</small>
@@ -26,7 +30,7 @@
   {#each posts as post}
     {@const href = `/post/${post.slug}`}
     {#if selectedCategory === 'all' ? true : post.categories.includes(selectedCategory)}
-      <li role={`listitem`} class={`list-item post`}>
+      <li role={`listitem`} class={`list-item post animated-fade-in`}>
         <a {href} aria-label={post.title}>
           <div class={`title-media`}>
             <img src={post.imageUrl} alt={post.title} width="100%" />

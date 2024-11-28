@@ -110,3 +110,20 @@ export const formatDate = (input: string): string => {
     const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' };
     return new Intl.DateTimeFormat('en-US', options).format(date);
 }
+
+export const initFadeInAnimation = () => {
+    const elements = document.querySelectorAll('.animated-fade-in'),
+        observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in')
+                        observer.unobserve(entry.target)
+                    }
+                })
+            },
+            { threshold: 0.1 }
+        )
+
+    elements.forEach((el) => observer.observe(el))
+}
