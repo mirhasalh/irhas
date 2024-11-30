@@ -1,3 +1,5 @@
+@import url("./variables.css");
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -10,6 +12,32 @@
     }
 }
 
+@keyframes wave {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    20% {
+        transform: rotate(20deg);
+    }
+
+    40% {
+        transform: rotate(-10deg);
+    }
+
+    60% {
+        transform: rotate(10deg);
+    }
+
+    80% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
 .animated-fade-in {
     opacity: 0;
     transform: translateY(20px);
@@ -17,6 +45,26 @@
 
 .fade-in {
     animation: fadeIn 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.head-1 {
+    cursor: pointer;
+    transition: border-color 0.2s linear;
+    border: 0.125rem dashed rgba(var(--surface-color), 1);
+    border-radius: 9999px;
+    aspect-ratio: 1 / 1;
+    background-color: rgba(var(--surface-color), 1);
+}
+
+.head-1:hover {
+    border-color: rgba(var(--secondary-color), 1);
+}
+
+.wave {
+    display: inline-block;
+    font-size: 2rem;
+    transform-origin: bottom center;
+    animation: wave 1.5s ease-in-out forwards;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -28,5 +76,16 @@
 
     .fade-in {
         animation: none;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .head-1 {
+        border-color: rgba(var(--surface-color-dark), 1);
+        background-color: rgba(var(--surface-color-dark), 1);
+    }
+
+    .head-1:hover {
+        border-color: rgba(var(--secondary-color-dark), 1);
     }
 }

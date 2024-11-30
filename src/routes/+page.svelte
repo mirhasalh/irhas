@@ -2,6 +2,8 @@
   import type { LayoutData } from './$types'
   import Posts from '$lib/components/Posts.svelte'
   import { website } from '$lib'
+  import Rive from '$lib/components/Rive.svelte'
+  import { hovered } from '$lib/hovered'
 
   let { data }: { data: LayoutData } = $props()
 
@@ -32,6 +34,24 @@
   <meta name="twitter:site" content="@irhasdev" />
 </svelte:head>
 
+<section>
+  <div class={`hero animated-fade-in`}>
+    <div class={`head-1`} role="presentation" onfocus={() => {}} onmouseover={() => hovered.set(true)} onmouseleave={() => hovered.set(false)}>
+      <Rive></Rive>
+    </div>
+    <div class={`geetings`}>
+      <h1 class={`shrink`}>
+        Hello there
+        <span class={`wave`}>👋</span>
+      </h1>
+      <p class={`shrink`}>
+        I'm Irhas, welcome to my blog.
+        <br />
+        <span class={`hobby`} class:reveal={$hovered}> I like drawing, btw. 🤫 </span>
+      </p>
+    </div>
+  </div>
+</section>
 <section class={`h-paddings`}>
   <hr class={`transparent`} />
   <Posts {posts} />

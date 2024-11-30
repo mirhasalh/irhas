@@ -8,6 +8,7 @@
 @import url("./list.css");
 @import url("./post.css");
 @import url("./logo.css");
+@import url("./hero.css");
 
 .shrink {
     margin: 0;
@@ -21,4 +22,26 @@
     display: flex;
     flex-wrap: wrap;
     gap: 4px;
+}
+
+.geetings {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.hobby {
+    transition: opacity 0.2s linear;
+    opacity: 0;
+}
+
+.hobby.reveal {
+    opacity: 1;
+}
+
+@media screen and (min-width: 768px) {
+    .geetings {
+        text-align: start;
+    }
 }
