@@ -39,7 +39,7 @@
     <div class={`head-1`} role="presentation" onfocus={() => {}} onmouseover={() => hovered.set(true)} onmouseleave={() => hovered.set(false)}>
       <Rive></Rive>
     </div>
-    <div class={`geetings`}>
+    <div class={`greetings`}>
       <h1 class={`shrink`}>
         Hello there
         <span class={`wave`}>👋</span>

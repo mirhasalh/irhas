@@ -24,7 +24,7 @@
     gap: 4px;
 }
 
-.geetings {
+.greetings {
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -41,7 +41,7 @@
 }
 
 @media screen and (min-width: 768px) {
-    .geetings {
+    .greetings {
         text-align: start;
     }
 }
