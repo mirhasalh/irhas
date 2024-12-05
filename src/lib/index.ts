@@ -82,10 +82,11 @@ export function put(path: string, data?: unknown, token?: string): Promise<any> 
 
 // Paths
 const posts = publicEnv.posts
+const postsQuery = publicEnv.postsQuery
 const aPost = publicEnv.post
 
 export const getPosts = async (from: number, to: number) => {
-    const url = `${posts}${from}...${to}%5D`
+    const url = `${posts}${from}...${to}${postsQuery}`
     const res = await get(url)
     const sorted = (res.result as App.Post[]).sort(
         (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
