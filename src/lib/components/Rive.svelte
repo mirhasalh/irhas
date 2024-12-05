@@ -15,7 +15,7 @@
       canvasElement.style.height = '200px'
 
       const r = new rive.Rive({
-        src: website + '/head_1.riv',
+        src: `${website}/avatar_1.riv`,
         canvas: canvasElement,
         stateMachines: 'State Machine 1',
         autoplay: true,
