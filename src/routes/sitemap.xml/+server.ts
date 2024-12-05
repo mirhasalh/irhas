@@ -2,7 +2,7 @@ import { getPosts, website } from '$lib'
 
 export const prerender = true
 
-const posts = await getPosts()
+const posts = await getPosts(0, 100)
 
 const getPostUrl = (slug: string) => `${website}/post/${slug}`
 
