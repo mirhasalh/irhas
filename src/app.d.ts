@@ -16,6 +16,7 @@ declare global {
 			publishedAt: string
 			slug: string
 			body: string
+			readingTime: number
 		}
 	}
 }
