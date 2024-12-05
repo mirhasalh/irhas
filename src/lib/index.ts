@@ -86,8 +86,7 @@ const postsQuery = publicEnv.postsQuery
 const aPost = publicEnv.post
 
 export const getPosts = async (from: number, to: number) => {
-    const url = `${posts}${from}...${to}${postsQuery}`
-    const res = await get(url)
+    const res = await get(`${posts}${from}...${to}${postsQuery}`)
     const sorted = (res.result as App.Post[]).sort(
         (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
     )
