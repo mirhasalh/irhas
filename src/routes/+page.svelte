@@ -2,8 +2,8 @@
   import type { LayoutData } from './$types'
   import Posts from '$lib/components/Posts.svelte'
   import { website } from '$lib'
-  import Rive from '$lib/components/Rive.svelte'
-  import { hovered } from '$lib/hovered'
+  import { avatar } from '$lib/shared.svelte'
+  import RiveAvatars from '$lib/components/RiveAvatars.svelte'
 
   let { data }: { data: LayoutData } = $props()
 
@@ -36,9 +36,7 @@
 
 <section>
   <div class={`hero animated-fade-in`}>
-    <div class={`head-1`} role="presentation" onfocus={() => {}} onmouseover={() => hovered.set(true)} onmouseleave={() => hovered.set(false)}>
-      <Rive></Rive>
-    </div>
+    <RiveAvatars />
     <div class={`greetings`}>
       <h1 class={`shrink`}>
         Hello there
@@ -47,7 +45,7 @@
       <p class={`shrink`}>
         I'm Irhas, welcome to my blog.
         <br />
-        <span class={`hobby`} class:reveal={$hovered}> I like drawing, btw. 🤫 </span>
+        <span class={`hobby`} class:reveal={avatar.hover}> I like drawing, btw. 🤫 </span>
       </p>
     </div>
   </div>

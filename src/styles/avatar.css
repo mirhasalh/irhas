@@ -21,8 +21,49 @@
     border-color: rgba(var(--primary-color), 1);
 }
 
+.rive-avatars-view {
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+.rive-avatars-view .avatars {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: left 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.rive-avatars-view .nav {
+    position: absolute;
+    z-index: 20;
+}
+
+.rive-avatars-view .nav#prev {
+    bottom: 0px;
+    left: 0px;
+}
+
+.rive-avatars-view .nav#next {
+    bottom: 0px;
+    right: 0px;
+}
+
+.avatars .avatar-item {
+    cursor: pointer;
+    background-color: rgba(var(--surface-color), 1);
+    border-radius: 9999px;
+}
+
 @media (prefers-color-scheme: dark) {
     .avatar:hover {
         border-color: rgba(var(--primary-color-dark), 1);
+    }
+
+    .avatars .avatar-item {
+        background-color: rgba(var(--surface-color-dark), 1);
     }
 }
