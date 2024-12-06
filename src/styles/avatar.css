@@ -27,6 +27,12 @@
     z-index: 1;
 }
 
+.rive-avatars-view h4 {
+    position: relative;
+    z-index: 20;
+    text-align: center;
+}
+
 .rive-avatars-view .avatars {
     display: flex;
     flex-direction: row;
@@ -40,15 +46,24 @@
 .rive-avatars-view .nav {
     position: absolute;
     z-index: 20;
+    height: 1.5rem;
+    min-height: 1.5rem;
+    width: 1.5rem;
+    min-width: 1.5rem;
+    aspect-ratio: 1 / 1;
+    border-radius: 9999px;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .rive-avatars-view .nav#prev {
-    bottom: 0px;
     left: 0px;
 }
 
 .rive-avatars-view .nav#next {
-    bottom: 0px;
     right: 0px;
 }
 

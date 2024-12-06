@@ -13,3 +13,6 @@ pnpm-lock.yaml
 /pnpm-lock.yaml
 package-lock.json
 /package-lock.json
+
+# Experimental
+src/routes/experimental/
