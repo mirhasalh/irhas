@@ -48,16 +48,10 @@
     scale: 1.05;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 768px) {
     .post:first-child a {
-        display: flex;
-        height: 320px;
-        justify-content: space-between;
-    }
-
-    .post:first-child a .title-media img {
-        width: auto;
-        height: 100%;
+        display: grid;
+        grid-template-columns: 65% minmax(0, 1fr);
     }
 
     .post:first-child a .tile-description .title-head h2 {
@@ -69,15 +63,23 @@
         text-overflow: ellipsis;
     }
 
+    .post:not(:first-child) a .tile-description {
+        min-height: 200px;
+    }
+
+    .post:not(:first-child) a .tile-description h2 {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        line-clamp: 2;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
     .post:first-child a .tile-description .title-head {
         display: -webkit-box;
         -webkit-box-orient: vertical;
         overflow: hidden;
-    }
-
-    .post:first-child a .tile-description {
-        height: auto;
-        width: fit-content;
     }
 }
 
