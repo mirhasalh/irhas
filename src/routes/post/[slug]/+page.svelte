@@ -4,7 +4,6 @@
   import { formatDate, website } from '$lib'
 
   let { data }: { data: PageData } = $props()
-  console.log('Data:', data)
 </script>
 
 <svelte:head>
