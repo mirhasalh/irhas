@@ -48,6 +48,17 @@
     scale: 1.05;
 }
 
+.post-info {
+    display: flex;
+    flex-direction: column;
+    color: rgba(var(--subtitle-color), 1);
+}
+
+.post-info * {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
 @media screen and (min-width: 768px) {
     .post:first-child a {
         display: grid;
@@ -94,6 +105,12 @@
 
     .title-head h4,
     .title-timestamp {
+        color: rgba(var(--subtitle-color-dark), 1);
+    }
+
+    .post-info {
+        display: flex;
+        flex-direction: column;
         color: rgba(var(--subtitle-color-dark), 1);
     }
 }

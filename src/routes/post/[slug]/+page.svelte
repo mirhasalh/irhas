@@ -1,9 +1,10 @@
 <script lang="ts">
   import type { PageData } from './$types'
   import Sanitized from '$lib/components/Sanitized.svelte'
-  import { website } from '$lib'
+  import { formatDate, website } from '$lib'
 
   let { data }: { data: PageData } = $props()
+  console.log('Data:', data)
 </script>
 
 <svelte:head>
@@ -32,7 +33,12 @@
 </svelte:head>
 
 <article>
+  <div class={`post-info`}>
+    <p class={`uppercase`}><small><strong>{data.post.categories.join(', ')}</strong></small></p>
+    <p><small>{formatDate(data.post.publishedAt)}</small></p>
+  </div>
   <h1>{data.post.title}</h1>
+  <p>{data.post.excerpt}</p>
   <img src={data.post.imageUrl} alt={data.post.title} width="100%" />
   <Sanitized html={data.code} />
 </article>
