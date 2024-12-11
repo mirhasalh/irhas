@@ -50,10 +50,23 @@
     align-items: center;
 }
 
+.btn span svg path {
+    fill: rgba(var(--on-surface-color), 1);
+}
+
 @media (prefers-color-scheme: dark) {
     .btn {
         background-color: rgba(var(--button-color-dark), 1);
         border-color: rgba(var(--button-color-dark), 1);
         color: rgba(var(--on-surface-color-dark), 1);
+    }
+
+    .btn span svg path {
+        fill: rgba(var(--on-surface-color-dark), 1);
+    }
+
+    .btn:hover {
+        background-color: rgba(var(--on-surface-color-dark), 0.1);
+        border-color: rgba(var(--button-color-dark), 0.1);
     }
 }
