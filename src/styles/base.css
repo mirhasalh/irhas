@@ -4,6 +4,11 @@
     -webkit-tap-highlight-color: transparent;
 }
 
+html {
+    scroll-padding-top: 74px;
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     transition: background-color 0.2s linear;

@@ -7,11 +7,16 @@
 @import url("./chip.css");
 @import url("./color.css");
 @import url("./divider.css");
+@import url("./heading.css");
 @import url("./list.css");
 @import url("./post.css");
 @import url("./logo.css");
 @import url("./typography.css");
 @import url("./hero.css");
+
+.app {
+    margin: 0;
+}
 
 .shrink {
     margin: 0;
@@ -41,6 +46,10 @@
 
 .hobby.reveal {
     opacity: 1;
+}
+
+.icon.icon-link::before {
+    content: "#";
 }
 
 @media screen and (min-width: 768px) {
