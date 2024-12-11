@@ -3,7 +3,7 @@ import { error } from '@sveltejs/kit'
 
 export const website = 'https://irhas.lol'
 export const github = `https://github.com`
-export const accounts = ['mirhasalh', 'irhasalh']
+export const accounts = ['irhasalh', 'mirhasalh']
 
 export const getEnvVar = (data: string) => {
     try {

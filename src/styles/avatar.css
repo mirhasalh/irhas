@@ -73,6 +73,30 @@
     border-radius: 9999px;
 }
 
+.avatar-group {
+    overflow: hidden;
+    display: flex;
+    width: calc(36px * 2);
+}
+
+.git-avatar {
+    position: relative;
+    display: inline-flex;
+
+}
+
+.avatar-group :where(.git-avatar) {
+    border-radius: 9999px;
+    overflow: hidden;
+    border: 0.125rem solid rgba(var(--surface-color), 1);
+    aspect-ratio: 1;
+}
+
+.avatar-group :not(:first-child) {
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
+}
+
 @media (prefers-color-scheme: dark) {
     .avatar:hover {
         border-color: rgba(var(--primary-color-dark), 1);
@@ -80,5 +104,9 @@
 
     .avatars .avatar-item {
         background-color: rgba(var(--surface-color-dark), 1);
+    }
+
+    .avatar-group :where(.git-avatar) {
+        border: 0.125rem solid rgba(var(--surface-color-dark), 1);
     }
 }
