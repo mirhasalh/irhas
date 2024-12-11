@@ -1,9 +1,15 @@
 <script lang="ts">
+  import { onMount } from 'svelte'
   import type { PageData } from './$types'
   import Sanitized from '$lib/components/Sanitized.svelte'
   import { formatDate, website } from '$lib'
 
   let { data }: { data: PageData } = $props()
+
+  onMount(() => {
+    document.body.classList.remove('bg-200')
+    document.body.classList.add('bg-100')
+  })
 </script>
 
 <svelte:head>

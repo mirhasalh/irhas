@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { onMount } from 'svelte'
   import type { LayoutData } from './$types'
   import Posts from '$lib/components/Posts.svelte'
   import { website } from '$lib'
@@ -9,6 +10,11 @@
 
   const obj: any = data as any,
     posts: App.Post[] = obj.posts as App.Post[]
+
+  onMount(() => {
+    document.body.classList.remove('bg-100')
+    document.body.classList.add('bg-200')
+  })
 </script>
 
 <svelte:head>
