@@ -40,7 +40,7 @@
 <article>
   <div class={`post-info`}>
     <p class={`uppercase`}><small><strong>{data.post.categories.join(', ')}</strong></small></p>
-    <p><small>{formatDate(data.post.publishedAt)}</small></p>
+    <p><small>{`${formatDate(data.post.publishedAt)} • ${data.post.readingTime} min read`}</small></p>
   </div>
   <h1>{data.post.title}</h1>
   <p>{data.post.excerpt}</p>
