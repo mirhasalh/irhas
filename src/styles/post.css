@@ -74,14 +74,11 @@
     top: 50px;
     height: fit-content;
     display: none;
+    flex: 0 1 auto;
 }
 
-.post-shell aside#left {
-    margin-left: auto;
-}
-
-.post-shell aside#right {
-    margin-right: auto;
+.post-shell aside nav ul li a {
+    margin-right: 16px;
 }
 
 .post-shell aside ul {

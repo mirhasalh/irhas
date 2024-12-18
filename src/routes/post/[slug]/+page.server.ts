@@ -1,6 +1,6 @@
 import type { PageLoad } from './$types'
 import { compile } from 'mdsvex'
-import { getPosts, getPost, parseCompiled, getHeadingIds } from '$lib'
+import { getPosts, getPost, parseCompiled } from '$lib'
 import { rehype } from 'rehype'
 import rehypeSlug from 'rehype-slug'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
@@ -18,12 +18,5 @@ export const load: PageLoad = async ({ params }: { params: { slug: string } }) =
     processedHtml = String(file)
   }
 
-  const str: string = JSON.parse(JSON.stringify(processedHtml))
-
-  return {
-    posts: await getPosts(0, 5),
-    post,
-    code: processedHtml,
-    headings: getHeadingIds(str)
-  }
+  return { posts: await getPosts(0, 5), post, code: processedHtml }
 }

@@ -2,7 +2,7 @@
   import { onMount } from 'svelte'
   import type { PageData } from './$types'
   import Sanitized from '$lib/components/Sanitized.svelte'
-  import { formatDate, website, formatSlug } from '$lib'
+  import { formatDate, website, formatSlug, getHeadingIds } from '$lib'
 
   let { data }: { data: PageData } = $props()
 
@@ -67,7 +67,7 @@
     <h4>On this page</h4>
     <nav>
       <ul>
-        {#each data.headings as anchor}
+        {#each getHeadingIds(data.code) as anchor}
           {@const url = `#${anchor}`}
           {@const str = formatSlug(anchor)}
           <li><a href={url} class="link"><small>{str}</small></a></li>
