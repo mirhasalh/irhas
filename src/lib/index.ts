@@ -127,3 +127,7 @@ export const initFadeInAnimation = () => {
 
     elements.forEach((el) => observer.observe(el))
 }
+
+export const formatSlug = (str: string) => {
+    return str[0].toLocaleUpperCase() + str.replaceAll('-', ' ').substring(1)
+}

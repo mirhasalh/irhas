@@ -59,6 +59,35 @@
     margin-bottom: 0;
 }
 
+.post-shell {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+.post-shell article {
+    width: 100%;
+}
+
+.post-shell aside {
+    position: sticky;
+    top: 50px;
+    height: fit-content;
+    display: none;
+}
+
+.post-shell aside#left {
+    margin-left: auto;
+}
+
+.post-shell aside#right {
+    margin-right: auto;
+}
+
+.post-shell aside ul {
+    list-style-type: none;
+}
+
 @media screen and (min-width: 768px) {
     .post:first-child a {
         display: grid;
@@ -91,6 +120,12 @@
         display: -webkit-box;
         -webkit-box-orient: vertical;
         overflow: hidden;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .post-shell aside {
+        display: block;
     }
 }
 
