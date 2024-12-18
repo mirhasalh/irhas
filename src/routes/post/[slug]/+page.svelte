@@ -9,6 +9,7 @@
 
   let anchors: string[] = $state([])
 
+  // TODO: move this to server side if possible
   const getAnchors = () => {
     anchors = []
     const children = articleElement.children
@@ -16,10 +17,6 @@
       if (child.id) anchors.push(child.id.toString())
     }
   }
-
-  $effect(() => {
-    if (data.post.title) getAnchors()
-  })
 
   onMount(() => {
     document.body.classList.remove('bg-200')
@@ -60,7 +57,11 @@
       <ul>
         {#each data.posts as post}
           {@const url = `${website}/post/${post.slug}`}
-          <li><a href={url} class="link"><small>{post.title}</small></a></li>
+          <li>
+            <a href={url} class="link" target="_blank">
+              <small>{post.title}</small>
+            </a>
+          </li>
         {/each}
       </ul>
     </nav>
