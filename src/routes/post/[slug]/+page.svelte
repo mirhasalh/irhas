@@ -4,24 +4,11 @@
   import Sanitized from '$lib/components/Sanitized.svelte'
   import { formatDate, website, formatSlug } from '$lib'
 
-  let { data }: { data: PageData } = $props(),
-    articleElement: HTMLElement
-
-  let anchors: string[] = $state([])
-
-  // TODO: move this to server side if possible
-  const getAnchors = () => {
-    anchors = []
-    const children = articleElement.children
-    for (const child of children) {
-      if (child.id) anchors.push(child.id.toString())
-    }
-  }
+  let { data }: { data: PageData } = $props()
 
   onMount(() => {
     document.body.classList.remove('bg-200')
     document.body.classList.add('bg-100')
-    if (articleElement) getAnchors()
   })
 </script>
 
@@ -66,7 +53,7 @@
       </ul>
     </nav>
   </aside>
-  <article bind:this={articleElement}>
+  <article>
     <div class={`post-info`}>
       <p class={`uppercase`}><small><strong>{data.post.categories.join(', ')}</strong></small></p>
       <p><small>{`${formatDate(data.post.publishedAt)} • ${data.post.readingTime} min read`}</small></p>
@@ -80,7 +67,7 @@
     <h4>On this page</h4>
     <nav>
       <ul>
-        {#each anchors as anchor}
+        {#each data.headings as anchor}
           {@const url = `#${anchor}`}
           {@const str = formatSlug(anchor)}
           <li><a href={url} class="link"><small>{str}</small></a></li>
