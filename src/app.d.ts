@@ -17,6 +17,7 @@ declare global {
 			slug: string
 			body: string
 			readingTime: number
+			headings: string[]
 		}
 	}
 }

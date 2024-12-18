@@ -131,18 +131,3 @@ export const initFadeInAnimation = () => {
 export const formatSlug = (str: string) => {
     return str[0].toLocaleUpperCase() + str.replaceAll('-', ' ').substring(1)
 }
-
-export const getHeadingIds = (html: string): string[] => {
-    const headingRegex = /<(h[1-6])( id="([^"]*)")?>(.*?)<\/\1>/gi;
-    const ids: string[] = [];
-
-    let match;
-    while ((match = headingRegex.exec(html)) !== null) {
-        const id = match[3] || match[4]?.toLowerCase().replace(/\s+/g, '-'); // Use the provided ID or generate one
-        if (id) {
-            ids.push(id);
-        }
-    }
-
-    return ids;
-}
