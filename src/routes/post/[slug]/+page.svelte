@@ -37,42 +37,13 @@
   <link rel="canonical" href={`${website}/post/${data.post.slug}`} />
 </svelte:head>
 
-<div class="post-shell">
-  <aside id="left">
-    <h4>Latest posts</h4>
-    <nav>
-      <ul>
-        {#each data.posts as post}
-          {@const url = `${website}/post/${post.slug}`}
-          <li>
-            <a href={url} class="link">
-              <small>{post.title}</small>
-            </a>
-          </li>
-        {/each}
-      </ul>
-    </nav>
-  </aside>
-  <article>
-    <div class={`post-info`}>
-      <p class={`uppercase`}><small><strong>{data.post.categories.join(', ')}</strong></small></p>
-      <p><small>{`${formatDate(data.post.publishedAt)} • ${data.post.readingTime} min read`}</small></p>
-    </div>
-    <h1>{data.post.title}</h1>
-    <p>{data.post.excerpt}</p>
-    <img src={data.post.imageUrl} alt={data.post.title} width="100%" />
-    <Sanitized html={data.code} />
-  </article>
-  <aside id="right">
-    <h4>On this page</h4>
-    <nav>
-      <ul>
-        {#each data.post.headings as anchor}
-          {@const url = `#${anchor}`}
-          {@const str = formatSlug(anchor)}
-          <li><a href={url} class="link"><small>{str}</small></a></li>
-        {/each}
-      </ul>
-    </nav>
-  </aside>
-</div>
+<article>
+  <div class={`post-info`}>
+    <p class={`uppercase`}><small><strong>{data.post.categories.join(', ')}</strong></small></p>
+    <p><small>{`${formatDate(data.post.publishedAt)} • ${data.post.readingTime} min read`}</small></p>
+  </div>
+  <h1>{data.post.title}</h1>
+  <p>{data.post.excerpt}</p>
+  <img src={data.post.imageUrl} alt={data.post.title} width="100%" />
+  <Sanitized html={data.code} />
+</article>

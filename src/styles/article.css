@@ -55,6 +55,7 @@ pre code {
 @media screen and (min-width: 1024px) {
     article {
         max-width: var(--md);
+        margin: 0 auto;
     }
 }
 
