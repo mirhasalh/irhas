@@ -10,19 +10,21 @@
   let anchors: string[] = $state([])
 
   const getAnchors = () => {
-    if (articleElement) {
-      anchors = []
-      const children = articleElement.children
-      for (const child of children) {
-        if (child.id) anchors.push(child.id.toString())
-      }
+    anchors = []
+    const children = articleElement.children
+    for (const child of children) {
+      if (child.id) anchors.push(child.id.toString())
     }
   }
+
+  $effect(() => {
+    if (articleElement) getAnchors()
+  })
 
   onMount(() => {
     document.body.classList.remove('bg-200')
     document.body.classList.add('bg-100')
-    getAnchors()
+    if (articleElement) getAnchors()
   })
 </script>
 
