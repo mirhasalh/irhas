@@ -45,7 +45,7 @@
         {#each data.posts as post}
           {@const url = `${website}/post/${post.slug}`}
           <li>
-            <a href={url} class="link" target="_blank">
+            <a href={url} class="link">
               <small>{post.title}</small>
             </a>
           </li>
