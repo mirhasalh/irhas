@@ -18,7 +18,7 @@
   }
 
   $effect(() => {
-    if (articleElement) getAnchors()
+    if (data.post.title) getAnchors()
   })
 
   onMount(() => {
