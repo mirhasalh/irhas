@@ -18,10 +18,12 @@ export const load: PageLoad = async ({ params }: { params: { slug: string } }) =
     processedHtml = String(file)
   }
 
+  const str: string = JSON.parse(JSON.stringify(processedHtml))
+
   return {
     posts: await getPosts(0, 5),
     post,
     code: processedHtml,
-    headings: getHeadingIds(processedHtml)
+    headings: getHeadingIds(str)
   }
 }
