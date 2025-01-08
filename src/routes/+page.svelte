@@ -1,10 +1,11 @@
 <script lang="ts">
   import { onMount } from 'svelte'
   import type { LayoutData } from './$types'
-  import Posts from '$lib/components/Posts.svelte'
   import { website } from '$lib'
   import { avatar } from '$lib/shared.svelte'
+  import RecentWork from '$lib/components/RecentWork.svelte'
   import RiveAvatars from '$lib/components/RiveAvatars.svelte'
+  import Posts from '$lib/components/Posts.svelte'
 
   let { data }: { data: LayoutData } = $props()
 
@@ -56,7 +57,9 @@
     </div>
   </div>
 </section>
+<section class={`h-paddings mb`}>
+  <RecentWork />
+</section>
 <section class={`h-paddings`}>
-  <hr class={`transparent`} />
   <Posts {posts} />
 </section>
