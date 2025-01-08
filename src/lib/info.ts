@@ -27,7 +27,7 @@ export const recentWork = [
     },
     {
         id: 3,
-        year: 2024,
+        year: 2023,
         imgUrl: `${website}/IMG_20250108-173808.webp`,
         urls: ['https://demo.photobook.ai/'],
         title: 'AI-Powered photo book editor',

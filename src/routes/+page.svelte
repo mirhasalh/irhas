@@ -20,23 +20,23 @@
 
 <svelte:head>
   <!-- Basic metadata -->
-  <title>Irhas' dev blog | Code, coffee, and casual chats</title>
-  <meta name="description" content="Relax and read fun takes on coding, web dev, and tech stuff—no stress, just vibes." />
-  <meta name="keywords" content="irhas blog, irhas, blog, chill, web dev, coding, fun, tech tips" />
+  <title>Irhas' Dev Journey | Code, Grit, and Growth</title>
+  <meta name="description" content="Dive into the grind of coding adventures, leveling up skills, and sharing hard-earned insights on web development and tech." />
+  <meta name="keywords" content="irhas blog, programming journey, web development, coding tips, front-end design, knowledge sharing, growth mindset, dev grind" />
   <meta name="author" content="Irhas" />
   <link rel="canonical" href={website} />
 
   <!-- Open graph metadata -->
-  <meta property="og:title" content="Irhas' dev blog" />
-  <meta property="og:description" content="Kick back and enjoy lighthearted insights on web dev and tech!" />
+  <meta property="og:title" content="Irhas' Dev Journey" />
+  <meta property="og:description" content="Follow the journey of turning code into success, one commit at a time. Insights on web dev, design, and tech growth." />
   <meta property="og:image" content={`${website}/og-image.jpg`} />
   <meta property="og:url" content={website} />
   <meta property="og:type" content="website" />
 
   <!-- Twitter metadata -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Irhas' dev blog" />
-  <meta name="twitter:description" content="Kick back and enjoy lighthearted insights on web dev and tech!" />
+  <meta name="twitter:title" content="Irhas' Dev Journey" />
+  <meta name="twitter:description" content="Turning struggles into solutions—explore tips, lessons, and stories from the world of coding and design." />
   <meta name="twitter:image" content={`${website}/twitter-image.jpg`} />
   <meta name="twitter:site" content="@irhasdev" />
 </svelte:head>
@@ -50,7 +50,7 @@
         <span class={`wave`}>👋</span>
       </h1>
       <p class={`shrink`}>
-        I'm Irhas, welcome to my blog.
+        I'm Irhas, welcome to my site.
         <br />
         <span class={`hobby`} class:reveal={avatar.hover}> I like drawing, btw. 🤫 </span>
       </p>
@@ -58,8 +58,8 @@
   </div>
 </section>
 <section class={`h-paddings mb`}>
-  <RecentWork />
+  <Posts {posts} />
 </section>
 <section class={`h-paddings`}>
-  <Posts {posts} />
+  <RecentWork />
 </section>
