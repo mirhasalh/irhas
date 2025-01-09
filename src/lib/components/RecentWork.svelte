@@ -31,7 +31,7 @@
 <ul class={`list`}>
   {#each recentWork as w}
     <li role={`listitem`} class={`list-item animated-fade-in`}>
-      <a class={`link`} href={getLink(w.id, w.urls)}>
+      <a class={`link`} href={getLink(w.id, w.urls)} target="_blank">
         {`${w.title} (${w.year})`}
         <figure>
           <img class={`cover`} src={w.imgUrl} alt={w.title} />

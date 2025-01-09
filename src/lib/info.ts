@@ -1,5 +1,12 @@
 import { website } from "$lib"
 
+export const sites = [
+    {
+        name: 'Flutter web',
+        url: 'https://flutter.irhas.lol/'
+    }
+]
+
 export const socials = [
     {
         name: 'GitHub',
@@ -38,7 +45,7 @@ export const recentWork = [
         imgUrl: `${website}/IMG_20250108-172909.webp`,
         urls: ['https://gomining.com/tokenomics'],
         title: 'GoMining landing page',
-        desc: 'Served as a Frontend Engineer using the Vue.js framework to build and optimize the landing page for the multinational company GoMining.'
+        desc: 'Served as a supporting Frontend Engineer, utilizing the Nuxt.js framework to build and optimize the landing page for the multinational company GoMining.'
     },
     {
         id: 3,

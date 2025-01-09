@@ -1,6 +1,6 @@
 <script lang="ts">
   import Logo from '$lib/components/Logo.svelte'
-  import { socials } from '$lib/info'
+  import { sites, socials } from '$lib/info'
 
   const d = new Date()
   let year = $state(d.getFullYear())
@@ -18,6 +18,14 @@
     {#each socials as social}
       <a class={`link`} href={social.url} target="_blank">
         <small>{social.name}</small>
+      </a>
+    {/each}
+  </nav>
+  <nav>
+    <h5 class={`footer-title`}>Sites</h5>
+    {#each sites as site}
+      <a class={`link`} href={site.url} target="_blank">
+        <small>{site.name}</small>
       </a>
     {/each}
   </nav>
