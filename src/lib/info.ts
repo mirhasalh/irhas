@@ -1,5 +1,20 @@
 import { website } from "$lib"
 
+export const socials = [
+    {
+        name: 'GitHub',
+        url: 'https://github.com/mirhasalh/irhas'
+    },
+    {
+        name: 'Instagram',
+        url: 'https://www.instagram.com/irhasdev/'
+    },
+    {
+        name: 'LinkedIn',
+        url: 'https://www.linkedin.com/in/irhasdev/'
+    }
+]
+
 export const recentWork = [
     {
         id: 0,
