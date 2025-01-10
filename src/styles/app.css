@@ -8,7 +8,9 @@
 @import url("./color.css");
 @import url("./divider.css");
 @import url("./footer.css");
+@import url("./form.css");
 @import url("./heading.css");
+@import url("./input.css");
 @import url("./link.css");
 @import url("./list.css");
 @import url("./post.css");
@@ -62,6 +64,14 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.actions {
+    display: flex;
+    width: 100%;
+    justify-content: end;
+    align-items: center;
+    margin-top: 12px;
 }
 
 @media screen and (min-width: 768px) {

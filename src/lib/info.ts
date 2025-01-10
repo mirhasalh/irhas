@@ -1,5 +1,7 @@
 import { website } from "$lib"
 
+export const email = 'irhasm@outlook.com'
+
 export const sites = [
     {
         name: 'Flutter web',
@@ -8,6 +10,14 @@ export const sites = [
 ]
 
 export const socials = [
+    {
+        name: 'Bluesky',
+        url: 'https://bsky.app/profile/irhasdev.bsky.social'
+    },
+    {
+        name: 'Facebook',
+        url: 'https://www.facebook.com/irhas03'
+    },
     {
         name: 'GitHub',
         url: 'https://github.com/mirhasalh/irhas'
@@ -19,6 +29,10 @@ export const socials = [
     {
         name: 'LinkedIn',
         url: 'https://www.linkedin.com/in/irhasdev/'
+    },
+    {
+        name: 'Telegram',
+        url: 'https://t.me/irhas03'
     }
 ]
 
