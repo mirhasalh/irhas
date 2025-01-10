@@ -9,6 +9,7 @@
     --on-surface-color: 27, 27, 27;
     --subtitle-color: 110, 110, 115;
     --button-color: 242, 242, 242;
+    --neutral-color: 215, 221, 228;
 
     --primary-color-dark: 68, 147, 248;
     --primary-highlight-color-dark: 19, 29, 46;
@@ -20,6 +21,7 @@
     --on-surface-color-dark: 255, 255, 255;
     --subtitle-color-dark: 240, 246, 252;
     --button-color-dark: 25, 30, 36;
+    --neutral-color-dark: 43, 50, 60;
 
     --md: 768px;
     --lg: 1024px;
