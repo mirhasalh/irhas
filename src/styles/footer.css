@@ -20,6 +20,13 @@
     text-transform: uppercase;
 }
 
+.footer-logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 @media screen and (min-width: 768px) {
     .footer {
         padding-top: 48px;
@@ -30,5 +37,9 @@
 
     .footer nav {
         width: auto;
+    }
+
+    .footer-logo {
+        align-items: start;
     }
 }

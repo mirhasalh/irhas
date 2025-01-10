@@ -16,7 +16,7 @@
 </script>
 
 <footer class={`footer`}>
-  <div>
+  <div class={`footer-logo`}>
     <a href="/">
       <Logo />
     </a>
