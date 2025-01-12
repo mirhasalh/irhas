@@ -33,6 +33,10 @@ export const socials = [
     {
         name: 'Telegram',
         url: 'https://t.me/irhas03'
+    },
+    {
+        name: 'X',
+        url: 'https://x.com/irhasdev'
     }
 ]
 
