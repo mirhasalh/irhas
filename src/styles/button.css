@@ -54,6 +54,19 @@
     fill: rgba(var(--on-surface-color), 1);
 }
 
+.btn:disabled {
+    cursor: unset;
+    color: rgba(var(--on-surface-color), 0.1);
+}
+
+.btn:disabled:hover {
+    background-color: rgba(var(--button-color), 1);
+}
+
+.btn:disabled:active {
+    transform: scale(1);
+}
+
 @media (prefers-color-scheme: dark) {
     .btn {
         background-color: rgba(var(--button-color-dark), 1);
@@ -68,5 +81,13 @@
     .btn:hover {
         background-color: rgba(var(--on-surface-color-dark), 0.1);
         border-color: rgba(var(--button-color-dark), 0.1);
+    }
+
+    .btn:disabled {
+        color: rgba(var(--on-surface-color-dark), 0.1);
+    }
+
+    .btn:disabled:hover {
+        background-color: rgba(var(--button-color-dark), 1);
     }
 }

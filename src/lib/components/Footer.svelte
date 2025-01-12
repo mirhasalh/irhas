@@ -42,7 +42,7 @@
     <h5 class={`footer-title`}>Email me</h5>
     <textarea class={`textarea`} name="body" id="body" placeholder="Jot something down" bind:value={emailBody}></textarea>
     <div class={`actions`}>
-      <button type="submit" class={`btn`}>Send</button>
+      <button type="submit" class={`btn`} disabled={emailBody.length < 5}>Send</button>
     </div>
   </form>
 </footer>
