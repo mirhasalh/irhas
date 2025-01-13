@@ -6,6 +6,7 @@
   import Posts from '$lib/components/Posts.svelte'
   import RecentWork from '$lib/components/RecentWork.svelte'
   import RiveAvatars from '$lib/components/RiveAvatars.svelte'
+  import Tweet from '$lib/components/Tweet.svelte'
 
   let { data }: { data: LayoutData } = $props()
 
@@ -40,4 +41,7 @@
 </section>
 <section class={`h-paddings`}>
   <RecentWork />
+</section>
+<section>
+  <Tweet />
 </section>
