@@ -2,13 +2,14 @@
   import { onMount } from 'svelte'
   import type { PageData } from './$types'
   import Sanitized from '$lib/components/Sanitized.svelte'
-  import { formatDate, website, formatSlug } from '$lib'
+  import { formatDate, website, initFadeInAnimation } from '$lib'
 
   let { data }: { data: PageData } = $props()
 
   onMount(() => {
-    document.body.classList.remove('bg-200')
-    document.body.classList.add('bg-100')
+    initFadeInAnimation()
+    document.body.classList.remove('bg-100')
+    document.body.classList.add('bg-200')
   })
 </script>
 

@@ -10,14 +10,18 @@
   let selectedTech = $state('Flutter'),
     level = $derived(techs.filter((v) => v.name === selectedTech)[0].loveLevel)
 
-  onMount(() => initFadeInAnimation())
+  onMount(() => {
+    initFadeInAnimation()
+    document.body.classList.remove('bg-100')
+    document.body.classList.add('bg-200')
+  })
 </script>
 
 <svelte:head>
   <script async src="//www.instagram.com/embed.js"></script>
 </svelte:head>
 
-<section class={`px tp mb`}>
+<section class={`px pt`}>
   <h1 class={`text-center animated-fade-in`}>About</h1>
 </section>
 <section class={`px mb`}>
