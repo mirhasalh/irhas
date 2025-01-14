@@ -4,6 +4,8 @@ export const bio = 'Just a regular guy from Bandung, always eager to challenge h
 
 export const email = 'irhasm@outlook.com'
 
+export const techs = ['Flutter', 'Dart', 'Svelte.js', 'WordPress', 'Figma', 'Nuxt.js', 'JavaScript', 'TypeScript']
+
 export const sites = [
     {
         name: 'Flutter web',

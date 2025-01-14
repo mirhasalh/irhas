@@ -2,7 +2,7 @@
   import { onMount } from 'svelte'
   import type { PageData } from './$types'
   import { initFadeInAnimation } from '$lib'
-  import { bio, email, igEmbedCode } from '$lib/info'
+  import { bio, techs, email, igEmbedCode } from '$lib/info'
   import Sanitized from '$lib/components/Sanitized.svelte'
 
   let { data }: { data: PageData } = $props()
@@ -35,17 +35,28 @@
         <div class="label">
           <span class="label-text">Bio</span>
         </div>
-        <textarea class="textarea h-150" value={bio} placeholder="Bio" readonly></textarea>
+        <textarea class="textarea" value={bio} placeholder="Bio" rows="4" readonly></textarea>
       </label>
+      <div class="label">
+        <span class={`shrink`}>Tech & tools I used so far</span>
+      </div>
+      <div class={`flex-wrap animated-fade-in`}>
+        {#each techs as tech}
+          <label class={`choice-chip`} for={tech}>
+            <input type="radio" id={tech} name={tech} value={tech} />
+            <small>{tech}</small>
+          </label>
+        {/each}
+      </div>
     </div>
   </div>
 </section>
 <section>
   <h1 class={`px animated-fade-in`}>GitHub public stats</h1>
-  <div class={`animated-fade-in light`}>
+  <div class={`overflow-x animated-fade-in light`}>
     <Sanitized html={data.light?.code} />
   </div>
-  <div class={`animated-fade-in dark`}>
+  <div class={`overflow-x animated-fade-in dark`}>
     <Sanitized html={data.dark?.code} />
   </div>
 </section>
