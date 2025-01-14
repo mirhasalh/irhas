@@ -1,6 +1,7 @@
 <script lang="ts">
   import { onMount } from 'svelte'
   import type { LayoutData } from './$types'
+  import { initFadeInAnimation } from '$lib'
   import { avatar } from '$lib/shared.svelte'
   import Meta from '$lib/components/Meta.svelte'
   import Posts from '$lib/components/Posts.svelte'
@@ -14,6 +15,7 @@
     posts: App.Post[] = obj.posts as App.Post[]
 
   onMount(() => {
+    initFadeInAnimation()
     document.body.classList.remove('bg-100')
     document.body.classList.add('bg-200')
   })

@@ -1,8 +1,6 @@
 <script lang="ts">
   import '../styles/app.css'
-  import { onMount } from 'svelte'
   import { onNavigate } from '$app/navigation'
-  import { initFadeInAnimation } from '$lib'
   import AppBar from '$lib/components/AppBar.svelte'
   import Footer from '$lib/components/Footer.svelte'
 
@@ -18,8 +16,6 @@
       })
     })
   })
-
-  onMount(() => initFadeInAnimation())
 </script>
 
 <AppBar />

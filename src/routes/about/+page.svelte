@@ -1,9 +1,13 @@
 <script lang="ts">
+  import { onMount } from 'svelte'
   import type { PageData } from './$types'
+  import { initFadeInAnimation } from '$lib'
   import { bio, email, igEmbedCode } from '$lib/info'
   import Sanitized from '$lib/components/Sanitized.svelte'
 
   let { data }: { data: PageData } = $props()
+
+  onMount(() => initFadeInAnimation())
 </script>
 
 <svelte:head>
