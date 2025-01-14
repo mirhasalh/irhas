@@ -38,6 +38,12 @@
     }
 }
 
+@keyframes progress-loading {
+    50% {
+        background-position-x: -115%;
+    }
+}
+
 .animated-fade-in {
     opacity: 0;
     transform: translateY(20px);

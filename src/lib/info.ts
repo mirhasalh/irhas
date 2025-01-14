@@ -4,7 +4,16 @@ export const bio = 'Just a regular guy from Bandung, always eager to challenge h
 
 export const email = 'irhasm@outlook.com'
 
-export const techs = ['Flutter', 'Dart', 'Svelte.js', 'WordPress', 'Figma', 'Nuxt.js', 'JavaScript', 'TypeScript']
+export const techs = [
+    { id: 0, name: 'Flutter', loveLevel: 100 },
+    { id: 1, name: 'Dart', loveLevel: 100 },
+    { id: 2, name: 'Svelte.js', loveLevel: 90 },
+    { id: 3, name: 'WordPress', loveLevel: 70 },
+    { id: 4, name: 'Figma', loveLevel: 100 },
+    { id: 5, name: 'Nuxt.js', loveLevel: 40 },
+    { id: 6, name: 'JavaScript', loveLevel: 60 },
+    { id: 7, name: 'TypeScript', loveLevel: 50 }
+]
 
 export const sites = [
     {

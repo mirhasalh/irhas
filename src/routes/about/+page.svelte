@@ -7,6 +7,9 @@
 
   let { data }: { data: PageData } = $props()
 
+  let selectedTech = $state('Flutter'),
+    level = $derived(techs.filter((v) => v.name === selectedTech)[0].loveLevel)
+
   onMount(() => initFadeInAnimation())
 </script>
 
@@ -31,19 +34,20 @@
         <br />
         <span>Get in touch 👉 <strong>{email}</strong></span>
       </p>
-      <label class="form-control">
-        <div class="label">
-          <span class="label-text">Bio</span>
+      <label class={`form-control`}>
+        <div class={`label`}>
+          <span class={`label-text`}>Bio</span>
         </div>
-        <textarea class="textarea" value={bio} placeholder="Bio" rows="4" readonly></textarea>
+        <textarea class={`textarea`} value={bio} placeholder="Bio" rows="4" readonly></textarea>
       </label>
-      <div class="label">
+      <div class={`label`}>
         <span class={`shrink`}>Tech & tools I used so far</span>
       </div>
+      <progress class={`progress`} value={level} max="100"></progress>
       <div class={`flex-wrap animated-fade-in`}>
-        {#each techs as tech}
+        {#each techs.map((v) => v.name) as tech}
           <label class={`choice-chip`} for={tech}>
-            <input type="radio" id={tech} name={tech} value={tech} />
+            <input type="radio" id={tech} name={tech} value={tech} bind:group={selectedTech} />
             <small>{tech}</small>
           </label>
         {/each}
