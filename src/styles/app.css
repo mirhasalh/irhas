@@ -18,6 +18,10 @@
 @import url("./typography.css");
 @import url("./hero.css");
 
+.dark {
+    display: none;
+}
+
 .app {
     margin: 0;
 }
@@ -26,12 +30,20 @@
     margin: 0;
 }
 
-.h-paddings {
+.pt {
+    padding: 48px;
+}
+
+.px {
     padding: 0 16px;
 }
 
 .mb {
     margin-bottom: 48px;
+}
+
+.h-150 {
+    height: 150px;
 }
 
 .flex-wrap {
@@ -115,6 +127,33 @@
     box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
 }
 
+.text-center {
+    text-align: center;
+}
+
+.about-grid {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+}
+
+.form-control {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.form-control .label {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.form-control .textarea {
+    flex-shrink: 1;
+}
+
 @media screen and (min-width: 768px) {
     .greetings {
         text-align: start;
@@ -123,9 +162,22 @@
     .mb {
         margin-bottom: 64px;
     }
+
+    .about-grid {
+        display: grid;
+        grid-template-columns: auto auto;
+    }
 }
 
 @media (prefers-color-scheme: dark) {
+    .dark {
+        display: block;
+    }
+
+    .light {
+        display: none;
+    }
+
     .menu {
         background-color: rgba(var(--surface-color-dark), 1);
     }

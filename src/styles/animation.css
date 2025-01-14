@@ -67,6 +67,10 @@
     animation: wave 1.5s ease-in-out forwards;
 }
 
+.wave:hover {
+    animation: wave 1.5s ease-in-out infinite;
+}
+
 .animated-menu-icon {
     position: relative;
     height: 24px;

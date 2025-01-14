@@ -36,12 +36,12 @@
     </div>
   </div>
 </section>
-<section class={`h-paddings mb`}>
+<section class={`px mb`}>
   <Posts {posts} />
 </section>
-<section class={`h-paddings`}>
+<section class={`px`}>
   <RecentWork />
 </section>
-<section class={`h-paddings`}>
+<section class={`px`}>
   <Tweet />
 </section>

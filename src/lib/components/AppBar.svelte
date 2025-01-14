@@ -3,7 +3,7 @@
   import AnimatedMenuIcon from './AnimatedMenuIcon.svelte'
   import Logo from './Logo.svelte'
 
-  const routes = ['Home', 'About-me', 'Posts']
+  const routes = ['Home', 'About', 'Posts']
 
   let detailsEl: HTMLDetailsElement,
     open = $state(false)
