@@ -14,6 +14,10 @@ header.glass {
     -webkit-backdrop-filter: blur(5px);
 }
 
+.app-bar-contraint nav {
+    display: none;
+}
+
 .app-bar-contraint {
     height: 100%;
     max-width: var(--md);
@@ -39,6 +43,23 @@ header.glass {
 .app-bar-actions nav {
     display: flex;
     gap: 4px;
+}
+
+.app-bar-leading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+@media screen and (min-width: 768px) {
+    .app-bar-contraint nav {
+        display: flex;
+    }
+
+    .app-bar-leading .dropdown {
+        display: none;
+    }
 }
 
 @media screen and (min-width: 1024px) {

@@ -81,7 +81,7 @@
 .animated-menu-icon::before {
     height: 2px;
     width: 18px;
-    background-color: black;
+    background-color: rgba(var(--on-surface-color), 1);
     transition-property: width, transform;
     transition-duration: 0.6s;
     transition-timing-function: cubic-bezier(0.22, 1.61, 0.36, 1);
@@ -134,5 +134,11 @@
 
     .head-1:hover {
         border-color: rgba(var(--secondary-color-dark), 1);
+    }
+
+    .animated-menu-icon div,
+    .animated-menu-icon::after,
+    .animated-menu-icon::before {
+        background-color: rgba(var(--on-surface-color-dark), 1);
     }
 }

@@ -29,9 +29,26 @@
     transition-property: color, background-color, border-color, opacity, box-shadow, transform;
 }
 
-.btn:hover {
+.btn:hover,
+.btn.ghost:hover {
     background-color: rgba(var(--on-surface-color), 0.1);
     border-color: rgba(var(--button-color), 0.1);
+}
+
+.btn.sm {
+    height: 2rem;
+    min-height: 2rem;
+}
+
+.btn.ghost {
+    background-color: rgba(var(--button-color), 0);
+    border-color: rgba(var(--button-color), 0);
+}
+
+.btn.squared {
+    padding-left: unset;
+    padding-right: unset;
+    aspect-ratio: 1;
 }
 
 .btn.btn-circle {
@@ -78,7 +95,8 @@
         fill: rgba(var(--on-surface-color-dark), 1);
     }
 
-    .btn:hover {
+    .btn:hover,
+    .btn.ghost:hover {
         background-color: rgba(var(--on-surface-color-dark), 0.1);
         border-color: rgba(var(--button-color-dark), 0.1);
     }
