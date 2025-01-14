@@ -41,10 +41,21 @@
         <textarea class={`textarea`} value={bio} placeholder="Bio" rows="4" readonly></textarea>
       </label>
       <div class={`label`}>
-        <span class={`shrink`}>Tech & tools I used so far</span>
+        <p class={`shrink`}>
+          Tech & tools I used so far
+          {#if level > 80}
+            <span>😍</span>
+          {:else if level > 70}
+            <span>😃</span>
+          {:else if level > 40}
+            <span>😑</span>
+          {:else}
+            <span>😤</span>
+          {/if}
+        </p>
       </div>
       <progress class={`progress`} value={level} max="100"></progress>
-      <div class={`flex-wrap animated-fade-in`}>
+      <div class={`flex-wrap`}>
         {#each techs.map((v) => v.name) as tech}
           <label class={`choice-chip`} for={tech}>
             <input type="radio" id={tech} name={tech} value={tech} bind:group={selectedTech} />
