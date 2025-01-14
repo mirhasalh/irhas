@@ -42,6 +42,6 @@
 <section class={`h-paddings`}>
   <RecentWork />
 </section>
-<section>
+<section class={`h-paddings`}>
   <Tweet />
 </section>
