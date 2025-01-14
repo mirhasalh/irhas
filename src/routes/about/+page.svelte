@@ -1,7 +1,9 @@
 <script lang="ts">
-  import SvelteMarkdown from 'svelte-markdown'
-  import { bio, email, light, dark, igEmbedCode } from '$lib/info'
+  import type { PageData } from './$types'
+  import { bio, email, igEmbedCode } from '$lib/info'
   import Sanitized from '$lib/components/Sanitized.svelte'
+
+  let { data }: { data: PageData } = $props()
 </script>
 
 <svelte:head>
@@ -37,9 +39,9 @@
 <section>
   <h1 class={`px animated-fade-in`}>GitHub public stats</h1>
   <div class={`animated-fade-in light`}>
-    <SvelteMarkdown source={light} />
+    <Sanitized html={data.light?.code} />
   </div>
   <div class={`animated-fade-in dark`}>
-    <SvelteMarkdown source={dark} />
+    <Sanitized html={data.dark?.code} />
   </div>
 </section>
