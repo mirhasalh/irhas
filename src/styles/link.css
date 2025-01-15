@@ -1,11 +1,21 @@
 @import url("./variables.css");
 
 a.link {
+    transition: color .2s linear;
+    transition-delay: .2s;
     color: rgba(var(--on-surface-color), 1);
+}
+
+a.link.active {
+    color: rgba(var(--primary-color), 1);
 }
 
 @media (prefers-color-scheme: dark) {
     a.link {
         color: rgba(var(--on-surface-color-dark), 1);
+    }
+
+    a.link.active {
+        color: rgba(var(--primary-color-dark), 1);
     }
 }

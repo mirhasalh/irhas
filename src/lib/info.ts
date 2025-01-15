@@ -19,6 +19,10 @@ export const sites = [
     {
         name: 'Flutter web',
         url: 'https://flutter.irhas.lol/'
+    },
+    {
+        name: 'Outter HTML formatter',
+        url: 'https://ohf.irhas.lol/'
     }
 ]
 

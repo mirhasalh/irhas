@@ -1,14 +1,30 @@
 <script lang="ts">
+  import { page } from '$app/state'
   import Accounts from './Accounts.svelte'
   import AnimatedMenuIcon from './AnimatedMenuIcon.svelte'
   import Logo from './Logo.svelte'
 
-  const routes = ['Home', 'About', 'Posts']
+  const routes = ['/', '/about', '/posts']
 
   let detailsEl: HTMLDetailsElement,
-    open = $state(false)
+    open = $state(false),
+    id = $derived.by(() => {
+      return page.route.id
+    })
 
-  const onToggle = () => (open = detailsEl?.open || false)
+  const onToggle = () => (open = detailsEl?.open || false),
+    getName = (route = '') => {
+      switch (route) {
+        case '/':
+          return 'Home'
+        case '/about':
+          return 'About'
+        case '/posts':
+          return 'Blog'
+        default:
+          return 'n/a'
+      }
+    }
 </script>
 
 <header class={`app-bar glass`}>
@@ -20,8 +36,9 @@
         </summary>
         <ul class={`menu dropdown-content`}>
           {#each routes as route}
-            {@const link = route === 'Home' ? '/' : `/${route.toLowerCase()}`}
-            <li><a href={link} class={`link`}><small>{route}</small></a></li>
+            {@const name = getName(route)}
+            {@const active = id === route}
+            <li><a href={route} class={`link`} class:active><small>{name}</small></a></li>
           {/each}
         </ul>
       </details>
@@ -31,8 +48,9 @@
     </div>
     <nav>
       {#each routes as route}
-        {@const link = route === 'Home' ? '/' : `/${route.toLowerCase()}`}
-        <a class={`link btn sm ghost`} href={link}><small>{route}</small></a>
+        {@const name = getName(route)}
+        {@const active = id === route}
+        <a class={`link btn sm ghost`} class:active href={route}><small>{name}</small></a>
       {/each}
     </nav>
     <div class={`app-bar-actions`}>
