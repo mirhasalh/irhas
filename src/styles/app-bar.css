@@ -19,6 +19,7 @@ header.glass {
 }
 
 .app-bar-contraint {
+    position: relative;
     height: 100%;
     max-width: var(--md);
     margin: 0 auto;
@@ -26,6 +27,14 @@ header.glass {
     justify-content: space-between;
     align-items: center;
     padding: 0 12px 0 8px;
+}
+
+.app-bar-contraint .center {
+    position: absolute;
+    z-index: 10;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .app-bar-contraint a {
@@ -38,6 +47,7 @@ header.glass {
     display: flex;
     align-items: center;
     height: 100%;
+    gap: 12px;
 }
 
 .app-bar-actions nav {
