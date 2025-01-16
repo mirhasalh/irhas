@@ -64,9 +64,9 @@
     <div class={`app-bar-actions`}>
       <button class={`btn sm squared`} onclick={() => pageState.setTheme(to)}>
         {#if app.theme === 'light'}
-          <Light />
-        {:else}
           <Dark />
+        {:else}
+          <Light />
         {/if}
       </button>
       <Accounts />
