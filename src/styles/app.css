@@ -174,17 +174,3 @@
         grid-template-columns: auto auto;
     }
 }
-
-@media (prefers-color-scheme: dark) {
-    .dark {
-        display: block;
-    }
-
-    .light {
-        display: none;
-    }
-
-    .menu {
-        background-color: rgba(var(--surface-color-dark), 1);
-    }
-}

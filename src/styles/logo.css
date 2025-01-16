@@ -3,9 +3,3 @@
 svg.logo path {
     fill: rgba(var(--on-surface-color), 1);
 }
-
-@media (prefers-color-scheme: dark) {
-    svg.logo path {
-        fill: rgba(var(--on-surface-color-dark), 1);
-    }
-}

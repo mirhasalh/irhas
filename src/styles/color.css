@@ -7,13 +7,3 @@
 .bg-200 {
     background-color: rgba(var(--bg-color), 1);
 }
-
-@media (prefers-color-scheme: dark) {
-    .bg-100 {
-        background-color: rgba(var(--surface-color-dark), 1);
-    }
-
-    .bg-200 {
-        background-color: rgba(var(--bg-color-dark), 1);
-    }
-}

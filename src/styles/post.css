@@ -125,24 +125,3 @@
         display: block;
     }
 }
-
-@media (prefers-color-scheme: dark) {
-    .post {
-        background-color: rgba(var(--surface-color-dark), 1);
-    }
-
-    .post a {
-        color: rgba(var(--on-surface-color-dark), 1);
-    }
-
-    .title-head h4,
-    .title-timestamp {
-        color: rgba(var(--subtitle-color-dark), 1);
-    }
-
-    .post-info {
-        display: flex;
-        flex-direction: column;
-        color: rgba(var(--subtitle-color-dark), 1);
-    }
-}

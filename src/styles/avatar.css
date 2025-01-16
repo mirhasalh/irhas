@@ -74,13 +74,3 @@
     align-items: center;
     gap: 1rem;
 }
-
-@media (prefers-color-scheme: dark) {
-    .avatars .avatar-item {
-        background-color: rgba(var(--surface-color-dark), 1);
-    }
-
-    .avatar-group :where(.git-avatar) {
-        border: 0.125rem solid rgba(var(--surface-color-dark), 1);
-    }
-}

@@ -136,20 +136,3 @@
         animation: none;
     }
 }
-
-@media (prefers-color-scheme: dark) {
-    .head-1 {
-        border-color: rgba(var(--surface-color-dark), 1);
-        background-color: rgba(var(--surface-color-dark), 1);
-    }
-
-    .head-1:hover {
-        border-color: rgba(var(--secondary-color-dark), 1);
-    }
-
-    .animated-menu-icon div,
-    .animated-menu-icon::after,
-    .animated-menu-icon::before {
-        background-color: rgba(var(--on-surface-color-dark), 1);
-    }
-}

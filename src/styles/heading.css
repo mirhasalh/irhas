@@ -25,21 +25,3 @@ h6 a:visited {
     text-decoration: none;
     top: 50px;
 }
-
-@media (prefers-color-scheme: dark) {
-
-    h1 a,
-    h2 a,
-    h3 a,
-    h4 a,
-    h5 a,
-    h6 a,
-    h1 a:visited,
-    h2 a:visited,
-    h3 a:visited,
-    h4 a:visited,
-    h5 a:visited,
-    h6 a:visited {
-        color: rgba(var(--on-surface-color-dark), 1);
-    }
-}

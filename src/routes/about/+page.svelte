@@ -72,10 +72,10 @@
 </section>
 <section>
   <h1 class={`px animated-fade-in`}>GitHub public stats</h1>
-  <div class={`overflow-x animated-fade-in light`}>
+  <div class={`overflow-x animated-fade-in light-mode`}>
     <Sanitized html={data.light?.code} />
   </div>
-  <div class={`overflow-x animated-fade-in dark`}>
+  <div class={`overflow-x animated-fade-in dark-mode`}>
     <Sanitized html={data.dark?.code} />
   </div>
 </section>

@@ -67,9 +67,3 @@ header.glass {
         padding: 0;
     }
 }
-
-@media (prefers-color-scheme: dark) {
-    header.glass {
-        background: rgba(var(--surface-color-dark), 0.5);
-    }
-}

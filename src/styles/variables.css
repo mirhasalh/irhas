@@ -1,4 +1,10 @@
 :root {
+    --md: 768px;
+    --lg: 1024px;
+    --xl: 1280px;
+}
+
+[data-theme="light"] {
     --primary-color: 10, 105, 218;
     --primary-highlight-color: 221, 244, 255;
     --on-primary-color: 255, 255, 255;
@@ -10,20 +16,18 @@
     --subtitle-color: 110, 110, 115;
     --button-color: 242, 242, 242;
     --neutral-color: 215, 221, 228;
+}
 
-    --primary-color-dark: 68, 147, 248;
-    --primary-highlight-color-dark: 19, 29, 46;
-    --on-primary-color-dark: 255, 255, 255;
-    --secondary-color-dark: 255, 181, 151;
-    --bg-color-dark: 2, 4, 10;
-    --surface-color-dark: 13, 17, 22;
-    --surface-highlight-color-dark: 21, 27, 35;
-    --on-surface-color-dark: 255, 255, 255;
-    --subtitle-color-dark: 240, 246, 252;
-    --button-color-dark: 25, 30, 36;
-    --neutral-color-dark: 43, 50, 60;
-
-    --md: 768px;
-    --lg: 1024px;
-    --xl: 1280px;
+[data-theme="dark"] {
+    --primary-color: 68, 147, 248;
+    --primary-highlight-color: 19, 29, 46;
+    --on-primary-color: 255, 255, 255;
+    --secondary-color: 255, 181, 151;
+    --bg-color: 2, 4, 10;
+    --surface-color: 13, 17, 22;
+    --surface-highlight-color: 21, 27, 35;
+    --on-surface-color: 255, 255, 255;
+    --subtitle-color: 240, 246, 252;
+    --button-color: 25, 30, 36;
+    --neutral-color: 43, 50, 60;
 }
