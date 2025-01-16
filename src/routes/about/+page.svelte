@@ -1,6 +1,7 @@
 <script lang="ts">
   import { onMount } from 'svelte'
   import type { PageData } from './$types'
+  import { app } from '$lib/shared.svelte'
   import { initFadeInAnimation } from '$lib'
   import { bio, techs, email, igEmbedCode } from '$lib/info'
   import Sanitized from '$lib/components/Sanitized.svelte'
@@ -72,10 +73,10 @@
 </section>
 <section>
   <h1 class={`px animated-fade-in`}>GitHub public stats</h1>
-  <div class={`overflow-x animated-fade-in light-mode`}>
+  <div class={`overflow-x animated-fade-in`} class:hidden={app.theme === 'dark'}>
     <Sanitized html={data.light?.code} />
   </div>
-  <div class={`overflow-x animated-fade-in dark-mode`}>
+  <div class={`overflow-x animated-fade-in`} class:hidden={app.theme === 'light'}>
     <Sanitized html={data.dark?.code} />
   </div>
 </section>
