@@ -8,8 +8,8 @@
 
   onMount(() => {
     initFadeInAnimation()
-    document.body.classList.remove('bg-100')
-    document.body.classList.add('bg-200')
+    document.body.classList.remove('bg-200')
+    document.body.classList.add('bg-100')
   })
 </script>
 
