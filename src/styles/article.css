@@ -39,7 +39,7 @@ article pre {
 
 pre {
     font-family: 'JetBrains Mono', monospace;
-    background-color: rgba(var(--bg-color), 1);
+    background-color: rgba(var(--bg-code), 1);
     overflow-x: auto;
     margin-top: 0;
     margin-bottom: 0;

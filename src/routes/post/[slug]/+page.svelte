@@ -1,16 +1,31 @@
 <script lang="ts">
   import { onMount } from 'svelte'
   import type { PageData } from './$types'
+  import 'highlight.js/styles/atom-one-dark.css'
   import Sanitized from '$lib/components/Sanitized.svelte'
   import { formatDate, website, initFadeInAnimation } from '$lib'
+  import { PostPageState } from './state.svelte'
 
   let { data }: { data: PageData } = $props(),
+    pageState = new PostPageState(),
+    articelEl: HTMLElement,
     cover = data.post.imageUrl ? data.post.imageUrl : `${website}/og-image.jpg`
+
+  pageState.registerLanguages()
+
+  const onArticelEl = () => {
+    if (articelEl) {
+      articelEl.querySelectorAll('pre code').forEach((codeEl) => {
+        pageState.highlightElement(codeEl as HTMLElement)
+      })
+    }
+  }
 
   onMount(() => {
     initFadeInAnimation()
     document.body.classList.remove('bg-200')
     document.body.classList.add('bg-100')
+    onArticelEl()
   })
 </script>
 
@@ -39,7 +54,7 @@
   <link rel="canonical" href={`${website}/post/${data.post.slug}`} />
 </svelte:head>
 
-<article>
+<article bind:this={articelEl}>
   <div class={`post-info`}>
     <p class={`uppercase`}><small><strong>{data.post.categories.join(', ')}</strong></small></p>
     <p><small>{`${formatDate(data.post.publishedAt)} • ${data.post.readingTime} min read`}</small></p>
