@@ -13,6 +13,7 @@ declare global {
 			categories: string[]
 			tags: string[]
 			imageUrl: string
+			videoUrl: string
 			publishedAt: string
 			slug: string
 			body: string
