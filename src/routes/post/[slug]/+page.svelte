@@ -46,6 +46,14 @@
   </div>
   <h1>{data.post.title}</h1>
   <p>{data.post.excerpt}</p>
-  <img src={data.post.imageUrl} alt={data.post.title} width="100%" />
+  {#if data.post.videoUrl}
+    <video width="100%" autoplay loop muted playsinline>
+      <source src={data.post.videoUrl} type="video/mp4" />
+      <track src="" kind="captions" srclang="en" label="English" />
+      Your browser does not support the video tag.
+    </video>
+  {:else if data.post.imageUrl}
+    <img src={data.post.imageUrl} alt={data.post.title} width="100%" />
+  {/if}
   <Sanitized html={data.code} />
 </article>
