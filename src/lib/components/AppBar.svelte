@@ -1,22 +1,17 @@
 <script lang="ts">
   import { page } from '$app/state'
-  import { app } from '$lib/shared.svelte'
-  import Dark from '$lib/icons/Dark.svelte'
-  import Light from '$lib/icons/Light.svelte'
   import Accounts from './Accounts.svelte'
   import AnimatedMenuIcon from './AnimatedMenuIcon.svelte'
   import Logo from './Logo.svelte'
-  import { LayoutPageState } from '../../routes/state.svelte'
+  import LightSwitch from './LightSwitch.svelte'
 
   const routes = ['/', '/posts', '/about']
 
-  let pageState = new LayoutPageState(),
-    detailsEl: HTMLDetailsElement,
+  let detailsEl: HTMLDetailsElement,
     open = $state(false),
     id = $derived.by(() => {
       return page.route.id
-    }),
-    to = $derived(app.theme === 'light' ? 'dark' : 'light')
+    })
 
   const onToggle = () => (open = detailsEl?.open || false),
     getName = (route = '') => {
@@ -62,13 +57,7 @@
       </nav>
     </div>
     <div class={`app-bar-actions`}>
-      <button class={`btn sm squared`} onclick={() => pageState.setTheme(to)}>
-        {#if app.theme === 'light'}
-          <Dark />
-        {:else}
-          <Light />
-        {/if}
-      </button>
+      <LightSwitch />
       <Accounts />
     </div>
   </div>
