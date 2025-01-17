@@ -9,12 +9,12 @@ ul.list {
     justify-content: space-between;
     margin: 0;
     padding: 0;
-    gap: 1em;
+    gap: 0;
 }
 
 @media screen and (min-width: 768px) {
     .list .list-item.post {
-        flex: 1 1;
+        flex: 0 calc(50% - 5px);
     }
 
     .list .list-item.post:first-child {
