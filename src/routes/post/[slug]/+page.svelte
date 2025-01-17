@@ -4,7 +4,8 @@
   import Sanitized from '$lib/components/Sanitized.svelte'
   import { formatDate, website, initFadeInAnimation } from '$lib'
 
-  let { data }: { data: PageData } = $props()
+  let { data }: { data: PageData } = $props(),
+    cover = data.post.imageUrl ? data.post.imageUrl : `${website}/og-image.jpg`
 
   onMount(() => {
     initFadeInAnimation()
@@ -22,7 +23,7 @@
   <!-- Open graph metadata -->
   <meta property="og:title" content={data.post.title} />
   <meta property="og:description" content={data.post.excerpt} />
-  <meta property="og:image" content={data.post.imageUrl} />
+  <meta property="og:image" content={cover} />
   <meta property="og:url" content={`${website}/post/${data.post.slug}`} />
   <meta property="og:type" content="article" />
   <meta property="article:published_time" content={data.post.publishedAt} />
@@ -32,7 +33,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content={data.post.title} />
   <meta name="twitter:description" content={data.post.excerpt} />
-  <meta name="twitter:image" content={data.post.imageUrl} />
+  <meta name="twitter:image" content={cover} />
 
   <!-- Canonical URL -->
   <link rel="canonical" href={`${website}/post/${data.post.slug}`} />
