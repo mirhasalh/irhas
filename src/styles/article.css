@@ -1,6 +1,7 @@
 @import url("./variables.css");
 
 article {
+    transition: background-color 0.2s linear;
     background-color: rgba(var(--surface-color), 1);
     padding-bottom: 24px;
     padding-top: 24px;

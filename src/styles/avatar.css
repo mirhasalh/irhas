@@ -60,6 +60,7 @@
     border-radius: 9999px;
     overflow: hidden;
     border: 0.125rem solid rgba(var(--surface-color), 1);
+    transition: border-color 0.2s linear;
     aspect-ratio: 1;
 }
 

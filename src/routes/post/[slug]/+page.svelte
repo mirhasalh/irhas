@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { browser } from '$app/environment'
   import { onMount } from 'svelte'
   import type { PageData } from './$types'
   import 'highlight.js/styles/atom-one-dark.css'
@@ -11,7 +12,7 @@
     articelEl: HTMLElement,
     cover = data.post.imageUrl ? data.post.imageUrl : `${website}/og-image.jpg`
 
-  pageState.registerLanguages()
+  if (browser) pageState.registerLanguages()
 
   const onArticelEl = () => {
     if (articelEl) {
