@@ -3,6 +3,7 @@
     --lg: 1024px;
     --xl: 1280px;
     --bg-code: 40, 44, 52;
+    --on-code: 171, 178, 191;
 }
 
 [data-theme="light"] {

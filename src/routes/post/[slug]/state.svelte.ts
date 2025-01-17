@@ -6,7 +6,9 @@ import yaml from 'highlight.js/lib/languages/yaml'
 import json from 'highlight.js/lib/languages/json'
 import bash from 'highlight.js/lib/languages/bash'
 import dart from 'highlight.js/lib/languages/dart'
-import svelte from 'highlight.svelte'
+// BUG: The requested module 'highlight.svelte' does not provide
+// an export named 'default'
+// import svelte from 'highlight.svelte'
 import css from 'highlight.js/lib/languages/css'
 import scss from 'highlight.js/lib/languages/scss'
 import javascript from 'highlight.js/lib/languages/javascript'
@@ -21,7 +23,7 @@ export class PostPageState {
     hljs.registerLanguage('json', json)
     hljs.registerLanguage('bash', bash)
     hljs.registerLanguage('dart', dart)
-    hljs.registerLanguage('svelte', svelte)
+    // hljs.registerLanguage('svelte', svelte)
     hljs.registerLanguage('css', css)
     hljs.registerLanguage('sass', scss)
     hljs.registerLanguage('javascript', javascript)

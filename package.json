@@ -22,7 +22,6 @@
 		"eslint-plugin-svelte": "^2.36.0",
 		"globals": "^15.0.0",
 		"highlight.js": "^11.11.1",
-		"highlight.svelte": "^0.1.2",
 		"isomorphic-dompurify": "^2.16.0",
 		"mdsvex": "^0.11.2",
 		"prettier": "^3.3.2",
