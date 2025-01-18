@@ -91,7 +91,7 @@
     {/each}
   </ul>
   <div class={`flex-center pt`}>
-    <a href="/posts" class={`btn link`}>View all</a>
+    <a href="/posts" class={`btn link animated-fade-in`}>View all</a>
   </div>
 </section>
 <section class={`px`}>
@@ -99,7 +99,7 @@
   <ul class={`recent-work-grid`}>
     {#each recentWork as w}
       <li role={`listitem`} class={`list-item work animated-fade-in`}>
-        <a class={`link`} href={getLink(w.id, w.urls)} target="_blank">
+        <a class={`link hover`} href={getLink(w.id, w.urls)} target="_blank">
           <div class={`work-info`}>
             <h4 class={`work-title`}>{`${w.title} (${w.year})`}</h4>
             <p class={`work-description`}>
@@ -108,7 +108,7 @@
           </div>
           <figure>
             <img class={`cover`} src={w.imgUrl} alt={w.title} />
-            <figcaption>
+            <figcaption class={`work-caption`}>
               <small>{w.desc}</small>
             </figcaption>
           </figure>

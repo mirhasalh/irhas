@@ -9,3 +9,7 @@ a.link {
 a.link.active {
     color: rgba(var(--primary-color), 1);
 }
+
+a.link.hover:hover {
+    text-decoration: underline;
+}

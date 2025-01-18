@@ -39,7 +39,7 @@
           {#each routes as route}
             {@const name = getName(route)}
             {@const active = id === route}
-            <li><a href={route} class={`link`} class:active><small>{name}</small></a></li>
+            <li><a href={route} class={`link hover`} class:active><small>{name}</small></a></li>
           {/each}
         </ul>
       </details>
@@ -52,7 +52,7 @@
         {#each routes as route}
           {@const name = getName(route)}
           {@const active = id === route}
-          <a class={`link btn sm ghost`} class:active href={route}><small>{name}</small></a>
+          <a class={`link hover btn sm ghost`} class:active href={route}><small>{name}</small></a>
         {/each}
       </nav>
     </div>
