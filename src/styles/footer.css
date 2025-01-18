@@ -25,6 +25,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 48px;
 }
 
 @media screen and (min-width: 768px) {
@@ -40,6 +41,7 @@
     }
 
     .footer-logo {
+        margin-top: 0px;
         align-items: start;
     }
 }

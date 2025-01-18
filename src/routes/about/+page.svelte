@@ -73,10 +73,12 @@
 </section>
 <section>
   <h1 class={`px animated-fade-in`}>GitHub public stats</h1>
-  <div class={`overflow-x animated-fade-in`} class:hidden={app.theme === 'dark'}>
-    <Sanitized html={data.light?.code} />
-  </div>
-  <div class={`overflow-x animated-fade-in`} class:hidden={app.theme === 'light'}>
-    <Sanitized html={data.dark?.code} />
+  <div class={`flex-center`}>
+    <div class={`overflow-x animated-fade-in`} class:hidden={app.theme === 'dark'}>
+      <Sanitized html={data.light?.code} />
+    </div>
+    <div class={`overflow-x animated-fade-in`} class:hidden={app.theme === 'light'}>
+      <Sanitized html={data.dark?.code} />
+    </div>
   </div>
 </section>

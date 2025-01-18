@@ -1,9 +1,14 @@
 @import url("./variables.css");
 
+.list-item.post:not(:last-child) {
+    margin-bottom: 16px;
+}
+
 .post {
     cursor: pointer;
     overflow: clip;
-    border-radius: 12px;
+    background-clip: content-box;
+    border-radius: 24px;
     background-color: rgba(var(--surface-color), 1);
 }
 
@@ -117,6 +122,12 @@
         display: -webkit-box;
         -webkit-box-orient: vertical;
         overflow: hidden;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .list-item.post:not(:last-child) {
+        margin-bottom: 24px;
     }
 }
 

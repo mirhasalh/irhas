@@ -10,9 +10,12 @@ export const techs = [
     { id: 2, name: 'Svelte.js', loveLevel: 90 },
     { id: 3, name: 'WordPress', loveLevel: 70 },
     { id: 4, name: 'Figma', loveLevel: 100 },
-    { id: 5, name: 'Nuxt.js', loveLevel: 40 },
-    { id: 6, name: 'JavaScript', loveLevel: 60 },
-    { id: 7, name: 'TypeScript', loveLevel: 50 }
+    { id: 5, name: 'React.js', loveLevel: 40 },
+    { id: 6, name: 'Next.js', loveLevel: 40 },
+    { id: 7, name: 'Vue.js', loveLevel: 30 },
+    { id: 8, name: 'Nuxt.js', loveLevel: 40 },
+    { id: 9, name: 'JavaScript', loveLevel: 60 },
+    { id: 10, name: 'TypeScript', loveLevel: 50 }
 ]
 
 export const sites = [

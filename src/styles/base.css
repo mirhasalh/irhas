@@ -92,7 +92,6 @@ ol {
 li {
     color: rgba(var(--on-surface-color), 1);
     transition: background-color 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    margin-bottom: 10px;
 }
 
 ul li {
@@ -108,11 +107,13 @@ li:hover {
     cursor: pointer;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 768px) {
     section {
-        max-width: var(--md);
+        max-width: 900px;
     }
+}
 
+@media screen and (min-width: 1024px) {
     footer {
         align-items: start;
     }
