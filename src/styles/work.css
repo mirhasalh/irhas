@@ -1,0 +1,28 @@
+.work-description {
+    display: none;
+}
+
+@media screen and (min-width: 768px) {
+    .work:first-child a figure figcaption {
+        display: none;
+    }
+
+    .work:first-child a figure {
+        width: 100%;
+    }
+
+    .work:first-child a {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    .work:first-child a .work-info .work-title {
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-bottom: 12px;
+    }
+
+    .work:first-child a .work-info .work-description {
+        display: contents;
+    }
+}
