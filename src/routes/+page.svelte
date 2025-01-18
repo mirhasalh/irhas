@@ -7,7 +7,6 @@
   import Posts from '$lib/components/Posts.svelte'
   import RecentWork from '$lib/components/RecentWork.svelte'
   import RiveAvatars from '$lib/components/RiveAvatars.svelte'
-  import Tweet from '$lib/components/Tweet.svelte'
 
   let { data }: { data: LayoutData } = $props()
 
@@ -45,5 +44,11 @@
   <RecentWork />
 </section>
 <section class={`px`}>
-  <Tweet />
+  <h1 class={`animated-fade-in`}>Tweet</h1>
+  <div class={`flex-center animated-fade-in mb`}>
+    <blockquote class={`twitter-tweet`}>
+      <p lang="en" dir="ltr">To make PowerShell recognize a backslash (\), you need to double it (\\)</p>
+      &mdash; IrhasDev (@irhasdev)<a href="https://twitter.com/irhasdev/status/1878710202670944462?ref_src=twsrc%5Etfw">January 13, 2025</a>
+    </blockquote>
+  </div>
 </section>
