@@ -9,24 +9,25 @@
 
   let { data }: { data: PageData } = $props(),
     pageState = new PostPageState(),
-    articelEl: HTMLElement,
-    cover = data.post.imageUrl ? data.post.imageUrl : `${website}/og-image.jpg`
+    articelEl: HTMLElement
+
+  const cover = data.post.imageUrl ? data.post.imageUrl : `${website}/og-image.jpg`,
+    headings = data.post.headings.map((item) => item.replace(/-/g, ' ')),
+    keywords = [data.post.title, ...headings, ...data.post.tags]
 
   if (browser) pageState.registerLanguages()
 
   const onArticelEl = () => {
-    if (articelEl) {
-      articelEl.querySelectorAll('pre code').forEach((codeEl) => {
-        pageState.highlightElement(codeEl as HTMLElement)
-      })
-    }
+    articelEl.querySelectorAll('pre code').forEach((codeEl) => {
+      pageState.highlightElement(codeEl as HTMLElement)
+    })
   }
 
   onMount(() => {
     initFadeInAnimation()
     document.body.classList.remove('bg-200')
     document.body.classList.add('bg-100')
-    onArticelEl()
+    if (articelEl) onArticelEl()
   })
 </script>
 
@@ -34,7 +35,7 @@
   <!-- Basic metadata -->
   <title>{data.post.title}</title>
   <meta name="description" content={data.post.excerpt} />
-  <meta name="keywords" content={data.post.tags.join(', ')} />
+  <meta name="keywords" content={keywords.join(', ')} />
 
   <!-- Open graph metadata -->
   <meta property="og:title" content={data.post.title} />
