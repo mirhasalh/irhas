@@ -1,6 +1,6 @@
 <script lang="ts">
   import Logo from '$lib/components/Logo.svelte'
-  import { email, sites, socials } from '$lib/info'
+  import { email, sites, socials } from '$lib'
 
   const d = new Date()
 

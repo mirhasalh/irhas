@@ -1,14 +1,15 @@
 <script lang="ts">
   import '../styles/app.css'
-  import { onMount } from 'svelte'
+  import { browser } from '$app/environment'
   import { onNavigate } from '$app/navigation'
   import AppBar from '$lib/components/AppBar.svelte'
   import Footer from '$lib/components/Footer.svelte'
   import { LayoutPageState } from './state.svelte'
 
-  let pageState = new LayoutPageState()
+  let { children } = $props(),
+    pageState = new LayoutPageState()
 
-  let { children } = $props()
+  if (browser) pageState.setTheme()
 
   onNavigate((navigation) => {
     if (!document.startViewTransition) return
@@ -20,8 +21,6 @@
       })
     })
   })
-
-  onMount(() => pageState.setTheme())
 </script>
 
 <svelte:head>

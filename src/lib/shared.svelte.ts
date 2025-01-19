@@ -1,5 +1,5 @@
 export const app = $state({
-    theme: ''
+    theme: 'light'
 })
 
 export const avatar = $state({

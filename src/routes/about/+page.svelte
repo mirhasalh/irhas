@@ -2,14 +2,13 @@
   import { onMount } from 'svelte'
   import type { PageData } from './$types'
   import { app } from '$lib/shared.svelte'
-  import { initFadeInAnimation } from '$lib'
-  import { bio, techs, email, igEmbedCode } from '$lib/info'
+  import { initFadeInAnimation, bio, techs, email, igEmbedCode } from '$lib'
   import Sanitized from '$lib/components/Sanitized.svelte'
 
   let { data }: { data: PageData } = $props()
 
   let selectedTech = $state('Flutter'),
-    level = $derived(techs.filter((v) => v.name === selectedTech)[0].loveLevel)
+    level = $derived(techs.filter((v) => v.name === selectedTech)[0].level)
 
   onMount(() => {
     initFadeInAnimation()

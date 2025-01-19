@@ -24,7 +24,15 @@
     color: rgba(var(--on-surface-color), 0.3);
 }
 
-.input {
+label.input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: max-content;
+}
+
+.input,
+label.input input {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -33,7 +41,6 @@
     padding-right: 1rem;
     font-size: 1rem;
     line-height: 2;
-    line-height: 1.5rem;
 }
 
 .textarea {
@@ -41,8 +48,22 @@
     flex-shrink: 1;
     padding: .5rem 1rem;
     font-size: .875rem;
-    line-height: 1.25rem;
     line-height: 2;
+}
+
+label.input input {
+    background-color: transparent;
+    border: none;
+    color: rgba(var(--on-surface-color), 1);
+}
+
+label.input:has(input:focus) {
+    border: 1px solid rgba(var(--neutral-color), 1);
+    outline: 1px solid rgba(var(--neutral-color), 1);
+}
+
+label.input input:focus {
+    outline: none;
 }
 
 @media screen and (min-width: 1024px) {

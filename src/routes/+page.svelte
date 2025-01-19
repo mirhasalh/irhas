@@ -2,8 +2,7 @@
   import { onMount } from 'svelte'
   import { browser } from '$app/environment'
   import type { LayoutData } from './$types'
-  import { initFadeInAnimation } from '$lib'
-  import { recentWork } from '$lib/info'
+  import { initFadeInAnimation, recentWork } from '$lib'
   import { avatar } from '$lib/shared.svelte'
   import Meta from '$lib/components/Meta.svelte'
   import Post from '$lib/components/Post.svelte'
@@ -19,12 +18,12 @@
     categories = Array.from(new Set(posts.flatMap((post) => post.categories || [])))
 
   const determineIsIos = () => {
-    if (browser) {
-      const userAgent: string = navigator.userAgent || (window as any).opera
-      isIos = /iPad|iPhone|iPod/.test(userAgent) && !(window as any).MSStream
-      isSafari = /Safari/.test(userAgent) && !/Chrome/.test(userAgent)
-    }
+    const userAgent: string = navigator.userAgent || (window as any).opera
+    isIos = /iPad|iPhone|iPod/.test(userAgent) && !(window as any).MSStream
+    isSafari = /Safari/.test(userAgent) && !/Chrome/.test(userAgent)
   }
+
+  if (browser) determineIsIos()
 
   const getLink = (id = 0, urls: string[]): string => {
     // To conditionally refer to a URL depending on the target platform (iOS or Android),
@@ -41,7 +40,6 @@
   })
 
   onMount(() => {
-    determineIsIos()
     initFadeInAnimation()
     document.body.classList.remove('bg-100')
     document.body.classList.add('bg-200')
