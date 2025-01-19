@@ -20,12 +20,18 @@
   <h1 class={`text-center animated-fade-in`}>{`#${data.slug}`}</h1>
 </section>
 <section class={`px`}>
-  <ul class={`list`}>
-    {#each posts as post}
-      {@const link = `/post/${post.slug}`}
-      <li role={`listitem`} class={`list-item post animated-fade-in`}>
-        <Post {post} {link} />
-      </li>
-    {/each}
-  </ul>
+  {#if posts.length}
+    <ul class={`list`}>
+      {#each posts as post}
+        {@const link = `/post/${post.slug}`}
+        <li role={`listitem`} class={`list-item post animated-fade-in`}>
+          <Post {post} {link} />
+        </li>
+      {/each}
+    </ul>
+  {:else}
+    <div class={`hero-60`}>
+      <p class={`text-center animated-fade-in`}>Posts? Nah</p>
+    </div>
+  {/if}
 </section>

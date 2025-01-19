@@ -1,4 +1,5 @@
-.hero {
+.hero,
+.hero-60 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -6,6 +7,10 @@
     min-height: calc(100vh - 120px);
     width: 100%;
     gap: 2em;
+}
+
+.hero-60 {
+    min-height: calc(60vh - 120px);
 }
 
 @media screen and (min-width: 768px) {

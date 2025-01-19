@@ -74,7 +74,7 @@
   <Sanitized html={data.code} />
   <ul class={`flex-wrap px`}>
     {#each data.post.tags as tag}
-      {@const link = `/tagged/${tag}`}
+      {@const link = `/posts/tagged/${tag}`}
       <li class={`list-item`}><a class={`btn sm link`} href={link}>{`#${tag}`}</a></li>
     {/each}
   </ul>
