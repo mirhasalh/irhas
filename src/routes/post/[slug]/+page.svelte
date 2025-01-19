@@ -12,7 +12,7 @@
     articelEl: HTMLElement
 
   const cover = data.post.imageUrl ? data.post.imageUrl : `${website}/og-image.jpg`,
-    headings = data.post.headings.map((item) => item.replace(/-/g, ' ')),
+    headings = data.post.headings ? data.post.headings.map((item) => item.replace(/-/g, ' ')) : [],
     keywords = [data.post.title, ...headings, ...data.post.tags]
 
   if (browser) pageState.registerLanguages()
