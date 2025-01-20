@@ -1,9 +1,12 @@
 import { PUBLIC_CMS } from '$env/static/public'
 import { error } from '@sveltejs/kit'
 
-export const website = 'https://irhas.lol'
-export const github = `https://github.com`
-export const accounts = ['irhasalh', 'mirhasalh']
+// Basic informations
+export const website = 'https://irhas.lol',
+  github = `https://github.com`,
+  accounts = ['irhasalh', 'mirhasalh'],
+  email = 'irhasm@outlook.com',
+  bio = 'Just a regular guy from Bandung, always eager to challenge himself in design and front-end development every day.'
 
 export const getEnvVar = (data: string) => {
   try {
@@ -81,11 +84,11 @@ export function put(path: string, data?: unknown, token?: string): Promise<any> 
 }
 
 // Paths
-const posts = publicEnv.posts
-const postsQuery = publicEnv.postsQuery
-const aPost = publicEnv.post
-const tagged = publicEnv.tagged
-const taggedQuery = publicEnv.taggedQuery
+const posts = publicEnv.posts,
+  postsQuery = publicEnv.postsQuery,
+  aPost = publicEnv.post,
+  tagged = publicEnv.tagged,
+  taggedQuery = publicEnv.taggedQuery
 
 export const getPosts = async (from: number, to: number) => {
   const res = await get(`${posts}${from}...${to}${postsQuery}`)
@@ -142,10 +145,7 @@ export const formatSlug = (str: string) => {
   return str[0].toLocaleUpperCase() + str.replaceAll('-', ' ').substring(1)
 }
 
-export const bio = 'Just a regular guy from Bandung, always eager to challenge himself in design and front-end development every day.'
-
-export const email = 'irhasm@outlook.com'
-
+// Additional informations
 export const techs = [
   { id: 0, name: 'Flutter', level: 100 },
   { id: 1, name: 'Dart', level: 100 },
