@@ -241,7 +241,7 @@ export const recentWork = [
     imgUrl: `${website}/IMG_20230521-195115.webp`,
     urls: ['https://apps.apple.com/id/app/ucollect-by-noovoleum/id6462969708', 'https://play.google.com/store/apps/details?id=com.noovoleum.ucollect&hl=en'],
     title: 'UCOllect app by noovoleum',
-    desc: 'Initiated and executed the design and development of the UCOllect app using the Flutter framework for iOS and Android as the pioneer engineer on the team.'
+    desc: 'As the pioneering engineer on the team, I initiated the design and executed the front-end development using the Flutter framework for iOS and Android, successfully achieving over 10,000 downloads and maintaining a 4-star rating.'
   }
 ]
 
