@@ -4,7 +4,7 @@
   import type { LayoutData } from './$types'
   import { HomePageState } from './state.svelte'
   import { initFadeInAnimation, recentWork } from '$lib'
-  import { avatar } from '$lib/shared.svelte'
+  import { app } from '$lib/shared.svelte'
   import Meta from '$lib/components/Meta.svelte'
   import Post from '$lib/components/Post.svelte'
   import RiveAvatars from '$lib/components/RiveAvatars.svelte'
@@ -59,7 +59,7 @@
       <p class={`shrink`}>
         I'm Irhas, welcome to my site.
         <br />
-        <span class={`hobby`} class:reveal={avatar.hover}> I like drawing, btw. 🤫 </span>
+        <span class={`hobby`} class:reveal={app.avatarHovered}> I like drawing, btw. 🤫 </span>
       </p>
     </div>
   </div>

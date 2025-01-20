@@ -1,6 +1,6 @@
 <script lang="ts">
   import Rive from './Rive.svelte'
-  import { avatar as sharedAvatar } from '$lib/shared.svelte'
+  import { app } from '$lib/shared.svelte'
   import ChevronLeft from '$lib/icons/tiny/ChevronLeft.svelte'
   import ChevronRight from '$lib/icons/tiny/ChevronRight.svelte'
 
@@ -22,8 +22,8 @@
 <div>
   <div class={`rive-avatars-view`} style={`min-width: ${width}px; min-height: ${height + 4}px;`}>
     <div class={`avatars`} style={`left: ${index * width * -1}px;`}>
-      {#each avatars as avatar, i}
-        <div role="presentation" class={`avatar-item`} onmouseenter={() => (sharedAvatar.hover = true)} onmouseleave={() => (sharedAvatar.hover = false)}>
+      {#each avatars as avatar}
+        <div role="presentation" class={`avatar-item`} onmouseenter={() => (app.avatarHovered = true)} onmouseleave={() => (app.avatarHovered = false)}>
           <Rive fileName={avatar} {width} {height} />
         </div>
       {/each}
