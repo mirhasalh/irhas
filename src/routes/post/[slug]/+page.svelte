@@ -2,12 +2,14 @@
   import { browser } from '$app/environment'
   import { onMount } from 'svelte'
   import type { PageData } from './$types'
+  import { HomePageState } from '../../state.svelte'
   import 'highlight.js/styles/atom-one-dark.css'
   import Sanitized from '$lib/components/Sanitized.svelte'
   import { formatDate, website, initFadeInAnimation } from '$lib'
   import { PostPageState } from './state.svelte'
 
   let { data }: { data: PageData } = $props(),
+    homePageState = new HomePageState(),
     pageState = new PostPageState(),
     articelEl: HTMLElement
 
@@ -15,7 +17,10 @@
     headings = data.post.headings ? data.post.headings.map((item) => item.replace(/-/g, ' ')) : [],
     keywords = [data.post.title, ...headings, ...data.post.tags]
 
-  if (browser) pageState.registerLanguages()
+  if (browser) {
+    pageState.registerLanguages()
+    homePageState.setReadingMode(true)
+  }
 
   const onArticelEl = () => {
     articelEl.querySelectorAll('pre code').forEach((codeEl) => {
@@ -25,8 +30,6 @@
 
   onMount(() => {
     initFadeInAnimation()
-    document.body.classList.remove('bg-200')
-    document.body.classList.add('bg-100')
     if (articelEl) onArticelEl()
   })
 </script>

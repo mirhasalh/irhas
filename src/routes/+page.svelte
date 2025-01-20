@@ -2,6 +2,7 @@
   import { onMount } from 'svelte'
   import { browser } from '$app/environment'
   import type { LayoutData } from './$types'
+  import { HomePageState } from './state.svelte'
   import { initFadeInAnimation, recentWork } from '$lib'
   import { avatar } from '$lib/shared.svelte'
   import Meta from '$lib/components/Meta.svelte'
@@ -9,6 +10,7 @@
   import RiveAvatars from '$lib/components/RiveAvatars.svelte'
 
   let { data }: { data: LayoutData } = $props(),
+    pageState = new HomePageState(),
     selectedCategory = $state('all'),
     isIos = false,
     isSafari = false
@@ -23,7 +25,10 @@
     isSafari = /Safari/.test(userAgent) && !/Chrome/.test(userAgent)
   }
 
-  if (browser) determineIsIos()
+  if (browser) {
+    determineIsIos()
+    pageState.setReadingMode(false)
+  }
 
   const getLink = (id = 0, urls: string[]): string => {
     // To conditionally refer to a URL depending on the target platform (iOS or Android),
@@ -39,11 +44,7 @@
     if (selectedCategory) initFadeInAnimation()
   })
 
-  onMount(() => {
-    initFadeInAnimation()
-    document.body.classList.remove('bg-100')
-    document.body.classList.add('bg-200')
-  })
+  onMount(() => initFadeInAnimation())
 </script>
 
 <Meta />

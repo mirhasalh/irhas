@@ -1,11 +1,16 @@
 <script lang="ts">
   import { onMount } from 'svelte'
+  import { browser } from '$app/environment'
   import type { PageData } from './$types'
+  import { HomePageState } from '../state.svelte'
   import Post from '$lib/components/Post.svelte'
   import { initFadeInAnimation } from '$lib'
 
   let { data }: { data: PageData } = $props(),
+    pageState = new HomePageState(),
     selectedCategory = $state('all')
+
+  if (browser) pageState.setReadingMode(false)
 
   const obj: any = data as any,
     posts: App.Post[] = obj.posts as App.Post[],
@@ -15,11 +20,7 @@
     if (selectedCategory) initFadeInAnimation()
   })
 
-  onMount(() => {
-    initFadeInAnimation()
-    document.body.classList.remove('bg-100')
-    document.body.classList.add('bg-200')
-  })
+  onMount(() => initFadeInAnimation())
 </script>
 
 <section class={`px mb pt`}>

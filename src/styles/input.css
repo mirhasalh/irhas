@@ -2,6 +2,7 @@
 
 .input,
 .textarea {
+    font-family: 'JetBrains Mono', monospace;
     flex-grow: 1;
     border-radius: 12px;
     border-width: 1px;

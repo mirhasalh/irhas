@@ -1,20 +1,20 @@
 <script lang="ts">
   import { onMount } from 'svelte'
+  import { browser } from '$app/environment'
   import type { PageData } from './$types'
   import { app } from '$lib/shared.svelte'
+  import { HomePageState } from '../state.svelte'
   import { initFadeInAnimation, bio, techs, email, igEmbedCode } from '$lib'
   import Sanitized from '$lib/components/Sanitized.svelte'
 
-  let { data }: { data: PageData } = $props()
-
-  let selectedTech = $state('Flutter'),
+  let { data }: { data: PageData } = $props(),
+    pageState = new HomePageState(),
+    selectedTech = $state('Flutter'),
     level = $derived(techs.filter((v) => v.name === selectedTech)[0].level)
 
-  onMount(() => {
-    initFadeInAnimation()
-    document.body.classList.remove('bg-100')
-    document.body.classList.add('bg-200')
-  })
+  if (browser) pageState.setReadingMode(false)
+
+  onMount(() => initFadeInAnimation())
 </script>
 
 <svelte:head>

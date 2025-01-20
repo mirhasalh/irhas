@@ -12,4 +12,9 @@ export class HomePageState {
 
     document.documentElement.setAttribute('data-theme', app.theme)
   }
+
+  setReadingMode = (enable: boolean) => {
+    document.body.classList.remove(enable ? 'bg-200' : 'bg-100')
+    document.body.classList.add(enable ? 'bg-100' : 'bg-200')
+  }
 }

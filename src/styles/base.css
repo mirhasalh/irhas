@@ -107,6 +107,15 @@ li:hover {
     cursor: pointer;
 }
 
+input[type="search"]::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    display: none;
+}
+
+input[type="search"] {
+    font-family: 'JetBrains Mono', monospace;
+}
+
 @media screen and (min-width: 768px) {
     section {
         max-width: 900px;
