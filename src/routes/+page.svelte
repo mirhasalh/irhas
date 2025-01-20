@@ -96,8 +96,9 @@
   <h1 class={`animated-fade-in`}>Recent work</h1>
   <ul class={`recent-work-grid`}>
     {#each recentWork as w}
+      {@const link = getLink(w.id, w.urls)}
       <li role={`listitem`} class={`list-item work animated-fade-in`}>
-        <a class={`link hover`} href={getLink(w.id, w.urls)} target="_blank">
+        <a class={`link hover`} href={link} target="_blank" rel="noopener noreferrer" aria-describedby="open-in-new-tab">
           <div class={`work-info`}>
             <h4 class={`work-title`}>{`${w.title} (${w.year})`}</h4>
             <p class={`work-description`}>

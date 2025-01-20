@@ -1,10 +1,10 @@
 <script lang="ts">
   import { app } from '$lib/shared.svelte'
-  import { LayoutPageState } from '../../routes/state.svelte'
+  import { HomePageState } from '../../routes/state.svelte'
   import DarkMode from '$lib/icons/DarkMode.svelte'
   import LightMode from '$lib/icons/LightMode.svelte'
 
-  let pageState = new LayoutPageState()
+  let pageState = new HomePageState()
   let to = $derived(app.theme === 'light' ? 'dark' : 'light')
 </script>
 

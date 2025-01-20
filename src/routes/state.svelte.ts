@@ -1,6 +1,6 @@
 import { app } from "$lib/shared.svelte"
 
-export class LayoutPageState {
+export class HomePageState {
   setTheme = (to = '') => {
     if (to === 'light') {
       app.theme = 'light'

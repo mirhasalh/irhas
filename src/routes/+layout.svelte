@@ -4,10 +4,10 @@
   import { onNavigate } from '$app/navigation'
   import AppBar from '$lib/components/AppBar.svelte'
   import Footer from '$lib/components/Footer.svelte'
-  import { LayoutPageState } from './state.svelte'
+  import { HomePageState } from './state.svelte'
 
   let { children } = $props(),
-    pageState = new LayoutPageState()
+    pageState = new HomePageState()
 
   if (browser) pageState.setTheme()
 

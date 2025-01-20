@@ -25,7 +25,7 @@
   <nav>
     <h5 class={`footer-title`}>Sites</h5>
     {#each sites as site}
-      <a class={`link hover`} href={site.url} target="_blank">
+      <a class={`link hover`} href={site.url} target="_blank" rel="noopener noreferrer" aria-describedby="open-in-new-tab">
         <small>{site.name}</small>
       </a>
     {/each}
@@ -33,7 +33,7 @@
   <nav>
     <h5 class={`footer-title`}>Socials</h5>
     {#each socials as social}
-      <a class={`link hover`} href={social.url} target="_blank">
+      <a class={`link hover`} href={social.url} target="_blank" rel="noopener noreferrer" aria-describedby="open-in-new-tab">
         <small>{social.name}</small>
       </a>
     {/each}
