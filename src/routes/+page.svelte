@@ -117,12 +117,22 @@
     {/each}
   </ul>
 </section>
-<section class={`px`}>
+<section class={`px mb`}>
   <h1 class={`animated-fade-in`}>Tweet</h1>
-  <div class={`flex-center animated-fade-in mb`}>
-    <blockquote class={`twitter-tweet`}>
-      <p lang="en" dir="ltr">To make PowerShell recognize a backslash (\), you need to double it (\\)</p>
-      &mdash; IrhasDev (@irhasdev)<a href="https://twitter.com/irhasdev/status/1878710202670944462?ref_src=twsrc%5Etfw">January 13, 2025</a>
+  <div class={`flex-center animated-fade-in`} class:hidden={app.theme === 'dark'}>
+    <blockquote class="twitter-tweet">
+      <p lang="en" dir="ltr">
+        Can&#39;t wait for <a href="https://twitter.com/daisyui_?ref_src=twsrc%5Etfw">@daisyui_</a> v5! I&#39;ll be rewriting all the styles for <a href="https://t.co/Ax4OZyZ7Hl">https://t.co/Ax4OZyZ7Hl</a> with it as soon as it&#39;s released
+      </p>
+      &mdash; IrhasDev (@irhasdev)<a href="https://twitter.com/irhasdev/status/1881552578217226372?ref_src=twsrc%5Etfw">January 21, 2025</a>
+    </blockquote>
+  </div>
+  <div class={`flex-center animated-fade-in`} class:hidden={app.theme === 'light'}>
+    <blockquote class="twitter-tweet" data-theme="dark">
+      <p lang="en" dir="ltr">
+        Can&#39;t wait for <a href="https://twitter.com/daisyui_?ref_src=twsrc%5Etfw">@daisyui_</a> v5! I&#39;ll be rewriting all the styles for <a href="https://t.co/Ax4OZyZ7Hl">https://t.co/Ax4OZyZ7Hl</a> with it as soon as it&#39;s released
+      </p>
+      &mdash; IrhasDev (@irhasdev)<a href="https://twitter.com/irhasdev/status/1881552578217226372?ref_src=twsrc%5Etfw">January 21, 2025</a>
     </blockquote>
   </div>
 </section>
