@@ -2,6 +2,7 @@
   import { browser } from '$app/environment'
   import { page } from '$app/state'
   import { HomePageState } from './state.svelte'
+  import Planet from '$lib/svg/Planet.svelte'
 
   let pageState = new HomePageState()
 
@@ -10,6 +11,9 @@
 
 <section>
   <div class={`hero`}>
-    <h1>{page.status}: {page?.error?.message}</h1>
+    <div>
+      <Planet />
+      <p class={`text-center`}>{page.status}: {page?.error?.message}</p>
+    </div>
   </div>
 </section>
