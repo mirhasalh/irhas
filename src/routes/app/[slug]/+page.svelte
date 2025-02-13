@@ -4,6 +4,8 @@
   import { website, initFadeInAnimation } from '$lib'
   import { HomePageState } from '../../state.svelte'
   import type { PageData } from './$types'
+  import AppStore from '$lib/svg/AppStore.svelte'
+  import GooglePlay from '$lib/svg/GooglePlay.svelte'
 
   let { data }: { data: PageData } = $props(),
     pageState = new HomePageState()
@@ -56,10 +58,10 @@
       {:else}
         <div class={`flex-center gap`}>
           {#if data.app!.ios}
-            <a class="link btn" href={data.app!.ios} target="_blank">App Store</a>
+            <a href={data.app!.ios} target="_blank"><AppStore /></a>
           {/if}
           {#if data.app!.android}
-            <a class="link btn" href={data.app!.android} target="_blank">Google Play</a>
+            <a href={data.app!.android} target="_blank"><GooglePlay /></a>
           {/if}
         </div>
       {/if}
