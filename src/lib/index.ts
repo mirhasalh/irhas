@@ -245,6 +245,50 @@ export const recentWork = [
   }
 ]
 
+export const apps = [
+  {
+    id: 0,
+    year: '2025',
+    name: 'Create invoice',
+    icon: `${website}/IMG_20250212-231404.webp`,
+    featureGraphic: `${website}/IMG_20250213-134303.webp`,
+    description: 'A minimalist tool for generating PDF invoices with dynamic colors, company logo attachment, and zero cost.',
+    privacy: {
+      effectiveDate: '12 February 2025',
+      declarations: [
+        {
+          title: 'Introduction',
+          subtitle: 'Thank you for using Create Invoice. Your privacy is important to us. This privacy policy explains how we handle your data.'
+        },
+        {
+          title: 'No data collection',
+          subtitle: 'Create Invoice does not collect, store, or transmit any personal or sensitive data. All invoices you create remain on your device and are not shared with us or any third party.'
+        },
+        {
+          title: 'No internet access',
+          subtitle: 'The app works entirely offline and does not require an internet connection. There are no online services, cloud storage, or remote servers involved.'
+        },
+        {
+          title: 'Permissions',
+          subtitle: 'Create Invoice may request access to your device’s storage solely to save and manage invoices. We do not access, share, or collect any data from your device.'
+        },
+        {
+          title: 'Changes to this Policy',
+          subtitle: 'We may update this privacy policy from time to time. Any changes will be reflected in this document.'
+        },
+        {
+          title: 'Contact',
+          subtitle: 'If you have any questions about this privacy policy, you can contact us at irhasm@icloud.com.'
+        }
+      ]
+    }
+  }
+]
+
+export const getApp = (slug = '') => {
+  return apps.find((v) => v.name.replace(' ', '-').toLowerCase() === slug)
+}
+
 // GitHub stats
 export const light = '![](https://raw.githubusercontent.com/mirhasalh/github-stats/master/generated/overview.svg#gh-light-mode-only)![](https://raw.githubusercontent.com/mirhasalh/github-stats/master/generated/languages.svg#gh-light-mode-only)',
   dark = '![](https://raw.githubusercontent.com/mirhasalh/github-stats/master/generated/overview.svg#gh-dark-mode-only)![](https://raw.githubusercontent.com/mirhasalh/github-stats/master/generated/languages.svg#gh-dark-mode-only)'

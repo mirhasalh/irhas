@@ -3,7 +3,7 @@
   import { browser } from '$app/environment'
   import type { LayoutData } from './$types'
   import { HomePageState } from './state.svelte'
-  import { initFadeInAnimation, recentWork } from '$lib'
+  import { apps, initFadeInAnimation, recentWork } from '$lib'
   import { app } from '$lib/shared.svelte'
   import Meta from '$lib/components/Meta.svelte'
   import Post from '$lib/components/Post.svelte'
@@ -63,6 +63,30 @@
       </p>
     </div>
   </div>
+</section>
+<section class={`px mb`}>
+  <h1 class={`animated-fade-in`}>Apps</h1>
+  <ul class={`recent-work-grid`}>
+    {#each apps as app}
+      {@const link = `/app/${app.name.replace(' ', '-').toLowerCase()}`}
+      <li role={`listitem`} class={`list-item work animated-fade-in`}>
+        <a class={`link hover`} href={link} target="_blank" rel="noopener noreferrer" aria-describedby="open-in-new-tab">
+          <div class={`work-info`}>
+            <h4 class={`work-title`}>{`${app.name} (${app.year})`}</h4>
+            <p class={`work-description`}>
+              <small>{app.description}</small>
+            </p>
+          </div>
+          <figure>
+            <img class={`cover`} src={app.featureGraphic} alt={app.name} width="126" />
+            <figcaption class={`work-caption`}>
+              <small>{app.description}</small>
+            </figcaption>
+          </figure>
+        </a>
+      </li>
+    {/each}
+  </ul>
 </section>
 <section class={`px mb`}>
   <h1 class={`animated-fade-in`}>Latest posts</h1>

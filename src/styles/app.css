@@ -176,6 +176,10 @@
     width: 24px;
 }
 
+.app-icon {
+    border-radius: 1.5rem;
+}
+
 @media screen and (min-width: 768px) {
     .greetings {
         text-align: start;
