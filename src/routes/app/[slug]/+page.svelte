@@ -67,7 +67,7 @@
   </div>
 </section>
 <section>
-  <h2 id={`feature-graphic animated-fade-in`}>Feature graphic</h2>
+  <h2 class={`animated-fade-in`} id={`feature-graphic`}>Feature graphic</h2>
   <img class={`animated-fade-in`} src={data.app!.featureGraphic} alt={data.app!.name} width="100%" />
 </section>
 <section class={`px mb`}>
