@@ -69,17 +69,17 @@
   </div>
 </section>
 <section>
-  <h2 class={`animated-fade-in`} id={`feature-graphic`}>Feature graphic</h2>
+  <h1 class={`px animated-fade-in`} id={`feature-graphic`}>Feature graphic</h1>
   <img class={`animated-fade-in`} src={data.app!.featureGraphic} alt={data.app!.name} width="100%" />
 </section>
 <section class={`px mb`}>
-  <h2 class={`animated-fade-in`} id={`description`}>Description</h2>
+  <h1 class={`animated-fade-in`} id={`description`}>Description</h1>
   <p class={`animated-fade-in`}>{data.app!.description}</p>
 </section>
 <section class={`px mb`}>
-  <h2 class={`animated-fade-in`} id={`privacy`}>Privacy Policy</h2>
+  <h1 class={`animated-fade-in`} id={`privacy`}>Privacy Policy</h1>
   <p class={`animated-fade-in`}>Effective Date: {data.app!.privacy.effectiveDate}</p>
-  <ol class={`list`}>
+  <ol class={`list list-mb`}>
     {#each data.app!.privacy.declarations as d, i}
       <li class={`list-item animated-fade-in`}><strong>{i + 1}. {d.title}</strong><br />{d.subtitle}</li>
     {/each}

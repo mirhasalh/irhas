@@ -12,6 +12,10 @@ ul.list {
     gap: 0;
 }
 
+.list.list-mb li:not(:last-child) {
+    margin-bottom: 12px;
+}
+
 @media screen and (min-width: 768px) {
     .list .list-item.post {
         flex: 0 calc(50% - 8px);
