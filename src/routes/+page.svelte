@@ -70,7 +70,7 @@
     {#each apps as app}
       {@const link = `/app/${app.name.replace(' ', '-').toLowerCase()}`}
       <li role={`listitem`} class={`list-item work animated-fade-in`}>
-        <a class={`link hover`} href={link} target="_blank" rel="noopener noreferrer" aria-describedby="open-in-new-tab">
+        <a class={`link hover`} href={link}>
           <div class={`work-info`}>
             <h4 class={`work-title`}>{`${app.name} (${app.year})`}</h4>
             <p class={`work-description`}>

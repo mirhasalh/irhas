@@ -249,9 +249,13 @@ export const apps = [
   {
     id: 0,
     year: '2025',
+    android: '',
+    ios: '',
+    isTesting: true,
     name: 'Create invoice',
     icon: `${website}/IMG_20250212-231404.webp`,
     featureGraphic: `${website}/IMG_20250213-134303.webp`,
+    shortDescription: 'Create an Invoice in Under 5 Seconds – Let’s Go!',
     description: 'A minimalist tool for generating PDF invoices with dynamic colors, company logo attachment, and zero cost.',
     privacy: {
       effectiveDate: '12 February 2025',
