@@ -7,6 +7,8 @@
   import AppStore from '$lib/svg/AppStore.svelte'
   import GooglePlay from '$lib/svg/GooglePlay.svelte'
 
+  const note = `Thanks for trying out this app before it's released! 🙏`
+
   let { data }: { data: PageData } = $props(),
     pageState = new HomePageState()
 
@@ -52,9 +54,12 @@
       </figure>
       <hr class={`md transparent`} />
       {#if data.app!.isTesting}
-        <button class="btn" onclick={() => requestInternalTesting()}>
-          <span>Join internal testing</span>
-        </button>
+        <div class={`flex-center flex-col`}>
+          <button class="btn" onclick={() => requestInternalTesting()}>
+            <span>Join closed-testing</span>
+          </button>
+          <p><small>{note}</small></p>
+        </div>
       {:else}
         <div class={`flex-center gap`}>
           {#if data.app!.ios}
