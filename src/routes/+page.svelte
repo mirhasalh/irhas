@@ -65,7 +65,7 @@
   </div>
 </section>
 <section class={`px mb`}>
-  <h1 class={`animated-fade-in`}>Apps</h1>
+  <h1 id="apps" class={`animated-fade-in`}>Apps</h1>
   <ul class={`recent-work-grid`}>
     {#each apps as app}
       {@const link = `/app/${app.name.replace(' ', '-').toLowerCase()}`}
@@ -89,7 +89,7 @@
   </ul>
 </section>
 <section class={`px mb`}>
-  <h1 class={`animated-fade-in`}>Latest posts</h1>
+  <h1 id="posts" class={`animated-fade-in`}>Latest posts</h1>
   <div class={`flex-wrap animated-fade-in`}>
     <label class={`choice-chip`} for={`all`}>
       <input type="radio" id={`all`} name={`all`} value={`all`} bind:group={selectedCategory} />
@@ -118,7 +118,7 @@
   </div>
 </section>
 <section class={`px`}>
-  <h1 class={`animated-fade-in`}>Recent work</h1>
+  <h1 id="work" class={`animated-fade-in`}>Recent work</h1>
   <ul class={`recent-work-grid`}>
     {#each recentWork as w}
       {@const link = getLink(w.id, w.urls)}
@@ -142,7 +142,7 @@
   </ul>
 </section>
 <section class={`px mb`}>
-  <h1 class={`animated-fade-in`}>Tweet</h1>
+  <h1 id="tweet" class={`animated-fade-in`}>Tweet</h1>
   <div class={`flex-center animated-fade-in`} class:hidden={app.theme === 'dark'}>
     <blockquote class="twitter-tweet">
       <p lang="en" dir="ltr">
