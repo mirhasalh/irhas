@@ -8,7 +8,7 @@
 
   let index = $state(0)
 
-  const avatars = ['avatar_1.riv', 'avatar_2.riv']
+  const avatars = ['avatar_3.riv', 'avatar_1.riv', 'avatar_2.riv']
 
   const next = () => {
     if (index < avatars.length - 1) index += 1
