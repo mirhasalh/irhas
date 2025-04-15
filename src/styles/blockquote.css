@@ -1,0 +1,35 @@
+@import url("./variables.css");
+
+blockquote {
+    font-family: 'JetBrains Mono', monospace;
+    font-style: italic;
+    background-color: rgba(var(--button-color), 1);
+    transition-property: background-color;
+    transition-duration: .3s;
+    transition-timing-function: linear;
+    position: relative;
+    padding: 1px 4px;
+}
+
+blockquote ::after {
+    position: absolute;
+    z-index: 10;
+    content: '';
+    width: 2px;
+    height: 100%;
+    background-color: rgba(var(--primary-color), 0.1);
+    transition-property: background-color;
+    transition-duration: .2s;
+    transition-timing-function: ease-out;
+    left: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+blockquote:hover {
+    background-color: rgba(var(--primary-color), 0.1);
+}
+
+blockquote :hover::after {
+    background-color: rgba(var(--primary-color), 1);
+}

@@ -4,6 +4,7 @@
 @import url("./avatar.css");
 @import url("./article.css");
 @import url("./button.css");
+@import url("./blockquote.css");
 @import url("./chip.css");
 @import url("./color.css");
 @import url("./divider.css");
@@ -16,6 +17,7 @@
 @import url("./post.css");
 @import url("./progress.css");
 @import url("./logo.css");
+@import url("./table.css");
 @import url("./typography.css");
 @import url("./hero.css");
 @import url("./work.css");
