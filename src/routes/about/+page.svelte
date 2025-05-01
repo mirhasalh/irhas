@@ -5,7 +5,7 @@
 
 <div class={`hero min-h-screen`}>
   <div class={`hero-content flex-col lg:flex-row-reverse max-w-3xl`}>
-    <img src={`${website}/IMG_20250501-170202.webp`} class={`max-w-sm rounded-lg shadow-2xl`} alt="Irhas dev author" />
+    <img src={`${website}/IMG_20250501-170202.webp`} class={`max-w-sm rounded-lg shadow-2xl`} alt="Irhas dev author" width="100%" />
     <div>
       <h1 id={`greetings`} class={`merriweather text-5xl font-bold`}>Hi there, I'm Irhas</h1>
       <p class={`py-6`}>{bio}</p>
