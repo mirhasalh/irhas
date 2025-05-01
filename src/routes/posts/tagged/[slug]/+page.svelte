@@ -24,7 +24,7 @@
     </label>
   </form>
   {#if posts.length}
-    <ul id={`recent-posts`} class={`grid gap-4 md:grid-cols-2 px-4`}>
+    <ul id={`recent-posts-grid`} class={`grid gap-4 md:grid-cols-2 px-4`}>
       {#each posts as post}
         {@const url = `/post/${post.slug}`}
         <li>
