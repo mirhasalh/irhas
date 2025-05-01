@@ -1,12 +1,15 @@
 <script lang="ts">
   import type { LayoutData } from './$types'
   import { website, formatDate, apps } from '$lib'
+  import MetaHome from '$components/MetaHome.svelte'
 
   let { data }: { data: LayoutData } = $props()
 
   const obj: any = data as any,
     posts: App.Post[] = obj.posts as App.Post[]
 </script>
+
+<MetaHome />
 
 <div class={`hero min-h-screen`}>
   <div class={`hero-content text-center`}>
