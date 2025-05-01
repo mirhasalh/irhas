@@ -1,61 +1,15 @@
-@import url("./variables.css");
-
-article {
-    transition: background-color 0.2s linear;
-    background-color: rgba(var(--surface-color), 1);
-    padding-bottom: 24px;
-    padding-top: 24px;
-    color: rgba(var(--on-surface-color), 1);
+#article-content>*:not(:last-child) {
+    margin-bottom: 1rem;
 }
 
-article h1,
-article h2,
-article h3,
-article h4,
-article h5,
-article h6 {
-    font-family: 'Merriweather', serif;
-}
-
-article h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-pre {
-    margin-left: 16px;
-    margin-right: 16px;
-}
-
-article p {
-    font-size: 16px;
-    line-height: 1.6;
-}
-
-article pre {
-    margin-bottom: 16px;
-}
-
-pre {
-    font-family: 'JetBrains Mono', monospace;
-    background-color: rgba(var(--bg-code), 1);
-    overflow-x: auto;
-    margin-top: 0;
-    margin-bottom: 0;
-    padding: 24px;
-    border-radius: 12px;
-    color: rgba(var(--on-code), 1);
-}
-
-pre code {
-    margin: 0;
-}
-
-@media screen and (min-width: 1024px) {
-    article {
-        max-width: var(--md);
-        margin: 0 auto;
-    }
+#article-content h1 a span::before,
+#article-content h2 a span::before,
+#article-content h3 a span::before,
+#article-content h4 a span::before,
+#article-content h5 a span::before,
+#article-content h6 a span::before {
+    cursor: pointer;
+    content: '#';
+    font-family: system-ui;
+    margin-right: 0.25rem;
 }

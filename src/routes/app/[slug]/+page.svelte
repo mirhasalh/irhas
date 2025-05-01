@@ -1,20 +1,10 @@
 <script lang="ts">
-  import { onMount } from 'svelte'
-  import { browser } from '$app/environment'
-  import { website, initFadeInAnimation } from '$lib'
-  import { HomePageState } from '../../state.svelte'
+  import { website } from '$lib'
   import type { PageData } from './$types'
-  import AppStore from '$lib/svg/AppStore.svelte'
-  import GooglePlay from '$lib/svg/GooglePlay.svelte'
 
   const note = `Thanks for trying out this app before it's released! 🙏`
 
-  let { data }: { data: PageData } = $props(),
-    pageState = new HomePageState()
-
-  if (browser) {
-    pageState.setReadingMode(false)
-  }
+  let { data }: { data: PageData } = $props()
 
   const requestInternalTesting = () => {
     const email = prompt('Enter your email to request access to the closed testing:')
@@ -27,8 +17,6 @@
       window.location.href = mailtoLink
     }
   }
-
-  onMount(() => initFadeInAnimation())
 </script>
 
 <svelte:head>
@@ -45,48 +33,45 @@
   <link rel="canonical" href={`${website}/app/${data.slug}`} />
 </svelte:head>
 
-<section>
-  <div class={`hero animated-fade-in`}>
-    <div class={`flex-center flex-col`}>
-      <h1>{data.app!.name}</h1>
-      <figure>
-        <img class={`app-icon`} src={data.app!.icon} alt={data.app!.name} width="126" />
-      </figure>
-      <hr class={`md transparent`} />
+<div class="hero bg-base-200 min-h-screen">
+  <div class="hero-content text-center">
+    <div class="max-w-md">
+      <img id={`app-icon`} class={`mx-auto mb-4`} src={data.app!.icon} alt={data.app!.name} width="126" />
       {#if data.app!.isTesting}
-        <div class={`flex-center flex-col`}>
-          <button class="btn" onclick={() => requestInternalTesting()}>
+        <div class={`grid gap-4`}>
+          <button class={`btn`} onclick={() => requestInternalTesting()}>
             <span>Join closed-testing</span>
           </button>
           <p><small>{note}</small></p>
         </div>
       {:else}
-        <div class={`flex-center gap`}>
+        <div class={`flex gap-2 mt-4`}>
           {#if data.app!.ios}
-            <a href={data.app!.ios} target="_blank"><AppStore /></a>
+            <a class={`btn`} href={data.app!.ios} target="_blank">AppStore</a>
           {/if}
           {#if data.app!.android}
-            <a href={data.app!.android} target="_blank"><GooglePlay /></a>
+            <a class={`btn`} href={data.app!.android} target="_blank">GooglePlay</a>
           {/if}
         </div>
       {/if}
     </div>
   </div>
+</div>
+
+<section class={`max-w-4xl mx-auto`}>
+  <h2 id={`feature-graphic`} class={`merriweather text-4xl m-4 font-bold`}>Feature graphic</h2>
+  <img src={data.app!.featureGraphic} alt={data.app!.name} width="100%" />
 </section>
-<section>
-  <h1 class={`px animated-fade-in`} id={`feature-graphic`}>Feature graphic</h1>
-  <img class={`animated-fade-in`} src={data.app!.featureGraphic} alt={data.app!.name} width="100%" />
+<section class={`max-w-4xl mx-auto mt-10`}>
+  <h2 id={`description`} class={`merriweather text-4xl m-4 font-bold`}>Description</h2>
+  <p class={`px-4`}>{data.app!.description}</p>
 </section>
-<section class={`px mb`}>
-  <h1 class={`animated-fade-in`} id={`description`}>Description</h1>
-  <p class={`animated-fade-in`}>{data.app!.description}</p>
-</section>
-<section class={`px mb`}>
-  <h1 class={`animated-fade-in`} id={`privacy`}>Privacy Policy</h1>
-  <p class={`animated-fade-in`}>Effective Date: {data.app!.privacy.effectiveDate}</p>
-  <ol class={`list list-mb`}>
+<section class={`max-w-4xl mx-auto mt-10`}>
+  <h2 id={`privacy`} class={`merriweather text-4xl m-4 font-bold`}>Privacy policy</h2>
+  <p class={`px-4`}>Effective date: {data.app!.privacy.effectiveDate}</p>
+  <ol id={`privacy-policy-list`} class={`list mt-4 px-4`}>
     {#each data.app!.privacy.declarations as d, i}
-      <li class={`list-item animated-fade-in`}><strong>{i + 1}. {d.title}</strong><br />{d.subtitle}</li>
+      <li><strong>{i + 1}. {d.title}</strong><br />{d.subtitle}</li>
     {/each}
   </ol>
 </section>

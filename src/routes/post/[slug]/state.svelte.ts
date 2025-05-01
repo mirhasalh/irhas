@@ -10,8 +10,7 @@ import css from 'highlight.js/lib/languages/css'
 import scss from 'highlight.js/lib/languages/scss'
 import javascript from 'highlight.js/lib/languages/javascript'
 import typescript from 'highlight.js/lib/languages/typescript'
-// NOTE: Use HTML, XML for svelte while 'highlight.svelte'
-// is troublesome
+// NOTE: Use HTML, XML for svelte while 'highlight.svelte' is troublesome.
 // import svelte from 'highlight.svelte'
 
 export class PostPageState {
@@ -30,5 +29,42 @@ export class PostPageState {
     // hljs.registerLanguage('svelte', svelte)
   }
 
-  highlightElement = (codeEl: HTMLElement) => hljs.highlightElement(codeEl)
+  highlightElement = (htmlElement: HTMLElement) => {
+    htmlElement.querySelectorAll('pre code').forEach((codeEl) => {
+      hljs.highlightElement(codeEl as HTMLElement)
+    })
+  }
+
+  setHeadingStyles = (htmlElement: HTMLElement) => {
+    htmlElement.querySelectorAll('h1, h2, h3, h4, h5, h6').forEach((heading) => {
+      switch (heading.tagName.toLowerCase()) {
+        case 'h1':
+          heading.classList.add('merriweather', 'text-4xl', 'font-bold')
+          break
+        case 'h2':
+          heading.classList.add('merriweather', 'text-3xl', 'font-semibold')
+          break
+        case 'h3':
+          heading.classList.add('merriweather', 'text-2xl', 'font-semibold')
+          break
+        case 'h4':
+          heading.classList.add('merriweather', 'text-xl', 'font-medium')
+          break
+        case 'h5':
+          heading.classList.add('merriweather', 'text-lg', 'font-medium')
+          break
+        case 'h6':
+          heading.classList.add('merriweather', 'text-base')
+          break
+      }
+    })
+  }
+
+  setCodeStyle = (htmlElement: HTMLElement) => {
+    const codeStyle = ['badge', 'badge-soft', 'badge-secondary', 'badge-sm', 'whitespace-nowrap']
+
+    htmlElement.querySelectorAll('p > code').forEach((codeEl) => {
+      codeEl.classList.add(...codeStyle)
+    })
+  }
 }

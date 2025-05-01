@@ -1,0 +1,10 @@
+@import url("./styles/article.css");
+@import url("./styles/base.css");
+@import url("./styles/code.css");
+@import url("./styles/fonts.css");
+@import url("./styles/img.css");
+@import url("./styles/list.css");
+@import url("./styles/post.css");
+@import url("./styles/pre.css");
+@import 'tailwindcss';
+@plugin "daisyui";

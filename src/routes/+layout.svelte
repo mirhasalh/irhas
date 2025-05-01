@@ -1,13 +1,19 @@
 <script lang="ts">
-  import '../styles/app.css'
+  import '../app.css'
   import { browser } from '$app/environment'
   import { onNavigate } from '$app/navigation'
-  import AppBar from '$lib/components/AppBar.svelte'
-  import Footer from '$lib/components/Footer.svelte'
   import { HomePageState } from './state.svelte'
+  import { app } from '$lib/shared.svelte'
+  import Footer from '$components/Footer.svelte'
+  import BrandLogo from '$components/BrandLogo.svelte'
+  import AppBar from '$components/AppBar.svelte'
+  import LightSwitch from '$components/LightSwitch.svelte'
 
   let { children } = $props(),
-    pageState = new HomePageState()
+    pageState = new HomePageState(),
+    to = $derived(app.theme === 'light' ? 'dark' : 'light')
+
+  const onChanged = () => pageState.setTheme(to)
 
   if (browser) pageState.setTheme()
 
@@ -23,10 +29,16 @@
   })
 </script>
 
-<svelte:head>
-  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-</svelte:head>
-
-<AppBar />
+<AppBar>
+  {#snippet leading()}
+    <a href="/" class={`flex items-center gap-2`}>
+      <BrandLogo width={40} height={40} />
+      <p class={`merriweather leading-4 text-sm`}>Irhas' dev<br />blog</p>
+    </a>
+  {/snippet}
+  {#snippet trailing()}
+    <LightSwitch isDark={app.theme === 'dark'} {onChanged} />
+  {/snippet}
+</AppBar>
 {@render children()}
 <Footer />

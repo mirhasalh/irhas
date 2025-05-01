@@ -1,1 +1,1 @@
-export const app = $state({ theme: 'light', avatarHovered: false })
+export const app = $state({ theme: 'light' })

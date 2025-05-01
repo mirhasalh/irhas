@@ -1,6 +1,0 @@
-@import url("./variables.css");
-
-svg.logo path,
-svg.icon path {
-    fill: rgba(var(--on-surface-color), 1);
-}

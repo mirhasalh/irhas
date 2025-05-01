@@ -1,17 +1,12 @@
 <script lang="ts">
-  import { app } from '$lib/shared.svelte'
-  import { HomePageState } from '../../routes/state.svelte'
-  import DarkMode from '$lib/icons/DarkMode.svelte'
-  import LightMode from '$lib/icons/LightMode.svelte'
+  import Dark from '$icons/Dark.svelte'
+  import Light from '$icons/Light.svelte'
 
-  let pageState = new HomePageState()
-  let to = $derived(app.theme === 'light' ? 'dark' : 'light')
+  let { isDark = $bindable(), onChanged, ...props }: { isDark: boolean; onChanged: (event: Event) => void } = $props()
 </script>
 
-<button class={`btn sm squared`} onclick={() => pageState.setTheme(to)}>
-  {#if app.theme === 'light'}
-    <DarkMode />
-  {:else}
-    <LightMode />
-  {/if}
-</button>
+<label class="swap swap-rotate btn btn-ghost">
+  <input type="checkbox" onchange={onChanged} bind:checked={isDark} {...props} />
+  <Light />
+  <Dark />
+</label>

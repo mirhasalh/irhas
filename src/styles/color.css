@@ -1,9 +1,0 @@
-@import url("./variables.css");
-
-.bg-100 {
-    background-color: rgba(var(--surface-color), 1);
-}
-
-.bg-200 {
-    background-color: rgba(var(--bg-color), 1);
-}
