@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Logo from '$lib/components/Logo.svelte'
+  import BrandLogo from './BrandLogo.svelte'
   import { email, sites, socials } from '$lib'
 
   const d = new Date()
@@ -15,34 +15,41 @@
   }
 </script>
 
-<footer class={`footer`}>
-  <div class={`footer-logo`}>
-    <a href="/">
-      <Logo />
-    </a>
-    <p><small>© {year} Irhas</small></p>
-  </div>
+<footer class={`footer sm:footer-horizontal bg-base-200 text-base-content p-10 mt-10`}>
+  <aside>
+    <a href="/"><BrandLogo /></a>
+    <p>
+      <span class={`merriweather`}>Irhas' dev blog</span>
+      <br />
+      © {year}
+    </p>
+  </aside>
   <nav>
-    <h5 class={`footer-title`}>Sites</h5>
+    <h6 class={`merriweather footer-title`}>Sites</h6>
     {#each sites as site}
-      <a class={`link hover`} href={site.url} target="_blank" rel="noopener noreferrer" aria-describedby="open-in-new-tab">
-        <small>{site.name}</small>
+      <a class={`link link-hover`} href={site.url} target="_blank" rel="noopener noreferrer" aria-describedby="open-in-new-tab">
+        {site.name}
       </a>
     {/each}
   </nav>
   <nav>
-    <h5 class={`footer-title`}>Socials</h5>
+    <h6 class={`merriweather footer-title`}>Socials</h6>
     {#each socials as social}
-      <a class={`link hover`} href={social.url} target="_blank" rel="noopener noreferrer" aria-describedby="open-in-new-tab">
-        <small>{social.name}</small>
+      <a class={`link link-hover`} href={social.url} target="_blank" rel="noopener noreferrer" aria-describedby="open-in-new-tab">
+        {social.name}
       </a>
     {/each}
   </nav>
-  <form class={`form`} onsubmit={sendEmail}>
-    <h5 class={`footer-title`}>Email me</h5>
-    <textarea class={`textarea`} name="body" id="body" placeholder="Jot something down" bind:value={emailBody}></textarea>
-    <div class={`actions`}>
-      <button type="submit" class={`btn`} disabled={emailBody.length < 5}>Send</button>
-    </div>
+  <form onsubmit={sendEmail}>
+    <h6 class={`merriweather footer-title`}>Get in touch</h6>
+    <fieldset class={`fieldset`}>
+      <legend class="fieldset-legend">Email me</legend>
+      <div class="join">
+        <input name="body" type="text" placeholder="Jot something down" class={`input input-bordered join-item`} bind:value={emailBody} />
+        <button type="submit" class={`btn btn-primary join-item`} disabled={emailBody.length < 5}>
+          <span>Send</span>
+        </button>
+      </div>
+    </fieldset>
   </form>
 </footer>

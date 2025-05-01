@@ -1,141 +1,63 @@
-@import url("./variables.css");
-
-.list-item.post:not(:last-child) {
-    margin-bottom: 16px;
+#post-card {
+    transition: background-color .2s linear;
 }
 
-.post {
-    cursor: pointer;
-    overflow: clip;
-    background-clip: content-box;
-    border-radius: 24px;
-    background-color: rgba(var(--surface-color), 1);
+#post-card figure img,
+#post-card figure video {
+    transition: transform 0.2s ease-in-out;
 }
 
-.post a {
-    all: unset;
-    color: rgba(var(--on-surface-color), 1);
-}
-
-.tile-description,
-.title-head {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.title-head h4,
-.title-timestamp {
-    color: rgba(var(--subtitle-color), 1);
-}
-
-.tile-description {
-    padding: 24px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.title-media {
-    overflow: clip;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.title-media img,
-.title-media video {
-    object-fit: cover;
-    scale: 1;
-    transition-delay: .1s;
-    transition: scale 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-
-.title-media:hover img,
-.title-media:hover video {
-    scale: 1.05;
-}
-
-.post-info {
-    display: flex;
-    flex-direction: column;
-    color: rgba(var(--subtitle-color), 1);
-}
-
-.post-info * {
-    margin-top: 0;
-    margin-bottom: 0;
-}
-
-.post-shell {
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-}
-
-.post-shell article {
-    width: 100%;
-}
-
-.post-shell aside {
-    position: sticky;
-    top: 50px;
-    height: fit-content;
-    display: none;
-    flex: 0 1 auto;
-}
-
-.post-shell aside nav ul li a {
-    margin-right: 16px;
-}
-
-.post-shell aside ul {
-    list-style-type: none;
+#post-card:hover figure img,
+#post-card:hover figure video {
+    transform: scale(1.02);
 }
 
 @media screen and (min-width: 768px) {
-    .post:first-child a {
-        display: grid;
-        grid-template-columns: 65% minmax(0, 1fr);
+    #recent-posts-grid :first-child {
+        grid-column: 1 / -1;
     }
 
-    .post:first-child a .tile-description .title-head h2 {
+    #recent-posts-grid :first-child #post-card {
+        flex-direction: row;
+    }
+
+    #recent-posts-grid :first-child #post-card #post-title {
         display: -webkit-box;
+        line-clamp: 1;
+        -webkit-line-clamp: 1;
         -webkit-box-orient: vertical;
-        line-clamp: 4;
-        -webkit-line-clamp: 4;
         overflow: hidden;
         text-overflow: ellipsis;
     }
 
-    .post:not(:first-child) a .tile-description {
-        min-height: 200px;
+    #recent-posts-grid :first-child #post-card figure {
+        border-radius: 0.5rem 0px 0px 0.5rem;
+        max-width: 500px;
+        min-width: 400px;
     }
 
-    .post:not(:first-child) a .tile-description h2 {
+    #recent-posts-grid :first-child #post-card #post-excerpt {
         display: -webkit-box;
+        line-clamp: 3;
+        -webkit-line-clamp: 3;
         -webkit-box-orient: vertical;
-        line-clamp: 2;
-        -webkit-line-clamp: 2;
         overflow: hidden;
         text-overflow: ellipsis;
-    }
-
-    .post:first-child a .tile-description .title-head {
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
     }
 }
 
 @media screen and (min-width: 1024px) {
-    .list-item.post:not(:last-child) {
-        margin-bottom: 24px;
+    #recent-posts-grid :first-child #post-card figure {
+        min-width: 440px;
     }
-}
 
-@media screen and (min-width: 1280px) {
-    .post-shell aside {
-        display: block;
+    #recent-posts-grid :first-child #post-card #post-title {
+        line-clamp: 4;
+        -webkit-line-clamp: 4;
+    }
+
+    #recent-posts-grid :first-child #post-card #post-excerpt {
+        line-clamp: 3;
+        -webkit-line-clamp: 3;
     }
 }

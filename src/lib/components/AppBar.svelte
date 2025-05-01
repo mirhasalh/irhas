@@ -1,64 +1,43 @@
 <script lang="ts">
   import { page } from '$app/state'
-  import Accounts from './Accounts.svelte'
-  import AnimatedMenuIcon from './AnimatedMenuIcon.svelte'
-  import Logo from './Logo.svelte'
-  import LightSwitch from './LightSwitch.svelte'
+  import Menu from '$icons/Menu.svelte'
 
-  const routes = ['/', '/posts', '/about']
+  let { leading, trailing } = $props()
 
-  let detailsEl: HTMLDetailsElement,
-    open = $state(false),
-    id = $derived.by(() => {
-      return page.route.id
-    })
-
-  const onToggle = () => (open = detailsEl?.open || false),
-    getName = (route = '') => {
-      switch (route) {
-        case '/':
-          return 'Home'
-        case '/about':
-          return 'About'
-        case '/posts':
-          return 'Blog'
-        default:
-          return 'n/a'
-      }
-    }
+  const urls = [
+    { url: '/', title: 'Home' },
+    { url: '/animations', title: 'Animations' },
+    { url: '/posts', title: 'Posts' },
+    { url: '/about', title: 'About' }
+  ]
 </script>
 
-<header class={`app-bar glass`}>
-  <div class={`app-bar-contraint`}>
-    <div class={`app-bar-leading`}>
-      <details class={`dropdown`} bind:this={detailsEl} ontoggle={onToggle}>
-        <summary class={`btn ghost sm squared`}>
-          <AnimatedMenuIcon active={open} />
-        </summary>
-        <ul class={`menu dropdown-content`}>
-          {#each routes as route}
-            {@const name = getName(route)}
-            {@const active = id === route}
-            <li><a href={route} class={`link hover`} class:active><small>{name}</small></a></li>
-          {/each}
-        </ul>
-      </details>
-      <a href="/">
-        <Logo width={36} height={36} />
-      </a>
-    </div>
-    <div class={`center`}>
-      <nav>
-        {#each routes as route}
-          {@const name = getName(route)}
-          {@const active = id === route}
-          <a class={`link hover btn sm ghost`} class:active href={route}><small>{name}</small></a>
+<div class="navbar bg-base-100 shadow-sm">
+  <div class="navbar-start">
+    <div class="dropdown">
+      <div tabindex="-1" role="button" class="btn btn-ghost lg:hidden">
+        <Menu />
+      </div>
+      <ul tabindex="-1" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+        {#each urls as u}
+          {@const active = u.url === page.route.id}
+          {@const link = active ? 'link link-primary' : 'link link-hover'}
+          <li><a class={`merriweather ${link}`} href={u.url}>{u.title}</a></li>
         {/each}
-      </nav>
+      </ul>
     </div>
-    <div class={`app-bar-actions`}>
-      <LightSwitch />
-      <Accounts />
-    </div>
+    {@render leading?.()}
   </div>
-</header>
+  <div class="navbar-center hidden lg:flex">
+    <ul class="menu menu-horizontal px-1">
+      {#each urls as u}
+        {@const active = u.url === page.route.id}
+        {@const link = active ? 'link link-primary' : 'link link-hover'}
+        <li><a class={`merriweather ${link}`} href={u.url}>{u.title}</a></li>
+      {/each}
+    </ul>
+  </div>
+  <div class="navbar-end">
+    {@render trailing?.()}
+  </div>
+</div>

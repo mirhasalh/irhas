@@ -1,33 +1,3 @@
-li.list-item {
-    list-style: none;
-}
-
-ul.list {
-    align-items: stretch;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    margin: 0;
-    padding: 0;
-    gap: 0;
-}
-
-.list.list-mb li:not(:last-child) {
-    margin-bottom: 12px;
-}
-
-@media screen and (min-width: 768px) {
-    .list .list-item.post {
-        flex: 0 calc(50% - 8px);
-    }
-
-    .list .list-item.post:first-child {
-        flex-basis: 100%;
-    }
-}
-
-@media screen and (min-width: 1024px) {
-    .list .list-item.post {
-        flex: 0 calc(50% - 12px);
-    }
+ol#privacy-policy-list li:not(:last-child) {
+margin-bottom: 1rem;
 }
