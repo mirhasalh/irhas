@@ -1,6 +1,7 @@
 <script lang="ts">
   import { browser } from '$app/environment'
   import { onMount } from 'svelte'
+  import { reveal } from 'svelte-reveal'
   import type { PageData } from './$types'
   import 'highlight.js/styles/atom-one-dark.css'
   import { formatDate, website } from '$lib'
@@ -25,6 +26,14 @@
     w = `https://wa.me/?text=Check%20this%20out!%20${website}/post/${data.post.slug}`,
     t = `https://t.me/share/url?url=${website}/post/${data.post.slug}&text=Check%20this%20out!`,
     shareBtnStyle = 'btn btn-circle btn-ghost btn-outline btn-sm`'
+
+  const shareLinks = [
+    { id: 'f', url: f },
+    { id: 'l', url: l },
+    { id: 't', url: t },
+    { id: 'w', url: w },
+    { id: 'x', url: x }
+  ]
 
   if (browser) pageState.registerLanguages()
 
@@ -65,30 +74,40 @@
 
 <article class="article">
   <div class="max-w-3xl mx-auto px-4 pt-4">
-    <span class="font-medium text-base-content/50 uppercase">{data.post.categories.join(', ')}</span>
+    <span class="font-medium text-base-content/50 uppercase" use:reveal={{ preset: 'blur' }}>{data.post.categories.join(', ')}</span>
     <br />
-    <span class="font-medium text-base-content/70"><small>{`${formatDate(data.post.publishedAt)} • ${data.post.readingTime} min read`}</small></span>
-    <h1 class="merriweather font-bold text-3xl my-4">{data.post.title}</h1>
-    <p>{data.post.excerpt}</p>
+    <span class="font-medium text-base-content/70" use:reveal={{ preset: 'blur' }}><small>{`${formatDate(data.post.publishedAt)} • ${data.post.readingTime} min read`}</small></span>
+    <h1 class="merriweather font-bold text-3xl my-4" use:reveal={{ preset: 'blur' }}>{data.post.title}</h1>
+    <p use:reveal={{ preset: 'blur' }}>{data.post.excerpt}</p>
     <div class="flex gap-2 flex-wrap my-4">
-      <a class={shareBtnStyle} href={f} target="_blank"><Facebook /></a>
-      <a class={shareBtnStyle} href={l} target="_blank"><Linkedin /></a>
-      <a class={shareBtnStyle} href={t} target="_blank"><Telegram /></a>
-      <a class={shareBtnStyle} href={w} target="_blank"><WhatsApp /></a>
-      <a class={shareBtnStyle} href={x} target="_blank"><Twitter /></a>
+      {#each shareLinks as s, i (s.id)}
+        <a class={shareBtnStyle} href={s.url} use:reveal={{ preset: 'blur', delay: i * 200 }}>
+          {#if s.id === 'f'}
+            <Facebook />
+          {:else if s.id === 'l'}
+            <Linkedin />
+          {:else if s.id === 't'}
+            <Telegram />
+          {:else if s.id === 'w'}
+            <WhatsApp />
+          {:else if s.id === 'x'}
+            <Twitter />
+          {/if}
+        </a>
+      {/each}
     </div>
   </div>
   <figure class="post-card-graphic max-w-4xl mx-auto my-10 overflow-clip lg:rounded-lg">
     {#if data.post.videoUrl}
-      <video autoplay loop muted playsinline width="100%">
+      <video autoplay loop muted playsinline width="100%" use:reveal={{ preset: 'blur' }}>
         <source src={data.post.videoUrl} type="video/mp4" />
         <track src="" kind="captions" srclang="en" label="English" />
         Your browser does not support the video tag.
       </video>
     {:else if data.post.imageUrl}
-      <img src={data.post.imageUrl} alt={data.post.title} width="100%" />
+      <img src={data.post.imageUrl} alt={data.post.title} width="100%" use:reveal={{ preset: 'blur' }} />
     {:else}
-      <img src={`${website}/og-image.jpg`} alt={data.post.title} width="100%" />
+      <img src={`${website}/og-image.jpg`} alt={data.post.title} width="100%" use:reveal={{ preset: 'blur' }} />
     {/if}
     <figcaption class="hidden">{data.post.title}</figcaption>
   </figure>

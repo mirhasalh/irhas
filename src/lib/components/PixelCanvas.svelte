@@ -82,11 +82,13 @@
   })
 </script>
 
-<canvas id="pixel-canvas" bind:this={canvas}></canvas>
 <svelte:window bind:innerWidth bind:innerHeight />
+
+<canvas id="pixel-canvas" bind:this={canvas}></canvas>
 
 <style>
   canvas#pixel-canvas {
+    pointer-events: none;
     display: block;
     position: absolute;
     z-index: 0;

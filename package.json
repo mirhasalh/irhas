@@ -37,6 +37,7 @@
 		"rehype-slug": "^6.0.0",
 		"svelte": "^5.0.0",
 		"svelte-check": "^4.0.0",
+		"svelte-reveal": "^1.1.0",
 		"tailwindcss": "^4.1.4",
 		"typescript": "^5.0.0",
 		"typescript-eslint": "^8.20.0",
