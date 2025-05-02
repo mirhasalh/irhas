@@ -1,18 +1,32 @@
+# System files
 .DS_Store
-node_modules
-/build
-/.svelte-kit
-/package
+
+# Dependency directories
+/node_modules/
+
+# Build artifacts
+/build/
+/dist/
+/.svelte-kit/
+
+# Package manager lockfiles
+/pnpm-lock.yaml
+/package-lock.json
+
+# Environment variables
 .env
 .env.*
 !.env.example
+
+# Vite temporary timestamp files
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 
-pnpm-lock.yaml
-/pnpm-lock.yaml
-package-lock.json
-/package-lock.json
+# Editor settings (optional, based on team preference)
+/.vscode/
 
-# Experimental
-src/routes/experimental/
+# Logs
+*.log
+
+# Test coverage
+/coverage/
