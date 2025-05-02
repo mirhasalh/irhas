@@ -34,4 +34,4 @@
   onMount(() => initRive())
 </script>
 
-<canvas id={target} class={`cursor-pointer`}></canvas>
+<canvas id={target} class="cursor-pointer"></canvas>

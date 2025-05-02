@@ -1,15 +1,67 @@
-#article-content>*:not(:last-child) {
+.article-content>*:not(:last-child) {
     margin-bottom: 1rem;
 }
 
-#article-content h1 a span::before,
-#article-content h2 a span::before,
-#article-content h3 a span::before,
-#article-content h4 a span::before,
-#article-content h5 a span::before,
-#article-content h6 a span::before {
+.article-content h1,
+.article-content h2,
+.article-content h3,
+.article-content h4,
+.article-content h5,
+.article-content h6 {
+    font-family: 'Merriweather', serif;
+    font-weight: 600;
+}
+
+.article-content h1 {
+    font-size: 28px;
+}
+
+.article-content h2 {
+    font-size: 24px;
+}
+
+.article-content h1 a span::before,
+.article-content h2 a span::before,
+.article-content h3 a span::before,
+.article-content h4 a span::before,
+.article-content h5 a span::before,
+.article-content h6 a span::before {
     cursor: pointer;
-    content: '#';
+    content: "#";
     font-family: system-ui;
     margin-right: 0.25rem;
+    opacity: 1;
+    transition: opacity .1s linear;
+}
+
+@media screen and (min-width: 1024px) {
+
+    .article-content h1,
+    .article-content h2,
+    .article-content h3,
+    .article-content h4,
+    .article-content h5,
+    .article-content h6 {
+        margin-left: -2rem;
+    }
+
+    .article-content h1 a span::before,
+    .article-content h2 a span::before,
+    .article-content h3 a span::before,
+    .article-content h4 a span::before,
+    .article-content h5 a span::before,
+    .article-content h6 a span::before {
+        content: "\1F517";
+        opacity: 0;
+        margin-right: 0.5rem;
+    }
+
+    .article-content h1:hover a span::before,
+    .article-content h2:hover a span::before,
+    .article-content h3:hover a span::before,
+    .article-content h4:hover a span::before,
+    .article-content h5:hover a span::before,
+    .article-content h6:hover a span::before {
+        opacity: 1;
+    }
 }

@@ -8,10 +8,10 @@
     posts: App.Post[] = obj.posts as App.Post[]
 </script>
 
-<section class={`max-w-4xl mx-auto`}>
-  <h2 class={`merriweather text-4xl m-4 font-bold`}>Recent posts</h2>
-  <ul id={`recent-posts-grid`} class={`grid gap-4 md:grid-cols-2 px-4`}>
-    {#each posts as post}
+<section class="max-w-4xl mx-auto">
+  <h2 class="merriweather text-4xl m-4 font-bold">Recent posts</h2>
+  <ul class="recent-posts-grid grid gap-4 md:grid-cols-2 px-4">
+    {#each posts as post (post.slug)}
       <li><PostCard {post} /></li>
     {/each}
   </ul>

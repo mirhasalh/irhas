@@ -10,17 +10,17 @@
   ]
 </script>
 
-<div class={`hero min-h-screen`}>
-  <div class={`hero-content text-center`}>
-    <div class={`max-w-3xl`}>
-      <h1 id={`animations`} class={`text-5xl font-bold merriweather`}>Animations</h1>
-      <p class={`py-6`}>Built this in <a class={`link link-hover link-secondary`} href="https://rive.app/" target="_blank">Rive</a>, super lightweight and the file size stays tiny. Perfect for keeping things fast without losing quality.</p>
-      <ul class={`flex flex-wrap justify-center items-center gap-2`}>
-        {#each avatars as avatar}
+<div class="hero min-h-screen">
+  <div class="hero-content text-center">
+    <div class="max-w-3xl">
+      <h1 id="animations" class="text-5xl font-bold merriweather">Animations</h1>
+      <p class="py-6">Built this in <a class="link link-hover link-secondary" href="https://rive.app/" target="_blank">Rive</a>, super lightweight and the file size stays tiny. Perfect for keeping things fast without losing quality.</p>
+      <ul class="flex flex-wrap justify-center items-center gap-2">
+        {#each avatars as avatar (avatar.file)}
           <li>
-            <div class={`card bg-base-100 shadow-sm`}>
+            <div class="card bg-base-100 shadow-sm">
               <Rive fileName={avatar.file} {width} {height} />
-              <div class={`card-body`}>
+              <div class="card-body">
                 <p>{avatar.fileSize} kb</p>
               </div>
             </div>
