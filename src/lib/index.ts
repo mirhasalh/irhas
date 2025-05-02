@@ -217,26 +217,32 @@ export const apps = [
       effectiveDate: '12 February 2025',
       declarations: [
         {
+          id: 0,
           title: 'Introduction',
           subtitle: 'Thank you for using Create Invoice. Your privacy is important to us. This privacy policy explains how we handle your data.'
         },
         {
+          id: 1,
           title: 'No data collection',
           subtitle: 'Create Invoice does not collect, store, or transmit any personal or sensitive data. All invoices you create remain on your device and are not shared with us or any third party.'
         },
         {
+          id: 2,
           title: 'No internet access',
           subtitle: 'The app works entirely offline and does not require an internet connection. There are no online services, cloud storage, or remote servers involved.'
         },
         {
+          id: 3,
           title: 'Permissions',
           subtitle: 'Create Invoice may request access to your device’s storage solely to save and manage invoices. We do not access, share, or collect any data from your device.'
         },
         {
+          id: 4,
           title: 'Changes to this Policy',
           subtitle: 'We may update this privacy policy from time to time. Any changes will be reflected in this document.'
         },
         {
+          id: 5,
           title: 'Contact',
           subtitle: 'If you have any questions about this privacy policy, you can contact us at irhasm@icloud.com.'
         }

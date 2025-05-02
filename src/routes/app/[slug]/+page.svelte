@@ -60,7 +60,10 @@
 
 <section class="max-w-4xl mx-auto">
   <h2 id="feature-graphic" class="merriweather text-4xl m-4 font-bold">Feature graphic</h2>
-  <img src={data.app!.featureGraphic} alt={data.app!.name} width="100%" />
+  <figure class="post-card-graphic overflow-clip lg:rounded-lg">
+    <img src={data.app!.featureGraphic} alt={data.app!.name} width="100%" />
+    <figcaption class="hidden">{data.app!.shortDescription}</figcaption>
+  </figure>
 </section>
 <section class="max-w-4xl mx-auto mt-10">
   <h2 id="description" class="merriweather text-4xl m-4 font-bold">Description</h2>
@@ -70,7 +73,7 @@
   <h2 id="privacy" class="merriweather text-4xl m-4 font-bold">Privacy policy</h2>
   <p class="px-4">Effective date: {data.app!.privacy.effectiveDate}</p>
   <ol class="privacy-policy-list list mt-4 px-4">
-    {#each data.app!.privacy.declarations as d, i}
+    {#each data.app!.privacy.declarations as d, i (d.id)}
       <li><strong>{i + 1}. {d.title}</strong><br />{d.subtitle}</li>
     {/each}
   </ol>

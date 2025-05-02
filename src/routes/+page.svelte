@@ -3,6 +3,7 @@
   import { apps } from '$lib'
   import MetaHome from '$components/MetaHome.svelte'
   import PostCard from '$components/PostCard.svelte'
+  import PixelCanvas from '$components/PixelCanvas.svelte'
 
   let { data }: { data: LayoutData } = $props()
 
@@ -13,12 +14,18 @@
 <MetaHome />
 
 <div class="hero min-h-screen">
-  <div class="hero-content text-center">
+  <div class="hero-content text-center relative z-10">
     <div class="max-w-md">
-      <h1 class="text-5xl font-bold merriweather">Coming soon</h1>
-      <p class="py-6">Mini game will be placed here.</p>
+      <h1 class="text-5xl font-bold merriweather">
+        👋 Hello, my
+        <br />
+        name's Irhas.
+      </h1>
+      <p class="py-6">Welcome to my personal blog.</p>
+      <a href="#recent-posts" class="btn">See my recent posts</a>
     </div>
   </div>
+  <PixelCanvas />
 </div>
 
 <section class="max-w-4xl mx-auto">
