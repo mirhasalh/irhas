@@ -30,7 +30,6 @@
 
   const onElement = () => {
     pageState.highlightElement(parsedEl)
-    pageState.setHeadingStyles(parsedEl)
     pageState.setCodeStyle(parsedEl)
   }
 
@@ -64,13 +63,14 @@
   <link rel="canonical" href={`${website}/post/${data.post.slug}`} />
 </svelte:head>
 
-<article class={`article`}>
-  <div class={`max-w-3xl mx-auto px-4`}>
-    <h3 class={`mt-4 font-bold text-base-content/50 uppercase`}>{data.post.categories.join(', ')}</h3>
-    <p class={`font-medium text-base-content/70`}><small>{`${formatDate(data.post.publishedAt)} • ${data.post.readingTime} min read`}</small></p>
-    <h2 class={`merriweather font-bold text-3xl my-4`}>{data.post.title}</h2>
+<article class="article">
+  <div class="max-w-3xl mx-auto px-4 pt-4">
+    <span class="font-medium text-base-content/50 uppercase">{data.post.categories.join(', ')}</span>
+    <br />
+    <span class="font-medium text-base-content/70"><small>{`${formatDate(data.post.publishedAt)} • ${data.post.readingTime} min read`}</small></span>
+    <h1 class="merriweather font-bold text-3xl my-4">{data.post.title}</h1>
     <p>{data.post.excerpt}</p>
-    <div class={`flex gap-2 flex-wrap my-4`}>
+    <div class="flex gap-2 flex-wrap my-4">
       <a class={shareBtnStyle} href={f} target="_blank"><Facebook /></a>
       <a class={shareBtnStyle} href={l} target="_blank"><Linkedin /></a>
       <a class={shareBtnStyle} href={t} target="_blank"><Telegram /></a>
@@ -78,25 +78,28 @@
       <a class={shareBtnStyle} href={x} target="_blank"><Twitter /></a>
     </div>
   </div>
-  {#if data.post.videoUrl}
-    <video class={`max-w-4xl mx-auto`} autoplay loop muted playsinline width="100%">
-      <source src={data.post.videoUrl} type="video/mp4" />
-      <track src="" kind="captions" srclang="en" label="English" />
-      Your browser does not support the video tag.
-    </video>
-  {:else if data.post.imageUrl}
-    <img class={`max-w-4xl mx-auto`} src={data.post.imageUrl} alt={data.post.title} width="100%" />
-  {:else}
-    <img class={`max-w-4xl mx-auto`} src={`${website}/og-image.jpg`} alt={data.post.title} width="100%" />
-  {/if}
-  <div id="article-content" class={`max-w-3xl mx-auto my-4 px-4`} bind:this={parsedEl}>
+  <figure class="post-card-graphic max-w-4xl mx-auto my-10 overflow-clip lg:rounded-lg">
+    {#if data.post.videoUrl}
+      <video autoplay loop muted playsinline width="100%">
+        <source src={data.post.videoUrl} type="video/mp4" />
+        <track src="" kind="captions" srclang="en" label="English" />
+        Your browser does not support the video tag.
+      </video>
+    {:else if data.post.imageUrl}
+      <img src={data.post.imageUrl} alt={data.post.title} width="100%" />
+    {:else}
+      <img src={`${website}/og-image.jpg`} alt={data.post.title} width="100%" />
+    {/if}
+    <figcaption class="hidden">{data.post.title}</figcaption>
+  </figure>
+  <div class="article-content max-w-3xl mx-auto my-4 px-4" bind:this={parsedEl}>
     <Sanitized html={data.code} />
   </div>
-  <div class={`max-w-3xl mx-auto px-4`}>
-    <ul class={`flex gap-2 flex-wrap`}>
-      {#each data.post.tags as tag}
+  <div class="max-w-3xl mx-auto px-4">
+    <ul class="flex gap-2 flex-wrap">
+      {#each data.post.tags as tag (tag)}
         {@const url = `/posts/tagged/${tag}`}
-        <li><a class={`btn btn-sm btn-primary`} href={url}>{`#${tag}`}</a></li>
+        <li><a class="btn btn-sm btn-primary" href={url}>{`#${tag}`}</a></li>
       {/each}
     </ul>
   </div>

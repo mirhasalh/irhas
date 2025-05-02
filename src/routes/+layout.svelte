@@ -31,9 +31,9 @@
 
 <AppBar>
   {#snippet leading()}
-    <a href="/" class={`flex items-center gap-2`}>
+    <a href="/" class="flex items-center gap-2">
       <BrandLogo width={40} height={40} />
-      <p class={`merriweather leading-4 text-sm`}>Irhas' dev<br />blog</p>
+      <p class="merriweather leading-4 text-sm">Irhas' dev<br />blog</p>
     </a>
   {/snippet}
   {#snippet trailing()}

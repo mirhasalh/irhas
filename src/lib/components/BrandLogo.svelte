@@ -2,7 +2,7 @@
   let { width = 100, height = 100 } = $props()
 </script>
 
-<svg class={`fill-current`} {width} {height} fill-rule="evenodd" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+<svg class="fill-current" {width} {height} fill-rule="evenodd" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
   <path d="M51 10.5H16V35.5H51V10.5Z" />
   <path d="M51 39.5H16V89.5H51V39.5Z" />
   <path d="M71.5 39.5H55V89.5H84V52C84 50.3585 83.6767 48.733 83.0485 47.2165C82.4203 45.6999 81.4996 44.3219 80.3388 43.1612C79.1781 42.0004 77.8001 41.0797 76.2835 40.4515C74.767 39.8233 73.1415 39.5 71.5 39.5Z" />

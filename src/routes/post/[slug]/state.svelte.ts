@@ -30,34 +30,7 @@ export class PostPageState {
   }
 
   highlightElement = (htmlElement: HTMLElement) => {
-    htmlElement.querySelectorAll('pre code').forEach((codeEl) => {
-      hljs.highlightElement(codeEl as HTMLElement)
-    })
-  }
-
-  setHeadingStyles = (htmlElement: HTMLElement) => {
-    htmlElement.querySelectorAll('h1, h2, h3, h4, h5, h6').forEach((heading) => {
-      switch (heading.tagName.toLowerCase()) {
-        case 'h1':
-          heading.classList.add('merriweather', 'text-4xl', 'font-bold')
-          break
-        case 'h2':
-          heading.classList.add('merriweather', 'text-3xl', 'font-semibold')
-          break
-        case 'h3':
-          heading.classList.add('merriweather', 'text-2xl', 'font-semibold')
-          break
-        case 'h4':
-          heading.classList.add('merriweather', 'text-xl', 'font-medium')
-          break
-        case 'h5':
-          heading.classList.add('merriweather', 'text-lg', 'font-medium')
-          break
-        case 'h6':
-          heading.classList.add('merriweather', 'text-base')
-          break
-      }
-    })
+    htmlElement.querySelectorAll('pre code:not(.hljs)').forEach((block) => hljs.highlightElement(block as HTMLElement))
   }
 
   setCodeStyle = (htmlElement: HTMLElement) => {
