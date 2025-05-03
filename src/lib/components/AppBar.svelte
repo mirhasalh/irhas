@@ -38,7 +38,7 @@
       {/each}
     </ul>
   </div>
-  <div class="navbar-end">
+  <div class="navbar-end gap-2">
     {@render trailing?.()}
   </div>
 </div>

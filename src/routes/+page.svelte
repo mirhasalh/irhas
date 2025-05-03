@@ -28,7 +28,11 @@
         I'm Irhas.
       </h1>
       <p class="py-6">Welcome to my personal blog.</p>
-      <a href="#recent-posts" class="btn">See my recent posts</a>
+      <div class="tooltip tooltip-bottom" data-tip="See recent posts">
+        <a href="#recent-posts" class="btn btn-ghost">
+          <span class="animate-bounce">↓</span>
+        </a>
+      </div>
     </div>
   </div>
   <PixelCanvas />
