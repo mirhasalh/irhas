@@ -8,12 +8,12 @@
   <figure class="post-card-graphic">
     {#if post.videoUrl}
       <video width="100%" autoplay loop muted playsinline>
-        <source src={post.videoUrl} type="video/mp4" />
+        <source src={`/api/cdn-sanity?url=${post.videoUrl}`} type="video/mp4" />
         <track src="" kind="captions" srclang="en" label="English" />
         Your browser does not support the video tag.
       </video>
     {:else if post.imageUrl}
-      <img src={post.imageUrl} alt={post.title} width="100%" />
+      <img src={`/api/cdn-sanity?url=${post.imageUrl}`} alt={post.title} width="100%" />
     {:else}
       <img src={`${website}/og-image.jpg`} alt={post.title} width="100%" />
     {/if}
