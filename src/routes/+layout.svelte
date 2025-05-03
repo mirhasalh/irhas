@@ -32,7 +32,7 @@
 
 <AppBar>
   {#snippet leading()}
-    <a href="/" class="flex items-center gap-2" use:reveal={{ preset: 'blur' }}>
+    <a href="/" class="flex items-center gap-2" use:reveal={{ preset: 'blur' }} title="Home">
       <BrandLogo width={40} height={40} />
       <p class="merriweather leading-4 text-sm">Irhas' dev<br />blog</p>
     </a>
@@ -43,7 +43,7 @@
       <span class="indicator-item status status-success animate-ping"></span>
       <div class="indicator-item status status-success"></div>
       <div class="tooltip tooltip-left tooltip-success" data-tip="Open to work">
-        <a class="btn btn-ghost btn-circle overflow-clip" href="https://github.com/mirhasalh" target="_blank">
+        <a class="btn btn-ghost btn-circle overflow-clip" href="https://github.com/mirhasalh" target="_blank" rel="noopener noreferrer" aria-describedby="open-in-new-tab" title="Go to mirhasalh GitHub">
           <img src="https://github.com/mirhasalh.png" alt="mirhasalh" />
         </a>
       </div>

@@ -17,12 +17,13 @@
     <div class="max-w-3xl">
       <h1 id="animations" class="text-5xl font-bold merriweather" use:reveal={{ preset: 'blur' }}>Animations</h1>
       <p class="py-6 hidden md:block" use:reveal={{ preset: 'blur' }}>
-        Built in <a class="link link-hover link-secondary" href="https://rive.app/" target="_blank">Rive</a>, super lightweight and the file size stays tiny.
+        Built in <a class="link link-hover link-secondary" href="https://rive.app/" target="_blank" rel="noopener noreferrer" aria-describedby="open-in-new-tab">Rive</a>, super lightweight and the file size stays tiny.
         <br />
         Perfect for keeping things fast without losing quality.
       </p>
       <p class="py-6 text-sm block md:hidden" use:reveal={{ preset: 'blur' }}>
-        Built in <a class="link link-hover link-secondary" href="https://rive.app/" target="_blank">Rive</a>, super lightweight and the file size stays tiny. Perfect for keeping things fast without losing quality.
+        Built in <a class="link link-hover link-secondary" href="https://rive.app/" target="_blank" rel="noopener noreferrer" aria-describedby="open-in-new-tab">Rive</a>, super lightweight and the file size stays tiny. Perfect for keeping things fast
+        without losing quality.
       </p>
       <ul class="flex flex-wrap justify-center items-center gap-2">
         {#each avatars as avatar, i (avatar.id)}

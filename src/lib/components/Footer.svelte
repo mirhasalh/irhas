@@ -53,7 +53,9 @@
 {/if}
 <footer class="footer bg-base-300 text-base-content px-10 py-4">
   <aside>
-    <a href="/"><BrandLogo /></a>
+    <a href="/" title="Home">
+      <BrandLogo />
+    </a>
     <p>
       <span class="merriweather">Irhas' dev blog</span>
       <br />
@@ -62,7 +64,7 @@
   </aside>
   <nav class="md:place-self-center md:justify-self-end">
     <div class="grid grid-flow-col gap-4">
-      <a href="https://www.netlify.com">
+      <a href="https://www.netlify.com" target="_blank" rel="noopener noreferrer" aria-describedby="open-in-new-tab">
         <img src="https://www.netlify.com/img/global/badges/netlify-color-bg.svg" alt="Deploys by Netlify" />
       </a>
     </div>

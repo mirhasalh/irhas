@@ -48,10 +48,14 @@
       {:else}
         <div class="flex gap-2 mt-4">
           {#if data.app!.ios}
-            <a class="btn" href={data.app!.ios} target="_blank" use:reveal={{ preset: 'blur' }}>AppStore</a>
+            <a class="btn" href={data.app!.ios} target="_blank" rel="noopener noreferrer" aria-describedby="open-in-new-tab" use:reveal={{ preset: 'blur' }}>
+              <span>AppStore</span>
+            </a>
           {/if}
           {#if data.app!.android}
-            <a class="btn" href={data.app!.android} target="_blank" use:reveal={{ preset: 'blur' }}>GooglePlay</a>
+            <a class="btn" href={data.app!.android} target="_blank" rel="noopener noreferrer" aria-describedby="open-in-new-tab" use:reveal={{ preset: 'blur' }}>
+              <span>GooglePlay</span>
+            </a>
           {/if}
         </div>
       {/if}

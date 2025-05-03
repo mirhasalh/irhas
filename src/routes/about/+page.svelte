@@ -21,7 +21,7 @@
       <div class="avatar-group -space-x-6">
         {#each gitHubAccounts as acc, i (acc)}
           <div class="avatar">
-            <a class="w-12" href={`https://github.com/${acc}`} target="_blank">
+            <a class="w-12" href={`https://github.com/${acc}`} target="_blank" rel="noopener noreferrer" aria-describedby="open-in-new-tab">
               <img src={`https://github.com/${acc}.png`} alt={`GitHub ${acc}`} use:reveal={{ preset: 'blur', delay: i * 200 }} />
             </a>
           </div>
