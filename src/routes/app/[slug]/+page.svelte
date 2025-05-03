@@ -34,7 +34,8 @@
   <link rel="canonical" href={`${website}/app/${data.slug}`} />
 </svelte:head>
 
-<div class="hero bg-base-200 min-h-screen">
+<div class="hero min-h-screen">
+  <div class="hero-pattern-neutral-content"></div>
   <div class="hero-content text-center">
     <div class="max-w-md">
       <img class="app-icon mx-auto mb-4" src={data.app!.icon} alt={data.app!.name} width="126" use:reveal={{ preset: 'blur' }} />

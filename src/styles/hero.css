@@ -25,7 +25,8 @@
 }
 
 .hero-pattern-primary,
-.hero-pattern-secondary {
+.hero-pattern-secondary,
+.hero-pattern-neutral-content {
     grid-column-start: 1;
     grid-row-start: 1;
     height: 100%;
@@ -38,9 +39,13 @@
 }
 
 .hero-pattern-primary {
-    background-image: url("./pattern-primary.svg");
+    background-image: url("https://irhas.lol/pattern-primary.svg");
 }
 
 .hero-pattern-secondary {
-    background-image: url("./pattern-secondary.svg");
+    background-image: url("https://irhas.lol/pattern-secondary.svg");
+}
+
+.hero-pattern-neutral-content {
+    background-image: url("https://irhas.lol/pattern-neutral-content.svg");
 }
