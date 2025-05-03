@@ -10,7 +10,8 @@
 </script>
 
 <div class="hero min-h-screen">
-  <div class="hero-content flex-col lg:flex-row-reverse max-w-3xl">
+  <div class="hero-overlay-gradient-crystal"></div>
+  <div class="hero-content flex-col lg:flex-row-reverse max-w-3xl relative z-10">
     <img src={`${website}/IMG_20250501-170202.webp`} class="max-w-sm rounded-lg shadow-2xl" alt="Irhas dev author" width="100%" />
     <div>
       <h1 id="greetings" class="merriweather text-5xl font-bold" use:reveal={{ preset: 'blur' }}>Hi there, I'm Irhas</h1>

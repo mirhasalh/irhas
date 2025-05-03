@@ -1,0 +1,26 @@
+.hero-overlay-gradient-teal {
+    pointer-events: none;
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    background: radial-gradient(circle at 40% 35%, #00d390 -200%, transparent 35%), radial-gradient(circle at 60% 40%, #00bafe -200%, transparent 30%);
+}
+
+.hero-overlay-gradient-peach {
+    pointer-events: none;
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    background: radial-gradient(at 40% 40%, #422ad5 -200%, transparent 30%), radial-gradient(at 60% 60%, #f43098 -200%, transparent 30%);
+}
+
+.hero-overlay-gradient-crystal {
+    pointer-events: none;
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    background: radial-gradient(circle at 30% 60%, #00bafe -200%, transparent 30%), radial-gradient(circle at 70% 50%, #fcb700 -200%, transparent 30%);
+}

@@ -39,11 +39,11 @@
   {/snippet}
   {#snippet trailing()}
     <LightSwitch isDark={app.theme === 'dark'} {onChanged} />
-    <div class="indicator">
+    <div class="indicator hidden md:block">
       <span class="indicator-item status status-success animate-ping"></span>
       <div class="indicator-item status status-success"></div>
       <div class="tooltip tooltip-left tooltip-success" data-tip="Open to work">
-        <a class="hidden btn btn-ghost btn-circle overflow-clip md:block" href="https://github.com/mirhasalh" target="_blank">
+        <a class="btn btn-ghost btn-circle overflow-clip" href="https://github.com/mirhasalh" target="_blank">
           <img src="https://github.com/mirhasalh.png" alt="mirhasalh" />
         </a>
       </div>

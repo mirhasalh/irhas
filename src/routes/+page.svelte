@@ -5,6 +5,7 @@
   import MetaHome from '$components/MetaHome.svelte'
   import PostCard from '$components/PostCard.svelte'
   import PixelCanvas from '$components/PixelCanvas.svelte'
+  import ArrowDown from '$icons/ArrowDown.svelte'
 
   let { data }: { data: LayoutData } = $props()
 
@@ -20,17 +21,18 @@
 <MetaHome />
 
 <div class="hero min-h-screen" use:reveal={{ preset: 'blur' }}>
+  <div class="hero-overlay-gradient-teal"></div>
   <div class="hero-content text-center relative z-10">
     <div class="max-w-md">
       <h1 class="text-5xl font-bold merriweather">
-        👋 Hello,
+        <span class="animate-wave">👋</span> Hello,
         <br />
         I'm Irhas.
       </h1>
       <p class="py-6">Welcome to my personal blog.</p>
       <div class="tooltip tooltip-bottom" data-tip="See recent posts">
         <a href="#recent-posts" class="btn btn-ghost">
-          <span class="animate-bounce">↓</span>
+          <ArrowDown />
         </a>
       </div>
     </div>
