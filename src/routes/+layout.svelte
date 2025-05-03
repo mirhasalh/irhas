@@ -1,7 +1,6 @@
 <script lang="ts">
   import '../app.css'
   import { browser } from '$app/environment'
-  import { reveal } from 'svelte-reveal'
   import { onNavigate } from '$app/navigation'
   import { HomePageState } from './state.svelte'
   import { app } from '$lib/shared.svelte'
@@ -32,7 +31,7 @@
 
 <AppBar>
   {#snippet leading()}
-    <a href="/" class="flex items-center gap-2" use:reveal={{ preset: 'blur' }} title="Home">
+    <a href="/" class="flex items-center gap-2" title="Home">
       <BrandLogo width={40} height={40} />
       <p class="merriweather leading-4 text-sm">Irhas'<br />dev blog</p>
     </a>

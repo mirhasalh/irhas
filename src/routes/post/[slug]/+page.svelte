@@ -1,7 +1,6 @@
 <script lang="ts">
   import { browser } from '$app/environment'
   import { onMount } from 'svelte'
-  import { reveal } from 'svelte-reveal'
   import type { PageData } from './$types'
   import 'highlight.js/styles/atom-one-dark.css'
   import { formatDate, website } from '$lib'
@@ -74,14 +73,14 @@
 
 <article class="article">
   <div class="max-w-3xl mx-auto px-4 pt-4">
-    <span class="font-medium text-base-content/50 uppercase" use:reveal={{ preset: 'blur' }}>{data.post.categories.join(', ')}</span>
+    <span class="font-medium text-base-content/50 uppercase">{data.post.categories.join(', ')}</span>
     <br />
-    <span class="font-medium text-base-content/70" use:reveal={{ preset: 'blur' }}><small>{`${formatDate(data.post.publishedAt)} • ${data.post.readingTime} min read`}</small></span>
-    <h1 class="merriweather font-bold text-3xl my-4" use:reveal={{ preset: 'blur' }}>{data.post.title}</h1>
-    <p use:reveal={{ preset: 'blur' }}>{data.post.excerpt}</p>
+    <span class="font-medium text-base-content/70"><small>{`${formatDate(data.post.publishedAt)} • ${data.post.readingTime} min read`}</small></span>
+    <h1 class="merriweather font-bold text-3xl my-4">{data.post.title}</h1>
+    <p>{data.post.excerpt}</p>
     <div class="flex gap-2 flex-wrap my-4">
       {#each shareLinks as s, i (s.id)}
-        <a class={shareBtnStyle} href={s.url} use:reveal={{ preset: 'blur', delay: i * 200 }}>
+        <a class={shareBtnStyle} href={s.url}>
           {#if s.id === 'f'}
             <Facebook />
           {:else if s.id === 'l'}
@@ -99,15 +98,15 @@
   </div>
   <figure class="post-card-graphic max-w-4xl mx-auto my-10 overflow-clip lg:rounded-lg">
     {#if data.post.videoUrl}
-      <video autoplay loop muted playsinline width="100%" use:reveal={{ preset: 'blur' }}>
+      <video autoplay loop muted playsinline width="100%">
         <source src={data.post.videoUrl} type="video/mp4" />
         <track src="" kind="captions" srclang="en" label="English" />
         Your browser does not support the video tag.
       </video>
     {:else if data.post.imageUrl}
-      <img src={data.post.imageUrl} alt={data.post.title} width="100%" use:reveal={{ preset: 'blur' }} />
+      <img src={data.post.imageUrl} alt={data.post.title} width="100%" />
     {:else}
-      <img src={`${website}/og-image.jpg`} alt={data.post.title} width="100%" use:reveal={{ preset: 'blur' }} />
+      <img src={`${website}/og-image.jpg`} alt={data.post.title} width="100%" />
     {/if}
     <figcaption class="hidden">{data.post.title}</figcaption>
   </figure>

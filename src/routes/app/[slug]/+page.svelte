@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { reveal } from 'svelte-reveal'
   import { website } from '$lib'
   import type { PageData } from './$types'
 
@@ -38,23 +37,23 @@
   <div class="hero-pattern-neutral-content"></div>
   <div class="hero-content text-center">
     <div class="max-w-md">
-      <img class="app-icon mx-auto mb-4" src={data.app!.icon} alt={data.app!.name} width="126" use:reveal={{ preset: 'blur' }} />
+      <img class="app-icon mx-auto mb-4" src={data.app!.icon} alt={data.app!.name} width="126" />
       {#if data.app!.isTesting}
         <div class="grid gap-4">
-          <button class="btn" onclick={() => requestInternalTesting()} use:reveal={{ preset: 'blur' }}>
+          <button class="btn" onclick={() => requestInternalTesting()}>
             <span>Join closed-testing</span>
           </button>
-          <p use:reveal={{ preset: 'blur' }}><small>{note}</small></p>
+          <p><small>{note}</small></p>
         </div>
       {:else}
         <div class="flex gap-2 mt-4">
           {#if data.app!.ios}
-            <a class="btn" href={data.app!.ios} target="_blank" rel="noopener noreferrer" aria-describedby="open-in-new-tab" use:reveal={{ preset: 'blur' }}>
+            <a class="btn" href={data.app!.ios} target="_blank" rel="noopener noreferrer" aria-describedby="open-in-new-tab">
               <span>AppStore</span>
             </a>
           {/if}
           {#if data.app!.android}
-            <a class="btn" href={data.app!.android} target="_blank" rel="noopener noreferrer" aria-describedby="open-in-new-tab" use:reveal={{ preset: 'blur' }}>
+            <a class="btn" href={data.app!.android} target="_blank" rel="noopener noreferrer" aria-describedby="open-in-new-tab">
               <span>GooglePlay</span>
             </a>
           {/if}
@@ -65,23 +64,23 @@
 </div>
 
 <section class="max-w-4xl mx-auto">
-  <h2 id="feature-graphic" class="merriweather text-4xl m-4 font-bold" use:reveal={{ preset: 'blur' }}>Feature graphic</h2>
+  <h2 id="feature-graphic" class="merriweather text-4xl m-4 font-bold">Feature graphic</h2>
   <figure class="post-card-graphic overflow-clip lg:rounded-lg">
-    <img src={data.app!.featureGraphic} alt={data.app!.name} width="100%" use:reveal={{ preset: 'blur' }} />
+    <img src={data.app!.featureGraphic} alt={data.app!.name} width="100%" />
     <figcaption class="hidden">{data.app!.shortDescription}</figcaption>
   </figure>
 </section>
 <section class="max-w-4xl mx-auto mt-10">
-  <h2 id="description" class="merriweather text-4xl m-4 font-bold" use:reveal={{ preset: 'blur' }}>Description</h2>
-  <p class="px-4" use:reveal={{ preset: 'blur' }}>{data.app!.description}</p>
+  <h2 id="description" class="merriweather text-4xl m-4 font-bold">Description</h2>
+  <p class="px-4">{data.app!.description}</p>
 </section>
 <section class="max-w-4xl mx-auto mt-10">
-  <h2 id="privacy" class="merriweather text-4xl m-4 font-bold" use:reveal={{ preset: 'blur' }}>Privacy policy</h2>
+  <h2 id="privacy" class="merriweather text-4xl m-4 font-bold">Privacy policy</h2>
   <p class="px-4">Effective date: {data.app!.privacy.effectiveDate}</p>
   <ol class="privacy-policy-list list mt-4 px-4">
     {#each data.app!.privacy.declarations as d, i (d.id)}
       <li>
-        <p use:reveal={{ preset: 'blur' }}>
+        <p>
           <strong>{i + 1}. {d.title}</strong>
           <br />
           {d.subtitle}

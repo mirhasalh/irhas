@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { reveal } from 'svelte-reveal'
   import type { PageData } from './$types'
   import PostCard from '$components/PostCard.svelte'
 
@@ -37,6 +36,6 @@
       {/each}
     </ul>
   {:else}
-    <p use:reveal={{ preset: 'blur' }}>Posts? Nah</p>
+    <p>Posts? Nah</p>
   {/if}
 </section>

@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { reveal } from 'svelte-reveal'
   import Rive from '$components/Rive.svelte'
 
   const width = 200,
@@ -16,13 +15,13 @@
   <div class="hero-overlay-gradient-secondary"></div>
   <div class="hero-content text-center relative z-10">
     <div class="max-w-3xl">
-      <h1 id="animations" class="text-5xl font-bold merriweather" use:reveal={{ preset: 'blur' }}>Animations</h1>
-      <p class="py-6 hidden md:block" use:reveal={{ preset: 'blur' }}>
+      <h1 id="animations" class="text-5xl font-bold merriweather">Animations</h1>
+      <p class="py-6 hidden md:block">
         Built in <a class="link link-hover link-secondary" href="https://rive.app/" target="_blank" rel="noopener noreferrer" aria-describedby="open-in-new-tab">Rive</a>, super lightweight and the file size stays tiny.
         <br />
         Perfect for keeping things fast without losing quality.
       </p>
-      <p class="py-6 text-sm block md:hidden" use:reveal={{ preset: 'blur' }}>
+      <p class="py-6 text-sm block md:hidden">
         Built in <a class="link link-hover link-secondary" href="https://rive.app/" target="_blank" rel="noopener noreferrer" aria-describedby="open-in-new-tab">Rive</a>, super lightweight and the file size stays tiny. Perfect for keeping things fast
         without losing quality.
       </p>
@@ -32,7 +31,7 @@
             <div class="card bg-base-100 shadow-sm">
               <Rive fileName={avatar.file} {width} {height} />
               <div class="card-body">
-                <p use:reveal={{ preset: 'blur', delay: i * 200 }}>{avatar.fileSize} kb</p>
+                <p>{avatar.fileSize} kb</p>
               </div>
             </div>
           </li>
