@@ -14,8 +14,8 @@
   }
 
   const colors: string[] = ['#060b10', '#1e242c', '#272f38', '#3b434c', '#14ffcc']
-  const gap: number = 30
-  const radius: number = 1
+  const gap: number = 14
+  const radius: number = 0.8
 
   let canvas: HTMLCanvasElement
   let ctx: CanvasRenderingContext2D
@@ -31,6 +31,7 @@
 
     const cols = Math.floor(canvas.width / gap)
     const rows = Math.floor(canvas.height / gap)
+    const speed = 0.02
 
     for (let y = 0; y <= rows; y++) {
       for (let x = 0; x <= cols; x++) {
@@ -38,8 +39,8 @@
           x: x * gap,
           y: y * gap,
           radius,
-          alpha: Math.random(),
-          alphaDelta: (Math.random() - 0.5) * 0.02,
+          alpha: (1 - y / rows) * 0.5 + Math.random() * 0.5,
+          alphaDelta: (Math.random() < 0.5 ? -1 : 1) * speed,
           color: colors[Math.floor(Math.random() * colors.length)]
         })
       }
@@ -91,8 +92,10 @@
     pointer-events: none;
     display: block;
     position: absolute;
-    z-index: 0;
+    z-index: 1;
     mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
     -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+    width: 100vw;
+    height: 100vh;
   }
 </style>

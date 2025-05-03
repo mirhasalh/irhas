@@ -18,12 +18,12 @@
   <div class="hero-overlay-gradient-primary"></div>
   <div class="hero-content text-center relative z-10">
     <div class="max-w-md">
-      <h1 class="text-5xl font-bold merriweather">
+      <h1 class="text-5xl font-bold merriweather md:text-7xl">
         <span class="animate-wave">👋</span> Hello,
         <br />
         I'm Irhas
       </h1>
-      <p class="py-6">Welcome to my personal blog.</p>
+      <p class="py-6 md:text-xl">Welcome to my personal blog.</p>
       <div class="tooltip tooltip-bottom" data-tip="See recent posts">
         <a href="#recent-posts" class="btn btn-ghost">
           <ArrowDown />
