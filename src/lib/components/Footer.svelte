@@ -1,6 +1,7 @@
 <script lang="ts">
   import BrandLogo from './BrandLogo.svelte'
   import { email, sites, socials } from '$lib'
+  import { app } from '$lib/shared.svelte'
 
   const d = new Date()
 
@@ -45,7 +46,12 @@
     </fieldset>
   </form>
 </footer>
-<footer class="footer bg-base-300 text-base-content border-base-300 border-t border-neutral-content px-10 py-4">
+{#if app.theme == 'dark'}
+  <hr class="border-neutral" />
+{:else}
+  <hr class="border-neutral-content" />
+{/if}
+<footer class="footer bg-base-300 text-base-content px-10 py-4">
   <aside>
     <a href="/"><BrandLogo /></a>
     <p>
