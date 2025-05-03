@@ -18,7 +18,7 @@
 
 <footer class="footer sm:footer-horizontal bg-base-300 text-base-content p-10 mt-10">
   <nav>
-    <h6 class="footer-title">Sites</h6>
+    <h3 class="footer-title">Sites</h3>
     {#each sites as site (site.url)}
       <a class="link link-hover" href={site.url} target="_blank" rel="noopener noreferrer" aria-describedby="open-in-new-tab">
         {site.name}
@@ -26,7 +26,7 @@
     {/each}
   </nav>
   <nav>
-    <h6 class="footer-title">Socials</h6>
+    <h3 class="footer-title">Socials</h3>
     {#each socials as social (social.url)}
       <a class="link link-hover" href={social.url} target="_blank" rel="noopener noreferrer" aria-describedby="open-in-new-tab">
         {social.name}
@@ -34,11 +34,11 @@
     {/each}
   </nav>
   <form onsubmit={sendEmail}>
-    <h6 class="footer-title">Get in touch</h6>
+    <h3 class="footer-title">Get in touch</h3>
     <fieldset class="fieldset">
       <legend class="fieldset-legend">Email me</legend>
       <div class="join">
-        <input name="body" type="text" placeholder="Jot something down" class="input input-bordered join-item" bind:value={emailBody} />
+        <input class="input input-bordered join-item" id="email-body" name="email-body" type="text" aria-label="Email body" placeholder="Jot something down" bind:value={emailBody} />
         <button type="submit" class="btn btn-primary join-item" disabled={emailBody.length < 5}>
           <span>Send</span>
         </button>
@@ -65,7 +65,7 @@
   <nav class="md:place-self-center md:justify-self-end">
     <div class="grid grid-flow-col gap-4">
       <a href="https://www.netlify.com" target="_blank" rel="noopener noreferrer" aria-describedby="open-in-new-tab">
-        <img src="https://www.netlify.com/img/global/badges/netlify-color-bg.svg" alt="Deploys by Netlify" />
+        <img src="/api/netlify-badge" alt="Deploys by Netlify" />
       </a>
     </div>
   </nav>

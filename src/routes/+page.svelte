@@ -25,8 +25,9 @@
       </h1>
       <p class="py-6 md:text-xl">Welcome to my personal blog.</p>
       <div class="tooltip tooltip-bottom" data-tip="See recent posts">
-        <a href="#recent-posts" class="btn btn-ghost">
+        <a href="#recent-posts" class="btn btn-ghost" title="See recent posts">
           <ArrowDown />
+          <span class="hidden">See recent posts</span>
         </a>
       </div>
     </div>
