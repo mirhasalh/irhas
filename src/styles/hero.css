@@ -34,8 +34,12 @@
     background-repeat: repeat;
     background-position: top left;
     background-size: 100px 100px;
-    -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
-    mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+    -webkit-mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 60%);
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: cover;
+    mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 60%);
+    mask-repeat: no-repeat;
+    mask-size: cover;
 }
 
 .hero-pattern-primary {
