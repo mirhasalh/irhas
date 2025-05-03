@@ -12,7 +12,8 @@
 </script>
 
 <div class="hero min-h-screen">
-  <div class="hero-overlay-gradient-peach"></div>
+  <div class="hero-pattern-secondary"></div>
+  <div class="hero-overlay-gradient-secondary"></div>
   <div class="hero-content text-center relative z-10">
     <div class="max-w-3xl">
       <h1 id="animations" class="text-5xl font-bold merriweather" use:reveal={{ preset: 'blur' }}>Animations</h1>

@@ -21,7 +21,7 @@
 <MetaHome />
 
 <div class="hero min-h-screen" use:reveal={{ preset: 'blur' }}>
-  <div class="hero-overlay-gradient-teal"></div>
+  <div class="hero-overlay-gradient-primary"></div>
   <div class="hero-content text-center relative z-10">
     <div class="max-w-md">
       <h1 class="text-5xl font-bold merriweather">
