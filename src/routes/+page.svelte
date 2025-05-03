@@ -27,7 +27,7 @@
       <h1 class="text-5xl font-bold merriweather">
         <span class="animate-wave">👋</span> Hello,
         <br />
-        I'm Irhas.
+        I'm Irhas
       </h1>
       <p class="py-6">Welcome to my personal blog.</p>
       <div class="tooltip tooltip-bottom" data-tip="See recent posts">
