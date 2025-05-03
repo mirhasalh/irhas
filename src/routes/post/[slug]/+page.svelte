@@ -16,7 +16,7 @@
     pageState = new PostPageState(),
     parsedEl: HTMLElement
 
-  const cover = data.post.imageUrl ? data.post.imageUrl : `${website}/og-image.jpg`,
+  const cover = data.post.imageUrl ? `/api/cdn-sanity?url=${data.post.imageUrl}` : `${website}/og-image.jpg`,
     headings = data.post.headings ? data.post.headings.map((item) => item.replace(/-/g, ' ')) : [],
     keywords = [data.post.title, ...headings, ...data.post.tags],
     f = `https://www.facebook.com/sharer/sharer.php?u=${website}/post/${data.post.slug}`,
@@ -99,12 +99,12 @@
   <figure class="post-card-graphic max-w-4xl mx-auto my-10 overflow-clip lg:rounded-lg">
     {#if data.post.videoUrl}
       <video autoplay loop muted playsinline width="100%">
-        <source src={data.post.videoUrl} type="video/mp4" />
+        <source src={`/api/cdn-sanity?url=${data.post.videoUrl}`} type="video/mp4" />
         <track src="" kind="captions" srclang="en" label="English" />
         Your browser does not support the video tag.
       </video>
     {:else if data.post.imageUrl}
-      <img src={data.post.imageUrl} alt={data.post.title} width="100%" />
+      <img src={`/api/cdn-sanity?url=${data.post.imageUrl}`} alt={data.post.title} width="100%" />
     {:else}
       <img src={`${website}/og-image.jpg`} alt={data.post.title} width="100%" />
     {/if}
