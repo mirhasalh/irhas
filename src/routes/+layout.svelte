@@ -9,13 +9,19 @@
   import AppBar from '$components/AppBar.svelte'
   import LightSwitch from '$components/LightSwitch.svelte'
 
+  if (browser) {
+    const currentTheme = document.documentElement.getAttribute('data-theme')
+    if (currentTheme === 'light' || currentTheme === 'dark') app.theme = currentTheme
+  }
+
   let { children } = $props(),
     pageState = new HomePageState(),
     to = $derived(app.theme === 'light' ? 'dark' : 'light')
 
-  const onChanged = () => pageState.setTheme(to)
-
-  if (browser) pageState.setTheme()
+  const onChanged = () => {
+    pageState.setTheme(to)
+    localStorage.setItem('theme', app.theme)
+  }
 
   onNavigate((navigation) => {
     if (!document.startViewTransition) return
