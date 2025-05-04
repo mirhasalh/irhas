@@ -1,13 +1,14 @@
 <script lang="ts">
-  import { bio, website, gitHubAccounts, recentWork } from '$lib'
+  import { bio, gitHubAccounts, recentWork } from '$lib'
   import Tick from '$icons/Tick.svelte'
+  import Card3D from '$components/Card3D.svelte'
 </script>
 
 <div class="hero min-h-screen">
   <div class="hero-pattern-primary"></div>
   <div class="hero-overlay-gradient-tertiary reveal-blur animation-delay-500"></div>
   <div class="hero-content flex-col lg:flex-row-reverse max-w-3xl relative z-10">
-    <img src={`${website}/IMG_20250501-170202.webp`} class="max-w-sm rounded-lg shadow-2xl" alt="Irhas dev author" width="100%" />
+    <Card3D />
     <div>
       <h1 id="greetings" class="merriweather text-5xl font-bold">Hi there, I'm Irhas</h1>
       <p class="py-6">{bio}</p>
