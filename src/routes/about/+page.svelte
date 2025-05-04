@@ -14,10 +14,10 @@
       <h2 id="github-accounts" class="font-bold merriweather text-4xl">GitHub accounts</h2>
       <p class="py-4">Hopefully, these say a lot about my coding journey.</p>
       <div class="avatar-group -space-x-6">
-        {#each gitHubAccounts as acc, i (acc)}
+        {#each gitHubAccounts as acc (acc.id)}
           <div class="avatar">
-            <a class="w-12" href={`https://github.com/${acc}`} target="_blank" rel="noopener noreferrer" aria-describedby="open-in-new-tab">
-              <img src={`https://github.com/${acc}.png`} alt={`GitHub ${acc}`} />
+            <a class="w-12" href={acc.profile} target="_blank" rel="noopener noreferrer" aria-describedby="open-in-new-tab">
+              <img src={acc.avatar} alt={acc.username} />
             </a>
           </div>
         {/each}

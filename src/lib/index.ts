@@ -3,9 +3,35 @@ import { error } from '@sveltejs/kit'
 
 // Basic informations
 export const website = 'https://irhas.lol',
-  gitHubAccounts = ['b3nggo', 'irhasalh', 'mirhasalh'],
   email = 'irhasm@outlook.com',
   bio = 'Just a regular guy from Bandung, always eager to challenge himself in design and front-end development every day.'
+
+export const gitHubAccounts = [
+  {
+    id: 0,
+    username: 'b3nggo',
+    profile: 'https://github.com/b3nggo',
+    avatar: 'https://github.com/b3nggo.png'
+  },
+  {
+    id: 1,
+    username: 'mirhas',
+    profile: 'https://gitlab.com/mirhas',
+    avatar: 'https://gitlab.com/uploads/-/system/user/avatar/12060869/avatar.png'
+  },
+  {
+    id: 2,
+    username: 'irhasalh',
+    profile: 'https://github.com/irhasalh',
+    avatar: 'https://github.com/irhasalh.png'
+  },
+  {
+    id: 3,
+    username: 'mirhasalh',
+    profile: 'https://github.com/mirhasalh',
+    avatar: 'https://github.com/mirhasalh.png'
+  }
+]
 
 export const getEnvVar = (data: string) => {
   try {
