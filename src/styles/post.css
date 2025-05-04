@@ -1,5 +1,5 @@
 .post-card {
-    transition: background-color .2s linear;
+    transition: box-shadow .2s linear;
 }
 
 .post-card-graphic>img,

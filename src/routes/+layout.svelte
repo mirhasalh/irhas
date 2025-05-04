@@ -1,6 +1,7 @@
 <script lang="ts">
   import '../app.css'
   import { browser } from '$app/environment'
+  import { onMount } from 'svelte'
   import { onNavigate } from '$app/navigation'
   import { HomePageState } from './state.svelte'
   import { app } from '$lib/shared.svelte'
@@ -33,6 +34,8 @@
       })
     })
   })
+
+  onMount(() => pageState.setBodyBackgroundColor())
 </script>
 
 <AppBar>

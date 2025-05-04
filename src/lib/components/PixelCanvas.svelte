@@ -8,9 +8,9 @@
     x: number
     y: number
     radius: number
-    alpha: number
-    alphaDelta: number
     color: string
+    blinkSpeed: number
+    blinkPhase: number
   }
 
   const colors: string[] = ['#060b10', '#1e242c', '#272f38', '#3b434c', '#14ffcc']
@@ -31,7 +31,6 @@
 
     const cols = Math.floor(canvasEl.width / gap)
     const rows = Math.floor(canvasEl.height / gap)
-    const speed = 0.02
 
     for (let y = 0; y <= rows; y++) {
       for (let x = 0; x <= cols; x++) {
@@ -39,25 +38,27 @@
           x: x * gap,
           y: y * gap,
           radius,
-          alpha: (1 - y / rows) * 0.5 + Math.random() * 0.5,
-          alphaDelta: (Math.random() < 0.5 ? -1 : 1) * speed,
-          color: colors[Math.floor(Math.random() * colors.length)]
+          color: colors[Math.floor(Math.random() * colors.length)],
+          blinkSpeed: Math.random() * 2 + 0.5,
+          blinkPhase: Math.random() * Math.PI * 2
         })
       }
     }
   }
 
+  let startTime = performance.now()
+
   function draw(): void {
+    const currentTime = performance.now()
+    const elapsed = (currentTime - startTime) / 1000
+
     ctx.clearRect(0, 0, canvasEl?.width, canvasEl?.height)
 
     for (const dot of dots) {
-      dot.alpha += dot.alphaDelta
-      if (dot.alpha <= 0.1 || dot.alpha >= 1) {
-        dot.alphaDelta *= -1
-      }
+      const alpha = 0.5 + 0.5 * Math.sin(elapsed * dot.blinkSpeed + dot.blinkPhase)
 
       ctx.beginPath()
-      ctx.globalAlpha = dot.alpha
+      ctx.globalAlpha = alpha
       ctx.fillStyle = dot.color
       ctx.arc(dot.x, dot.y, dot.radius, 0, Math.PI * 2)
       ctx.fill()

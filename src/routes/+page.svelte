@@ -51,8 +51,8 @@
     {#each apps as app (app.id)}
       {@const url = `/app/${app.name.replace(' ', '-').toLowerCase()}`}
       <li>
-        <a class="post-card card bg-base-100 shadow-sm hover:bg-base-200" href={url}>
-          <figure>
+        <a class="post-card card bg-base-100 shadow-sm hover:shadow-xl" href={url}>
+          <figure class="post-card-graphic">
             <img src={app.featureGraphic} alt={app.name} width="100%" />
           </figure>
           <div class="card-body">

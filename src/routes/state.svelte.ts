@@ -12,4 +12,6 @@ export class HomePageState {
 
     document.documentElement.setAttribute('data-theme', app.theme)
   }
+
+  setBodyBackgroundColor = () => document.body.classList.add("bg-base-200")
 }

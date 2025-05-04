@@ -4,7 +4,7 @@
   let { post }: { post: App.Post } = $props()
 </script>
 
-<a class="post-card card bg-base-100 shadow-sm hover:bg-base-200" href={`/post/${post.slug}`}>
+<a class="post-card card bg-base-100 shadow-sm hover:shadow-xl" href={`/post/${post.slug}`}>
   <figure class="post-card-graphic">
     {#if post.videoUrl}
       <video width="100%" autoplay loop muted playsinline>
