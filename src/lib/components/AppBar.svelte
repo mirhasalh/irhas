@@ -12,7 +12,7 @@
   ]
 </script>
 
-<div class="navbar bg-base-100 shadow-sm">
+<header class="navbar bg-base-100 shadow-sm">
   <div class="navbar-start">
     <div class="dropdown">
       <div tabindex="-1" role="button" class="btn btn-ghost lg:hidden">
@@ -40,4 +40,4 @@
   <div class="navbar-end gap-2">
     {@render trailing?.()}
   </div>
-</div>
+</header>

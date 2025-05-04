@@ -71,8 +71,19 @@
   <link rel="canonical" href={`${website}/post/${data.post.slug}`} />
 </svelte:head>
 
+<div class="sticky top-0 z-20 bg-base-300 hidden md:flex">
+  <div class="breadcrumbs text-sm mx-auto">
+    <ul>
+      <li><a href="/">🏠</a></li>
+      <li><a href="/posts">posts</a></li>
+      <li>{data.post.slug}</li>
+    </ul>
+  </div>
+</div>
 <article class="article">
   <div class="max-w-3xl mx-auto px-4 pt-4">
+    <a class="btn btn-sm mb-4 md:hidden" href="/posts" title="Back to posts">←</a>
+    <br />
     <span class="font-medium text-base-content/50 uppercase">{data.post.categories.join(', ')}</span>
     <br />
     <span class="font-medium text-base-content/70"><small>{`${formatDate(data.post.publishedAt)} • ${data.post.readingTime} min read`}</small></span>
