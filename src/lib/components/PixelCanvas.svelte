@@ -17,20 +17,20 @@
   const gap: number = 14
   const radius: number = 0.8
 
-  let canvas: HTMLCanvasElement
+  let canvasEl: HTMLCanvasElement
   let ctx: CanvasRenderingContext2D
   let dots: Dot[] = []
 
   function initCanvas(): void {
-    if (!canvas || !ctx) return
+    if (!canvasEl || !ctx) return
 
-    canvas.width = innerWidth
-    canvas.height = innerHeight
+    canvasEl.width = innerWidth
+    canvasEl.height = innerHeight
 
     dots = []
 
-    const cols = Math.floor(canvas.width / gap)
-    const rows = Math.floor(canvas.height / gap)
+    const cols = Math.floor(canvasEl.width / gap)
+    const rows = Math.floor(canvasEl.height / gap)
     const speed = 0.02
 
     for (let y = 0; y <= rows; y++) {
@@ -48,7 +48,7 @@
   }
 
   function draw(): void {
-    ctx.clearRect(0, 0, canvas?.width, canvas?.height)
+    ctx.clearRect(0, 0, canvasEl?.width, canvasEl?.height)
 
     for (const dot of dots) {
       dot.alpha += dot.alphaDelta
@@ -74,24 +74,24 @@
   })
 
   onMount(() => {
-    const context = canvas.getContext('2d')
+    const context = canvasEl.getContext('2d')
     if (!context) throw new Error('Failed to get canvas context')
     ctx = context
 
     initCanvas()
-    if (canvas) draw()
+    if (canvasEl) draw()
   })
 </script>
 
 <svelte:window bind:innerWidth bind:innerHeight />
 
-<canvas id="pixel-canvas" bind:this={canvas}></canvas>
+<canvas class="pixel-canvas" bind:this={canvasEl}></canvas>
 
 <style>
-  canvas#pixel-canvas {
+  canvas.pixel-canvas {
     pointer-events: none;
     display: block;
-    position: absolute;
+    position: relative;
     z-index: 1;
     mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
     -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);

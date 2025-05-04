@@ -1,0 +1,7 @@
+[data-theme="light"] {
+    --bg-base-200: 248, 248, 248;
+}
+
+[data-theme="dark"] {
+    --bg-base-200: 25, 30, 36;
+}

@@ -14,18 +14,19 @@
 
 <MetaHome />
 
-<div class="hero min-h-screen">
-  <div class="hero-overlay-gradient-primary"></div>
+<div class="hero min-h-screen relative">
+  <div class="reveal-curtain"></div>
+  <div class="hero-overlay-gradient-primary reveal-blur animation-delay-2000"></div>
   <div class="hero-content text-center relative z-10">
     <div class="max-w-md">
-      <h1 class="text-5xl font-bold merriweather md:text-7xl">
+      <h1 class="reveal-fade-fly-blur text-5xl font-bold merriweather md:text-7xl">
         <span class="animate-wave">👋</span> Hello,
         <br />
         I'm Irhas
       </h1>
-      <p class="py-6 md:text-xl">Welcome to my personal blog.</p>
+      <p class="reveal-fade-fly-blur animation-delay-250 py-6 md:text-xl">Welcome to my personal blog.</p>
       <div class="tooltip tooltip-bottom" data-tip="See recent posts">
-        <a href="#recent-posts" class="btn btn-ghost" title="See recent posts">
+        <a href="#recent-posts" class="reveal-fade-fly-blur animation-delay-500 btn btn-ghost" title="See recent posts">
           <ArrowDown />
           <span class="hidden">See recent posts</span>
         </a>
