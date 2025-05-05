@@ -1,10 +1,11 @@
 <script lang="ts">
   import type { LayoutData } from './$types'
-  import { apps } from '$lib'
+  import { apps, techStacks } from '$lib'
   import MetaHome from '$components/MetaHome.svelte'
   import PostCard from '$components/PostCard.svelte'
   import PixelCanvas from '$components/PixelCanvas.svelte'
   import ArrowDown from '$icons/ArrowDown.svelte'
+  import Marquee from '$components/Marquee.svelte'
 
   let { data }: { data: LayoutData } = $props()
 
@@ -35,6 +36,18 @@
   </div>
   <PixelCanvas />
 </div>
+
+<section id="marquee-section" class="relative reveal-fade-fly-blur animation-delay-2000">
+  <Marquee>
+    <div class="flex gap-1">
+      {#each techStacks as tech (tech.id)}
+        <div class="p-6 w-50 flex justify-center items-center">
+          <img class="tech-stack-image" src={tech.img} alt={tech.title} />
+        </div>
+      {/each}
+    </div>
+  </Marquee>
+</section>
 
 <section class="max-w-4xl mx-auto">
   <h2 id="recent-posts" class="merriweather text-4xl m-4 font-bold">Recent posts</h2>

@@ -1,3 +1,11 @@
 img.app-icon {
     border-radius: 0.5rem;
 }
+
+img.tech-stack-image {
+    transition: filter 0.3s ease;
+}
+
+html[data-theme="dark"] .tech-stack-image {
+    filter: brightness(0) invert(1);
+}

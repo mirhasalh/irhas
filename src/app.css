@@ -7,6 +7,7 @@
 @import url("./styles/hero.css");
 @import url("./styles/img.css");
 @import url("./styles/list.css");
+@import url("./styles/marquee.css");
 @import url("./styles/post.css");
 @import url("./styles/pre.css");
 @import 'tailwindcss';
