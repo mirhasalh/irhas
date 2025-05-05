@@ -128,7 +128,9 @@
       <div class="collapse-content text-sm">
         <ul class="list list-mb-2">
           {#each data.post.headings as heading (heading)}
-            <li><a class="link link-hover" href={`#${heading}`}>{formatSlug(heading)}</a></li>
+            <li>
+              <button type="button" onclick={() => pageState.onHeading(heading)}>{formatSlug(heading)}</button>
+            </li>
           {/each}
         </ul>
       </div>
