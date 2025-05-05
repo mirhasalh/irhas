@@ -3,7 +3,7 @@
   import { onMount } from 'svelte'
   import type { PageData } from './$types'
   import 'highlight.js/styles/atom-one-dark.css'
-  import { formatDate, website } from '$lib'
+  import { formatDate, website, formatSlug } from '$lib'
   import { PostPageState } from './state.svelte'
   import Sanitized from '$components/Sanitized.svelte'
   import Facebook from '$icons/socials/Facebook.svelte'
@@ -121,6 +121,19 @@
     {/if}
     <figcaption class="hidden">{data.post.title}</figcaption>
   </figure>
+  <div class="max-w-3xl mx-auto px-4">
+    <div class="collapse border-base-300 border">
+      <input type="checkbox" />
+      <div class="collapse-title font-semibold">Table of contents</div>
+      <div class="collapse-content text-sm">
+        <ul class="list list-mb-2">
+          {#each data.post.headings as heading (heading)}
+            <li><a class="link link-hover" href={`#${heading}`}>{formatSlug(heading)}</a></li>
+          {/each}
+        </ul>
+      </div>
+    </div>
+  </div>
   <div class="article-content max-w-3xl mx-auto my-4 px-4" bind:this={parsedEl}>
     <Sanitized html={data.code} />
   </div>
