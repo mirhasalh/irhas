@@ -40,4 +40,17 @@ export class PostPageState {
       codeEl.classList.add(...codeStyle)
     })
   }
+
+  onHeading = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      if (typeof element.focus === "function") {
+        element.focus();
+      }
+
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    } else {
+      console.warn(`Element with id "${id}" not found.`)
+    }
+  }
 }

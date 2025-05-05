@@ -77,7 +77,7 @@
 <section class="max-w-4xl mx-auto mt-10">
   <h2 id="privacy" class="merriweather text-4xl m-4 font-bold">Privacy policy</h2>
   <p class="px-4">Effective date: {data.app!.privacy.effectiveDate}</p>
-  <ol class="privacy-policy-list list mt-4 px-4">
+  <ol class="list-mb-4 list mt-4 px-4">
     {#each data.app!.privacy.declarations as d, i (d.id)}
       <li>
         <p>
