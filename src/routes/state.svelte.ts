@@ -1,4 +1,4 @@
-import { app } from "$lib/shared.svelte"
+import { app } from '$lib/shared.svelte'
 
 export class HomePageState {
   setTheme = (to = '') => {
@@ -13,5 +13,5 @@ export class HomePageState {
     document.documentElement.setAttribute('data-theme', app.theme)
   }
 
-  setBodyBackgroundColor = () => document.body.classList.add("bg-base-200")
+  setBodyBackgroundColor = () => document.body.classList.add('bg-base-200')
 }

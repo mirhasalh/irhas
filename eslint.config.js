@@ -17,20 +17,20 @@ export default ts.config(
   prettier,
   ...svelte.configs.prettier,
   {
-	languageOptions: {
-	  globals: { ...globals.browser, ...globals.node }
-	},
-	rules: { 'no-undef': 'off' }
+    languageOptions: {
+      globals: { ...globals.browser, ...globals.node }
+    },
+    rules: { 'no-undef': 'off' }
   },
   {
-	files: ['**/*.svelte', '**/*.svelte.ts', '**/*.svelte.js'],
-	languageOptions: {
-	  parserOptions: {
-	    projectService: true,
-		extraFileExtensions: ['.svelte'],
-		parser: ts.parser,
-		svelteConfig
-	  }
-	}
+    files: ['**/*.svelte', '**/*.svelte.ts', '**/*.svelte.js'],
+    languageOptions: {
+      parserOptions: {
+        projectService: true,
+        extraFileExtensions: ['.svelte'],
+        parser: ts.parser,
+        svelteConfig
+      }
+    }
   }
 )
