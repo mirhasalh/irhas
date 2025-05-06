@@ -11,7 +11,7 @@
     categories = [...new Set(posts.map((v) => v.categories).flat())]
 </script>
 
-<section class="max-w-4xl mx-auto">
+<section class="max-w-4xl mx-auto min-h-screen">
   <h2 class="merriweather text-4xl mx-4 mt-4 font-bold">Recent posts</h2>
   <form class="filter m-4">
     <input class="btn btn-square" type="reset" value="×" />
