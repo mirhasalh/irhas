@@ -5,7 +5,9 @@
   import 'highlight.js/styles/atom-one-dark.css'
   import { formatDate, website, formatSlug } from '$lib'
   import { PostPageState } from './state.svelte'
+  import Back from '$icons/tiny/Back.svelte'
   import Sanitized from '$components/Sanitized.svelte'
+  import Home from '$icons/tiny/Home.svelte'
   import Facebook from '$icons/socials/Facebook.svelte'
   import Linkedin from '$icons/socials/Linkedin.svelte'
   import Telegram from '$icons/socials/Telegram.svelte'
@@ -74,7 +76,7 @@
 <div class="sticky top-0 z-20 bg-base-300 hidden md:flex">
   <div class="breadcrumbs text-sm mx-auto">
     <ul>
-      <li><a href="/">🏠</a></li>
+      <li><a href="/" title="Home"><Home /></a></li>
       <li><a href="/posts">posts</a></li>
       <li>{data.post.slug}</li>
     </ul>
@@ -82,7 +84,9 @@
 </div>
 <article class="article">
   <div class="max-w-3xl mx-auto px-4 pt-4">
-    <a class="btn btn-sm mb-4 md:hidden" href="/posts" title="Back to posts">←</a>
+    <a class="btn btn-sm mb-4 md:hidden" href="/posts" title="Back to posts">
+      <Back />
+    </a>
     <br />
     <span class="font-medium text-base-content/50 uppercase">{data.post.categories.join(', ')}</span>
     <br />
