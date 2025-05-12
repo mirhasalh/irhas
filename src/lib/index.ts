@@ -285,31 +285,41 @@ export const techStacks = [
   {
     id: 0,
     title: 'Dart',
-    img: './dart.webp'
+    img: `${website}/dart.webp`
   },
   {
     id: 1,
     title: 'Flutter',
-    img: './flutter.webp'
+    img: `${website}/flutter.webp`
   },
   {
     id: 2,
-    title: 'Svelte',
-    img: './svelte.webp'
+    title: 'Figma',
+    img: `${website}/figma.webp`
   },
   {
     id: 3,
-    title: 'Nuxt',
-    img: './nuxt.webp'
+    title: 'Svelte',
+    img: `${website}/svelte.webp`
   },
   {
     id: 4,
-    title: 'Go',
-    img: './go.webp'
+    title: 'Nuxt',
+    img: `${website}/nuxt.webp`
   },
   {
     id: 5,
+    title: 'Go',
+    img: `${website}/go.webp`
+  },
+  {
+    id: 6,
     title: 'Next',
-    img: './next.webp'
+    img: `${website}/next.webp`
+  },
+  {
+    id: 7,
+    title: 'Swift',
+    img: `${website}/swift.webp`
   }
 ]
