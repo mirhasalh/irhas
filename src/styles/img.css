@@ -3,6 +3,7 @@ img.app-icon {
 }
 
 img.tech-stack-image {
+    max-height: 50px;
     transition: filter 0.3s ease;
 }
 
