@@ -321,5 +321,15 @@ export const techStacks = [
     id: 7,
     title: 'Swift',
     img: `${website}/swift.webp`
+  },
+  {
+    id: 8,
+    title: 'Java',
+    img: `${website}/java.webp`
+  },
+  {
+    id: 9,
+    title: 'Spring Boot',
+    img: `${website}/spring-boot.webp`
   }
 ]
