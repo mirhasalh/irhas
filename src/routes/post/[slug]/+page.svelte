@@ -133,7 +133,7 @@
         <ul class="list list-mb-2">
           {#each data.post.headings as heading (heading)}
             <li>
-              <button type="button" onclick={() => pageState.onHeading(heading)}>{formatSlug(heading)}</button>
+              <button class="link link-hover toc-item" type="button" onclick={() => pageState.onHeading(heading)}>{formatSlug(heading)}</button>
             </li>
           {/each}
         </ul>
