@@ -125,7 +125,7 @@
     {/if}
     <figcaption class="hidden">{data.post.title}</figcaption>
   </figure>
-  <div class="max-w-3xl mx-auto px-4">
+  <div class="max-w-3xl mx-auto px-4 xl:hidden">
     <div class="collapse border-base-300 border">
       <input type="checkbox" />
       <div class="collapse-title font-semibold">Table of contents</div>
@@ -140,15 +140,30 @@
       </div>
     </div>
   </div>
-  <div class="article-content max-w-3xl mx-auto my-4 px-4" bind:this={parsedEl}>
-    <Sanitized html={data.code} />
-  </div>
-  <div class="max-w-3xl mx-auto px-4">
-    <ul class="flex gap-2 flex-wrap">
-      {#each data.post.tags as tag (tag)}
-        {@const url = `/posts/tagged/${tag}`}
-        <li><a class="btn btn-sm btn-primary" href={url}>{`#${tag}`}</a></li>
-      {/each}
-    </ul>
+  <div class="article-join">
+    <div class="article-toc">
+      <div class="collapse border-base-300 border collapse-open">
+        <input type="checkbox" />
+        <div class="collapse-title font-semibold">Table of contents</div>
+        <div class="collapse-content text-sm">
+          <ul class="list list-mb-2">
+            {#each data.post.headings as heading (heading)}
+              <li>
+                <button class="link link-hover toc-item" type="button" onclick={() => pageState.onHeading(heading)}>{formatSlug(heading)}</button>
+              </li>
+            {/each}
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="article-content max-w-3xl mx-auto my-4 px-4" bind:this={parsedEl}>
+      <Sanitized html={data.code} />
+      <ul class="flex gap-2 flex-wrap">
+        {#each data.post.tags as tag (tag)}
+          {@const url = `/posts/tagged/${tag}`}
+          <li><a class="btn btn-sm btn-primary" href={url}>{`#${tag}`}</a></li>
+        {/each}
+      </ul>
+    </div>
   </div>
 </article>
