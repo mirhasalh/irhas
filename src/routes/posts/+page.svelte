@@ -1,6 +1,8 @@
 <script lang="ts">
-  import PostCard from '$components/PostCard.svelte'
+  import { fade, fly } from 'svelte/transition'
+  import { flip } from 'svelte/animate'
   import type { PageData } from './$types'
+  import PostCard from '$components/PostCard.svelte'
 
   let { data }: { data: PageData } = $props()
 
@@ -9,6 +11,10 @@
   const obj: any = data as any,
     posts: App.Post[] = obj.posts as App.Post[],
     categories = [...new Set(posts.map((v) => v.categories).flat())]
+
+  let postsToShow = $derived.by(() => {
+    return !selectedCategory ? posts : posts.filter((p) => p.categories.includes(selectedCategory))
+  })
 </script>
 
 <section class="max-w-4xl mx-auto min-h-screen">
@@ -20,11 +26,10 @@
     {/each}
   </form>
   <ul class="recent-posts-grid grid gap-4 md:grid-cols-2 px-4">
-    {#each posts as post (post.slug)}
-      {@const show = !selectedCategory ? true : post.categories.includes(selectedCategory)}
-      {#if show}
-        <li><PostCard {post} /></li>
-      {/if}
+    {#each postsToShow as post (post.slug)}
+      <li animate:flip in:fade out:fly={{ x: 100 }}>
+        <PostCard {post} />
+      </li>
     {/each}
   </ul>
 </section>

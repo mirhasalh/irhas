@@ -1,5 +1,7 @@
 .post-card {
-    transition: box-shadow .2s linear;
+    transition-property: box-shadow;
+    transition-duration: .2s;
+    transition-timing-function: linear;
 }
 
 .post-card-graphic>img,
