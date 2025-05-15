@@ -49,6 +49,14 @@ export class PostPageState {
     })
   }
 
+  setBlockquoteStyle = (htmlElement: HTMLElement) => {
+    const linkStyle = ['blockquote']
+
+    htmlElement.querySelectorAll('blockquote').forEach((blockquoteEl) => {
+      blockquoteEl.classList.add(...linkStyle)
+    })
+  }
+
   onHeading = (id: string) => {
     const element = document.getElementById(id);
     if (element) {

@@ -42,6 +42,7 @@
     pageState.highlightElement(parsedEl)
     pageState.setCodeStyle(parsedEl)
     pageState.setLinkStyle(parsedEl)
+    pageState.setBlockquoteStyle(parsedEl)
   }
 
   onMount(() => {
