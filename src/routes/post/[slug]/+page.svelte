@@ -41,6 +41,7 @@
   const onElement = () => {
     pageState.highlightElement(parsedEl)
     pageState.setCodeStyle(parsedEl)
+    pageState.setLinkStyle(parsedEl)
   }
 
   onMount(() => {

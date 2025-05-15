@@ -41,6 +41,14 @@ export class PostPageState {
     })
   }
 
+  setLinkStyle = (htmlElement: HTMLElement) => {
+    const linkStyle = ['link', 'link-primary', 'link-hover']
+
+    htmlElement.querySelectorAll('p > a').forEach((linkEl) => {
+      linkEl.classList.add(...linkStyle)
+    })
+  }
+
   onHeading = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
