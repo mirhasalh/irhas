@@ -331,5 +331,10 @@ export const techStacks = [
     id: 9,
     title: 'Spring Boot',
     img: `${website}/spring-boot.webp`
+  },
+  {
+    id: 10,
+    title: 'Rive app',
+    img: `${website}/rive.webp`
   }
 ]
