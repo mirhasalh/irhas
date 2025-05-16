@@ -18,8 +18,7 @@
     pageState = new PostPageState(),
     parsedEl: HTMLElement
 
-  const cover = data.post.imageUrl ? data.post.imageUrl : `${website}/og-image.jpg`,
-    headings = data.post.headings ? data.post.headings.map((item) => item.replace(/-/g, ' ')) : [],
+  const headings = data.post.headings ? data.post.headings.map((item) => item.replace(/-/g, ' ')) : [],
     keywords = [data.post.title, ...headings, ...data.post.tags],
     f = `https://www.facebook.com/sharer/sharer.php?u=${website}/post/${data.post.slug}`,
     x = `https://twitter.com/intent/tweet?text=Check%20this%20out!&url=${website}/post/${data.post.slug}`,
@@ -59,7 +58,7 @@
   <!-- Open graph metadata -->
   <meta property="og:title" content={data.post.title} />
   <meta property="og:description" content={data.post.excerpt} />
-  <meta property="og:image" content={cover} />
+  <meta property="og:image" content={`${website}/${data.post.slug}.png`} />
   <meta property="og:url" content={`${website}/post/${data.post.slug}`} />
   <meta property="og:type" content="article" />
   <meta property="article:published_time" content={data.post.publishedAt} />
@@ -69,7 +68,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content={data.post.title} />
   <meta name="twitter:description" content={data.post.excerpt} />
-  <meta name="twitter:image" content={cover} />
+  <meta name="twitter:image" content={`${website}/${data.post.slug}.png`} />
 
   <!-- Canonical URL -->
   <link rel="canonical" href={`${website}/post/${data.post.slug}`} />
@@ -114,17 +113,7 @@
     </div>
   </div>
   <figure class="post-card-graphic max-w-4xl mx-auto my-10 overflow-clip lg:rounded-lg">
-    {#if data.post.videoUrl}
-      <video autoplay loop muted playsinline width="100%">
-        <source src={data.post.videoUrl} type="video/mp4" />
-        <track src="" kind="captions" srclang="en" label="English" />
-        Your browser does not support the video tag.
-      </video>
-    {:else if data.post.imageUrl}
-      <img src={data.post.imageUrl} alt={data.post.title} width="100%" />
-    {:else}
-      <img src={`${website}/og-image.jpg`} alt={data.post.title} width="100%" />
-    {/if}
+    <img src={`${website}/${data.post.slug}.png`} alt={data.post.title} width="100%" />
     <figcaption class="hidden">{data.post.title}</figcaption>
   </figure>
   <div class="max-w-3xl mx-auto px-4 xl:hidden">
