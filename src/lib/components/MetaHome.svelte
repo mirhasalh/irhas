@@ -23,4 +23,6 @@
 
   <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
   <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/rss.xml" />
+
+  <meta name="msvalidate.01" content="E5CD603A2AABF1659ECAC8A20B150AF4" />
 </svelte:head>

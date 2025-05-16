@@ -18,7 +18,7 @@
     pageState = new PostPageState(),
     parsedEl: HTMLElement
 
-  const cover = data.post.imageUrl ? `/api/cdn-sanity?url=${data.post.imageUrl}` : `${website}/og-image.jpg`,
+  const cover = data.post.imageUrl ? data.post.imageUrl : `${website}/og-image.jpg`,
     headings = data.post.headings ? data.post.headings.map((item) => item.replace(/-/g, ' ')) : [],
     keywords = [data.post.title, ...headings, ...data.post.tags],
     f = `https://www.facebook.com/sharer/sharer.php?u=${website}/post/${data.post.slug}`,
