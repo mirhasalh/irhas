@@ -2,6 +2,8 @@
   import { bio, gitHubAccounts, recentWork } from '$lib'
   import Tick from '$icons/Tick.svelte'
   import Card3D from '$components/Card3D.svelte'
+
+  let showImage = $state(false)
 </script>
 
 <div class="hero min-h-screen">
@@ -28,7 +30,16 @@
 </div>
 
 <section class="max-w-4xl mx-auto">
-  <h2 id="work-history" class="merriweather text-4xl m-4 font-bold">Work history</h2>
+  <div class="flex-wrap justify-between items-center m-4 md:flex">
+    <h2 id="work-history" class="merriweather text-4xl font-bold">Work history</h2>
+    <fieldset class="fieldset p-4">
+      <legend class="fieldset-legend hidden">Login options</legend>
+      <label class="label">
+        Show image
+        <input type="checkbox" bind:checked={showImage} class="toggle" />
+      </label>
+    </fieldset>
+  </div>
   <ul class="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical px-4">
     {#each recentWork as w, i (w.id)}
       {@const isEven = i % 2 == 0}
@@ -40,10 +51,10 @@
         <div class={textStyle}>
           <time class="jetbrains-mono italic">{w.year}</time>
           <div class="text-lg font-black merriweather">{w.title}</div>
-          <img class="hidden" src={w.imgUrl} alt={w.title} />
+          <img class:hidden={!showImage} src={w.imgUrl} alt={w.title} />
           <small>{w.desc}</small>
           <br />
-          <a class="btn btn-sm hidden" href={w.urls[0]}>
+          <a class="btn btn-sm mt-2" class:hidden={!showImage} href={w.urls[0]}>
             <span class="text-sm">Visit</span>
           </a>
         </div>
