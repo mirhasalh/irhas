@@ -8,7 +8,8 @@ const config = {
     adapter: adapter(),
     alias: {
       $components: 'src/lib/components',
-      $icons: 'src/lib/icons'
+      $icons: 'src/lib/icons',
+      $l10n: 'src/lib/l10n'
     }
   },
   extensions: ['.svelte', '.svx']
