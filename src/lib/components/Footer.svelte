@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { l } from '$lib/shared.svelte'
   import BrandLogo from './BrandLogo.svelte'
   import { email, sites, socials } from '$lib'
   import { app } from '$lib/shared.svelte'
@@ -18,7 +19,7 @@
 
 <footer class="footer sm:footer-horizontal bg-base-300 text-base-content p-10 mt-10">
   <nav>
-    <h3 class="footer-title">Sites</h3>
+    <h3 class="footer-title">{l('sites')}</h3>
     {#each sites as site (site.url)}
       <a class="link link-hover" href={site.url} target="_blank" rel="noopener noreferrer" aria-describedby="open-in-new-tab">
         {site.name}
@@ -26,7 +27,7 @@
     {/each}
   </nav>
   <nav>
-    <h3 class="footer-title">Socials</h3>
+    <h3 class="footer-title">{l('socials')}</h3>
     {#each socials as social (social.url)}
       <a class="link link-hover" href={social.url} target="_blank" rel="noopener noreferrer" aria-describedby="open-in-new-tab">
         {social.name}
@@ -34,13 +35,13 @@
     {/each}
   </nav>
   <form onsubmit={sendEmail}>
-    <h3 class="footer-title">Get in touch</h3>
+    <h3 class="footer-title">{l('getInTouch')}</h3>
     <fieldset class="fieldset">
-      <legend class="fieldset-legend">Email me</legend>
+      <legend class="fieldset-legend">{l('emailMe')}</legend>
       <div class="join">
         <input class="input input-bordered join-item" id="email-body" name="email-body" type="text" aria-label="Email body" placeholder="Jot something down" bind:value={emailBody} />
         <button type="submit" class="btn btn-primary join-item" disabled={emailBody.length < 5}>
-          <span>Send</span>
+          <span>{l('send')}</span>
         </button>
       </div>
     </fieldset>

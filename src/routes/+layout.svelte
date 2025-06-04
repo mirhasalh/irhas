@@ -5,6 +5,7 @@
   import { onNavigate } from '$app/navigation'
   import { HomePageState } from './state.svelte'
   import { app } from '$lib/shared.svelte'
+  import t9n from '$l10n/t9n'
   import Footer from '$components/Footer.svelte'
   import BrandLogo from '$components/BrandLogo.svelte'
   import AppBar from '$components/AppBar.svelte'
@@ -42,10 +43,15 @@
   {#snippet leading()}
     <a href="/" class="flex items-center gap-2" title="Home">
       <BrandLogo width={40} height={40} />
-      <p class="merriweather leading-4 text-sm">Irhas'<br />dev blog</p>
+      <p class="merriweather leading-4 text-sm hidden sm:block">Irhas'<br />dev blog</p>
     </a>
   {/snippet}
   {#snippet trailing()}
+    <select class="select w-18 uppercase" bind:value={app.locale}>
+      {#each Object.keys(t9n) as lang}
+        <option value={lang}>{lang}</option>
+      {/each}
+    </select>
     <LightSwitch isDark={app.theme === 'dark'} {onChanged} />
     <div class="indicator hidden md:block">
       <span class="indicator-item status status-success animate-ping"></span>

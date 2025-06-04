@@ -1,5 +1,6 @@
 <script lang="ts">
   import Rive from '$components/Rive.svelte'
+  import { l } from '$lib/shared.svelte'
 
   const width = 200,
     height = 200,
@@ -15,15 +16,21 @@
   <div class="hero-overlay-gradient-secondary reveal-blur animation-delay-500"></div>
   <div class="hero-content text-center relative z-10">
     <div class="max-w-3xl">
-      <h1 id="animations" class="text-5xl font-bold merriweather">Animations</h1>
+      <h1 id="animations" class="text-5xl font-bold merriweather">
+        {l('animations')}
+      </h1>
       <p class="py-6 hidden md:block">
-        Built in <a class="link link-hover link-secondary" href="https://rive.app/" target="_blank" rel="noopener noreferrer" aria-describedby="open-in-new-tab">Rive</a>, super lightweight and the file size stays tiny.
+        {l('riveIntro.start')}
+        <a class="link link-hover link-secondary" href="https://rive.app/" target="_blank" rel="noopener noreferrer" aria-describedby="open-in-new-tab">Rive</a>
+        — {l('riveIntro.mid')}
         <br />
-        Perfect for keeping things fast without losing quality.
+        {l('riveIntro.end')}
       </p>
       <p class="py-6 text-sm block md:hidden">
-        Built in <a class="link link-hover link-secondary" href="https://rive.app/" target="_blank" rel="noopener noreferrer" aria-describedby="open-in-new-tab">Rive</a>, super lightweight and the file size stays tiny. Perfect for keeping things fast
-        without losing quality.
+        {l('riveIntro.start')}
+        <a class="link link-hover link-secondary" href="https://rive.app/" target="_blank" rel="noopener noreferrer" aria-describedby="open-in-new-tab">Rive</a>
+        — {l('riveIntro.mid')}
+        {l('riveIntro.end')}
       </p>
       <ul class="flex flex-wrap justify-center items-center gap-2">
         {#each avatars as avatar, i (avatar.id)}

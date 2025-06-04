@@ -1,5 +1,6 @@
 <script lang="ts">
   import { bio, gitHubAccounts, recentWork } from '$lib'
+  import { l } from '$lib/shared.svelte'
   import Tick from '$icons/Tick.svelte'
   import Card3D from '$components/Card3D.svelte'
 
@@ -12,10 +13,14 @@
   <div class="hero-content flex-col lg:flex-row-reverse max-w-3xl relative z-10">
     <Card3D />
     <div>
-      <h1 id="greetings" class="merriweather text-5xl font-bold">Hi there, I'm Irhas</h1>
+      <h1 id="greetings" class="merriweather text-5xl font-bold">
+        {l('greetings2')}
+      </h1>
       <p class="py-6">{bio}</p>
-      <h2 id="github-accounts" class="font-bold merriweather text-4xl">GitHub accounts</h2>
-      <p class="py-4">Hopefully, these say a lot about my coding journey.</p>
+      <h2 id="github-accounts" class="font-bold merriweather text-4xl">
+        {l('gitHubAccounts')}
+      </h2>
+      <p class="py-4">{l('gitHubAccountsSubtitle')}</p>
       <div class="avatar-group -space-x-6">
         {#each gitHubAccounts as acc (acc.id)}
           <div class="avatar">
@@ -31,11 +36,13 @@
 
 <section class="max-w-4xl mx-auto">
   <div class="flex-wrap justify-between items-center m-4 md:flex">
-    <h2 id="work-history" class="merriweather text-4xl font-bold">Work history</h2>
+    <h2 id="work-history" class="merriweather text-4xl font-bold">
+      {l('workHistory')}
+    </h2>
     <fieldset class="fieldset p-4">
       <legend class="fieldset-legend hidden">Login options</legend>
       <label class="label">
-        Show image
+        {l('showImage')}
         <input type="checkbox" bind:checked={showImage} class="toggle" />
       </label>
     </fieldset>
@@ -55,7 +62,7 @@
           <small>{w.desc}</small>
           <br />
           <a class="btn btn-sm mt-2" class:hidden={!showImage} href={w.urls[0]}>
-            <span class="text-sm">Visit</span>
+            <span class="text-sm">{l('visit')}</span>
           </a>
         </div>
         {#if i !== recentWork.length - 1}

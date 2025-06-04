@@ -1,6 +1,7 @@
 <script lang="ts">
   import type { LayoutData } from './$types'
   import { apps, techStacks } from '$lib'
+  import { l } from '$lib/shared.svelte'
   import MetaHome from '$components/MetaHome.svelte'
   import PostCard from '$components/PostCard.svelte'
   import PixelCanvas from '$components/PixelCanvas.svelte'
@@ -21,11 +22,14 @@
   <div class="hero-content text-center relative z-10">
     <div class="max-w-md">
       <h1 class="reveal-fade-fly-blur text-5xl font-bold merriweather md:text-7xl">
-        <span class="animate-wave">👋</span> Hello,
+        <span class="animate-wave">👋</span>
+        {l('greetings.hello')}
         <br />
-        I'm Irhas
+        {l('greetings.name')}
       </h1>
-      <p class="reveal-fade-fly-blur animation-delay-250 py-6 md:text-xl">Welcome to my personal blog.</p>
+      <p class="reveal-fade-fly-blur animation-delay-250 py-6 md:text-xl">
+        {l('welcome')}
+      </p>
       <div class="tooltip tooltip-bottom" data-tip="See recent posts">
         <a href="#recent-posts" class="reveal-fade-fly-blur animation-delay-500 btn btn-ghost" title="See recent posts">
           <ArrowDown />
@@ -50,16 +54,25 @@
 </section>
 
 <section class="max-w-4xl mx-auto">
-  <h2 id="recent-posts" class="merriweather text-4xl m-4 font-bold">Recent posts</h2>
+  <h2 id="recent-posts" class="merriweather text-4xl m-4 font-bold">
+    {l('recentPost')}
+  </h2>
   <ul class="recent-posts-grid grid gap-4 md:grid-cols-2 px-4">
     {#each posts as post (post.slug)}
       <li><PostCard {post} /></li>
     {/each}
   </ul>
+  <div class="flex justify-center my-4">
+    <a class="btn" href="/posts">
+      {l('viewAll')}
+    </a>
+  </div>
 </section>
 
 <section class="max-w-4xl mx-auto mt-10">
-  <h2 id="apps" class="merriweather text-4xl m-4 font-bold">Apps</h2>
+  <h2 id="apps" class="merriweather text-4xl m-4 font-bold">
+    {l('apps')}
+  </h2>
   <ul class="recent-posts-grid grid gap-4 md:grid-cols-2 px-4">
     {#each apps as app (app.id)}
       {@const url = `/app/${app.name.replace(' ', '-').toLowerCase()}`}
