@@ -3,8 +3,7 @@ import { error } from '@sveltejs/kit'
 
 // Basic informations
 export const website = 'https://irhas.lol',
-  email = 'irhasm@outlook.com',
-  bio = 'Just a regular guy from Bandung, always eager to challenge himself in design and front-end development every day.'
+  email = 'irhasm@outlook.com'
 
 export const gitHubAccounts = [
   {

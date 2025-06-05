@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { l } from '$lib/shared.svelte'
   import { fade, fly } from 'svelte/transition'
   import { flip } from 'svelte/animate'
   import type { PageData } from './$types'
@@ -18,7 +19,9 @@
 </script>
 
 <section class="max-w-4xl mx-auto min-h-screen">
-  <h2 class="merriweather text-4xl mx-4 mt-4 font-bold">Recent posts</h2>
+  <h2 class="merriweather text-4xl mx-4 mt-4 font-bold">
+    {l('recentPost')}
+  </h2>
   <form class="filter m-4">
     <input class="btn btn-square" type="reset" value="×" />
     {#each categories as c}

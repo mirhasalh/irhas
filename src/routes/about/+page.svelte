@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { bio, gitHubAccounts, recentWork } from '$lib'
+  import { gitHubAccounts, recentWork } from '$lib'
   import { l } from '$lib/shared.svelte'
   import Tick from '$icons/Tick.svelte'
   import Card3D from '$components/Card3D.svelte'
@@ -16,7 +16,7 @@
       <h1 id="greetings" class="merriweather text-5xl font-bold">
         {l('greetings2')}
       </h1>
-      <p class="py-6">{bio}</p>
+      <p class="py-6">{l('bio')}</p>
       <h2 id="github-accounts" class="font-bold merriweather text-4xl">
         {l('gitHubAccounts')}
       </h2>

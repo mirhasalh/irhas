@@ -2,6 +2,7 @@ export default {
   en: {
     animations: 'Animations',
     apps: 'Apps',
+    bio: 'Just a regular guy from Bandung, always eager to challenge himself in design and front-end development every day.',
     emailMe: 'Email me',
     getInTouch: 'Get in touch',
     gitHubAccounts: 'GitHub accounts',
@@ -35,6 +36,7 @@ export default {
   id: {
     animations: 'Animasi',
     apps: 'Aplikasi',
+    bio: 'Seorang pria biasa dari Bandung, yang selalu bersemangat menantang dirinya sendiri dalam desain dan pengembangan front-end setiap hari.',
     emailMe: 'Kirim pesan',
     getInTouch: 'Hubungi kami',
     gitHubAccounts: 'Akun GitHub',
