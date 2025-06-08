@@ -1,10 +1,14 @@
 <script lang="ts">
   import { website } from '$lib'
   import type { PageData } from './$types'
+  import GooglePlay from '$icons/download/GooglePlay.svelte'
+  import AppStore from '$icons/download/AppStore.svelte'
 
   const note = `Thanks for trying out this app before it's released! 🙏`
 
   let { data }: { data: PageData } = $props()
+
+  const urls = data.app!.urls as App.AppUrl[]
 
   const requestInternalTesting = () => {
     const email = prompt('Enter your email to request access to the closed testing:')
@@ -34,30 +38,34 @@
 </svelte:head>
 
 <div class="hero min-h-screen">
+  <div class="hero-overlay-gradient-primary reveal-blur animation-delay-500"></div>
   <div class="hero-pattern-neutral-content"></div>
-  <div class="hero-content text-center">
+  <div class="hero-content text-center relative z-10">
     <div class="max-w-md">
       <img class="app-icon mx-auto mb-4" src={data.app!.icon} alt={data.app!.name} width="126" />
-      {#if data.app!.isTesting}
-        <div class="grid gap-4">
-          <button class="btn" onclick={() => requestInternalTesting()}>
-            <span>Join closed-testing</span>
-          </button>
-          <p><small>{note}</small></p>
-        </div>
-      {:else}
-        <div class="flex gap-2 mt-4">
-          {#if data.app!.ios}
-            <a class="btn" href={data.app!.ios} target="_blank" rel="noopener noreferrer" aria-describedby="open-in-new-tab">
-              <span>AppStore</span>
-            </a>
-          {/if}
-          {#if data.app!.android}
-            <a class="btn" href={data.app!.android} target="_blank" rel="noopener noreferrer" aria-describedby="open-in-new-tab">
-              <span>GooglePlay</span>
-            </a>
-          {/if}
-        </div>
+      <ul class="flex gap-2 justify-center">
+        {#each urls.filter((v) => v.show) as url (url.id)}
+          <li>
+            {#if url.code === 'internal-testing'}
+              <button class="btn" onclick={() => requestInternalTesting()}>
+                <span>Join closed-testing</span>
+              </button>
+            {:else}
+              <a href={url.url} target="_blank" rel="noopener noreferrer" aria-describedby="open-in-new-tab">
+                {#if url.code === 'android'}
+                  <GooglePlay />
+                {:else if url.code === 'ios'}
+                  <AppStore />
+                {:else}
+                  <span>{url.title}</span>
+                {/if}
+              </a>
+            {/if}
+          </li>
+        {/each}
+      </ul>
+      {#if !data.app!.production}
+        <p class="mt-2"><small>{note}</small></p>
       {/if}
     </div>
   </div>

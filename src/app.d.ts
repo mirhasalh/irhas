@@ -20,6 +20,14 @@ declare global {
 	  readingTime: number
 	  headings: string[]
     }
+
+	interface AppUrl {
+	  id: number
+	  title: string
+	  code: string
+	  url: string
+	  show: boolean
+	}
   }
 }
 
