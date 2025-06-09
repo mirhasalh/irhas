@@ -230,9 +230,30 @@ export const apps = [
   {
     id: 0,
     year: '2025',
-    android: '',
-    ios: '',
-    isTesting: true,
+    urls: [
+      {
+        id: 0,
+        title: 'Android',
+        code: 'android',
+        url: 'https://irhas.lol',
+        show: false
+      },
+      {
+        id: 1,
+        title: 'iOS',
+        code: 'ios',
+        url: 'https://irhas.lol',
+        show: false
+      },
+      {
+        id: 2,
+        title: 'Internal testing',
+        code: 'internal-testing',
+        url: '',
+        show: true
+      }
+    ],
+    production: false,
     name: 'Create invoice',
     icon: `${website}/IMG_20250212-231404.webp`,
     featureGraphic: `${website}/IMG_20250213-134303.webp`,
