@@ -2,7 +2,7 @@
   import { onMount } from 'svelte'
 
   let innerWidth = $state(0)
-  let innerHeight = $state(0)
+  let parentHeight = $state(0)
 
   interface Dot {
     x: number
@@ -25,7 +25,7 @@
     if (!canvasEl || !ctx) return
 
     canvasEl.width = innerWidth
-    canvasEl.height = innerHeight
+    canvasEl.height = parentHeight
 
     dots = []
 
@@ -68,8 +68,13 @@
     requestAnimationFrame(draw)
   }
 
+  const getParentHeight = () => {
+    const parent = canvasEl.parentElement
+    parentHeight = parent!.offsetHeight
+  }
+
   $effect(() => {
-    if (innerWidth && innerHeight && ctx) {
+    if (innerWidth && ctx) {
       initCanvas()
     }
   })
@@ -79,17 +84,20 @@
     if (!context) throw new Error('Failed to get canvas context')
     ctx = context
 
+    if (canvasEl) getParentHeight()
     initCanvas()
     if (canvasEl) draw()
   })
 </script>
 
-<svelte:window bind:innerWidth bind:innerHeight />
+<svelte:window bind:innerWidth />
 
 <canvas class="pixel-canvas" bind:this={canvasEl}></canvas>
 
 <style>
   canvas.pixel-canvas {
+    width: inherit;
+    height: inherit;
     pointer-events: none;
     display: block;
     position: relative;

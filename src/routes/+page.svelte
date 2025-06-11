@@ -16,7 +16,7 @@
 
 <MetaHome />
 
-<div class="hero relative">
+<div class="hero min-h-screen relative">
   <div class="reveal-curtain"></div>
   <div class="hero-overlay-gradient-primary reveal-blur animation-delay-2000"></div>
   <div class="hero-content text-center relative z-10">
