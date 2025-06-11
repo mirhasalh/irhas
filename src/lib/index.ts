@@ -233,27 +233,27 @@ export const apps = [
     urls: [
       {
         id: 0,
-        title: 'Android',
-        code: 'android',
-        url: 'https://irhas.lol',
+        title: 'Internal testing',
+        code: 'internal-testing',
+        url: '',
         show: false
       },
       {
         id: 1,
+        title: 'Android',
+        code: 'android',
+        url: 'https://play.google.com/store/apps/details?id=lol.irhas&pli=1',
+        show: true
+      },
+      {
+        id: 2,
         title: 'iOS',
         code: 'ios',
         url: 'https://irhas.lol',
         show: false
-      },
-      {
-        id: 2,
-        title: 'Internal testing',
-        code: 'internal-testing',
-        url: '',
-        show: true
       }
     ],
-    production: false,
+    production: true,
     name: 'Create invoice',
     icon: `${website}/IMG_20250212-231404.webp`,
     featureGraphic: `${website}/IMG_20250213-134303.webp`,
