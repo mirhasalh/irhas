@@ -302,59 +302,15 @@ export const getApp = (slug = '') => {
 }
 
 export const techStacks = [
-  {
-    id: 0,
-    title: 'Dart',
-    img: `${website}/dart.webp`
-  },
-  {
-    id: 1,
-    title: 'Flutter',
-    img: `${website}/flutter.webp`
-  },
-  {
-    id: 2,
-    title: 'Figma',
-    img: `${website}/figma.webp`
-  },
-  {
-    id: 3,
-    title: 'Svelte',
-    img: `${website}/svelte.webp`
-  },
-  {
-    id: 4,
-    title: 'Nuxt',
-    img: `${website}/nuxt.webp`
-  },
-  {
-    id: 5,
-    title: 'Go',
-    img: `${website}/go.webp`
-  },
-  {
-    id: 6,
-    title: 'Next',
-    img: `${website}/next.webp`
-  },
-  {
-    id: 7,
-    title: 'Swift',
-    img: `${website}/swift.webp`
-  },
-  {
-    id: 8,
-    title: 'Java',
-    img: `${website}/java.webp`
-  },
-  {
-    id: 9,
-    title: 'Spring Boot',
-    img: `${website}/spring-boot.webp`
-  },
-  {
-    id: 10,
-    title: 'Rive app',
-    img: `${website}/rive.webp`
-  }
+  { id: 0, title: 'Dart', },
+  { id: 1, title: 'Flutter' },
+  { id: 2, title: 'Figma' },
+  { id: 3, title: 'Svelte' },
+  { id: 4, title: 'Nuxt' },
+  { id: 5, title: 'Go' },
+  { id: 6, title: 'Next' },
+  { id: 7, title: 'Swift' },
+  { id: 8, title: 'Java' },
+  { id: 9, title: 'Spring' },
+  { id: 10, title: 'Rive' }
 ]

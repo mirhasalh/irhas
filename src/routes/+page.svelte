@@ -6,6 +6,17 @@
   import PostCard from '$components/PostCard.svelte'
   import PixelCanvas from '$components/PixelCanvas.svelte'
   import ArrowDown from '$icons/ArrowDown.svelte'
+  import Dart from '$icons/tech/Dart.svelte'
+  import Flutter from '$icons/tech/Flutter.svelte'
+  import Figma from '$icons/tech/Figma.svelte'
+  import Go from '$icons/tech/Go.svelte'
+  import Java from '$icons/tech/Java.svelte'
+  import Next from '$icons/tech/Next.svelte'
+  import Nuxt from '$icons/tech/Nuxt.svelte'
+  import Spring from '$icons/tech/Spring.svelte'
+  import Svelte from '$icons/tech/Svelte.svelte'
+  import Swift from '$icons/tech/Swift.svelte'
+  import Rive from '$icons/tech/Rive.svelte'
   import Marquee from '$components/Marquee.svelte'
 
   let { data }: { data: LayoutData } = $props()
@@ -45,8 +56,30 @@
   <Marquee>
     <div class="flex gap-1">
       {#each techStacks as tech (tech.id)}
-        <div class="p-6 w-50 flex justify-center items-center">
-          <img class="tech-stack-image" src={tech.img} alt={tech.title} />
+        <div class="p-6 flex justify-center items-center">
+          {#if tech.title === 'Flutter'}
+            <Flutter />
+          {:else if tech.title === 'Figma'}
+            <Figma />
+          {:else if tech.title === 'Go'}
+            <Go />
+          {:else if tech.title === 'Java'}
+            <Java />
+          {:else if tech.title === 'Next'}
+            <Next />
+          {:else if tech.title === 'Nuxt'}
+            <Nuxt />
+          {:else if tech.title === 'Spring'}
+            <Spring />
+          {:else if tech.title === 'Svelte'}
+            <Svelte />
+          {:else if tech.title === 'Swift'}
+            <Swift />
+          {:else if tech.title === 'Rive'}
+            <Rive />
+          {:else}
+            <Dart />
+          {/if}
         </div>
       {/each}
     </div>
