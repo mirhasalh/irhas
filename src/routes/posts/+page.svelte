@@ -13,7 +13,7 @@
     categories = $derived([...new Set(posts.map((v) => v.category).flat())])
 
   let postsToShow = $derived.by(() => {
-    return !selectedCategory ? posts : posts.filter((p) => p.category === selectedCategory)
+    return !selectedCategory ? posts : posts.filter((p) => p.category === selectedCategory).sort((a, b) => new Date(b.publishedAt!).getTime() - new Date(a.publishedAt!).getTime())
   })
 </script>
 

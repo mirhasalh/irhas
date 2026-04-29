@@ -7,7 +7,8 @@
     toFind = $derived(find.replace(/\s+/g, '').toLowerCase())
 
   const obj: any = $derived(data as any),
-    posts: App.Post[] = $derived(obj.posts as App.Post[])
+    posts: App.Post[] = $derived(obj.posts as App.Post[]),
+    sortedPosts = $derived(posts.filter((post) => post.publishedAt).sort((a, b) => new Date(b.publishedAt!).getTime() - new Date(a.publishedAt!).getTime()))
 
   const goFind = async (find = '') => window.open(`/posts/tagged/${find}`, '_blank')
 
@@ -33,9 +34,9 @@
       <input name="search" type="text" placeholder="Tag" bind:value={find} onkeypress={onKeyPress} />
     </label>
   </form>
-  {#if posts.length}
+  {#if sortedPosts.length}
     <ul class="recent-posts-grid grid gap-4 px-4 md:grid-cols-2">
-      {#each posts as post (post.slug)}
+      {#each sortedPosts as post (post._id)}
         <li><PostCard {post} /></li>
       {/each}
     </ul>

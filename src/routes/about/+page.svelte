@@ -35,7 +35,7 @@
   let { data }: { data: PageData } = $props(),
     showImage = $state(false)
 
-  const works = $derived(data.works.reverse())
+  const works = $derived(data.works.sort((a, b) => b.year - a.year))
 </script>
 
 <svelte:head>
