@@ -37,7 +37,8 @@
 
   const obj = $derived(data as any),
     posts = $derived(obj.posts as App.Post[]),
-    mobileApps = $derived(obj.apps as App.MobileApp[])
+    mobileApps = $derived(obj.apps as App.MobileApp[]),
+    sortedPosts = $derived(posts.filter((post) => post.publishedAt).sort((a, b) => new Date(b.publishedAt!).getTime() - new Date(a.publishedAt!).getTime()))
 </script>
 
 <MetaHome />
@@ -132,7 +133,7 @@
     {l('recentPosts')}
   </h2>
   <ul class="recent-posts-grid grid gap-4 px-4 md:grid-cols-2">
-    {#each posts as post (post._id)}
+    {#each sortedPosts as post (post._id)}
       <li><PostCard {post} /></li>
     {/each}
   </ul>
