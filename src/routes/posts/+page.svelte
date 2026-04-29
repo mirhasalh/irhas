@@ -13,8 +13,9 @@
     categories = $derived([...new Set(posts.map((v) => v.category).flat())])
 
   let postsToShow = $derived.by(() => {
-    return !selectedCategory ? posts : posts.filter((p) => p.category === selectedCategory).sort((a, b) => new Date(b.publishedAt!).getTime() - new Date(a.publishedAt!).getTime())
-  })
+      return !selectedCategory ? posts : posts.filter((p) => p.category === selectedCategory)
+    }),
+    sortedPostsToShow = $derived(postsToShow.sort((a, b) => new Date(b.publishedAt!).getTime() - new Date(a.publishedAt!).getTime()))
 </script>
 
 <svelte:head>
@@ -48,7 +49,7 @@
     {/each}
   </form>
   <ul class="recent-posts-grid grid gap-4 px-4 md:grid-cols-2">
-    {#each postsToShow as post (post._id)}
+    {#each sortedPostsToShow as post (post._id)}
       <li>
         <PostCard {post} />
       </li>
