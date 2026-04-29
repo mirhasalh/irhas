@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="msvalidate.01" content="E5CD603A2AABF1659ECAC8A20B150AF4" />
+		<meta name="google-site-verification" content="stgZ0EgaRyzVG51NhE0E5bPN58eQCozkWeO7ftJ9dx4" />
+		<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&family=Merriweather:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+		<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+		<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/rss.xml" />
+		%sveltekit.head%
+		<script>
+			(function () {
+				try {
+					const savedTheme = localStorage.getItem('theme')
+					const theme = (savedTheme === 'light' || savedTheme === 'dark')
+						? savedTheme
+						: (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+					document.documentElement.setAttribute('data-theme', theme)
+				} catch (e) {
+					document.documentElement.setAttribute('data-theme', 'light')
+				}
+			})();
+			(function () {
+				try {
+					const savedLang = localStorage.getItem('lang')
+					if (savedLang) document.documentElement.setAttribute('lang', savedLang)
+				} catch (e) { }
+			})();
+		</script>
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div>%sveltekit.body%</div>
+	</body>
+</html>
