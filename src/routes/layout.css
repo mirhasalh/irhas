@@ -12,4 +12,6 @@
 @import url("../styles/post.css");
 @import url("../styles/pre.css");
 @import 'tailwindcss';
-@plugin "daisyui";
+@plugin 'daisyui/index.js' {
+  themes: all;
+}
