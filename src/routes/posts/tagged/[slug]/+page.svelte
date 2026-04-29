@@ -3,11 +3,11 @@
   import PostCard from '$components/PostCard.svelte'
 
   let { data }: { data: PageData } = $props(),
-    find = $state(data.slug),
+    find = $derived(data.slug),
     toFind = $derived(find.replace(/\s+/g, '').toLowerCase())
 
-  const obj: any = data as any,
-    posts: App.Post[] = obj.posts as App.Post[]
+  const obj: any = $derived(data as any),
+    posts: App.Post[] = $derived(obj.posts as App.Post[])
 
   const goFind = async (find = '') => window.open(`/posts/tagged/${find}`, '_blank')
 
