@@ -11,7 +11,7 @@
     },
     {
       name: 'GitHub',
-      url: 'https://github.com/mirhasalh/irhaslol'
+      url: 'https://github.com/mirhasalh/irhas'
     },
     {
       name: 'Instagram',
