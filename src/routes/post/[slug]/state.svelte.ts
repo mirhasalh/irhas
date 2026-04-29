@@ -39,6 +39,10 @@ export class PostPageState {
     htmlElement.querySelectorAll('p > code').forEach((codeEl) => {
       codeEl.classList.add(...codeStyle)
     })
+
+    htmlElement.querySelectorAll('li > code').forEach((codeEl) => {
+      codeEl.classList.add(...codeStyle)
+    })
   }
 
   setLinkStyle = (htmlElement: HTMLElement) => {
