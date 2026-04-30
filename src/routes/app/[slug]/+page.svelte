@@ -3,7 +3,6 @@
   import type { PageData } from './$types'
   import GooglePlay from '$icons/download/GooglePlay.svelte'
   import AppStore from '$icons/download/AppStore.svelte'
-  import { app } from '$lib/shared.svelte'
 
   const note = "Thanks for trying out this app before it's released! 🙏"
 

@@ -8,7 +8,9 @@ declare global {
 		// interface PageState {}
 		// interface Platform {}
 		interface Post {
-			_id: string;
+			id: string;
+			updatedAt: string;
+			createdAt: string;
 			title: string
 			excerpt: string
 			category: string
@@ -29,7 +31,7 @@ declare global {
 			url: string
 		}
 		interface MobileApp {
-			_id: string
+			id: string
 			description: string
 			effectiveDateOfPrivacy: string
 			featureGraphic: string
@@ -43,8 +45,7 @@ declare global {
 			year: number
 		}
 		interface Work {
-			_id: string
-			_createdAt: string
+			id: string
 			title: string
 			description: string
 			imgFileName: string

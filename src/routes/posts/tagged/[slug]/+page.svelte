@@ -36,7 +36,7 @@
   </form>
   {#if sortedPosts.length}
     <ul class="recent-posts-grid grid gap-4 px-4 md:grid-cols-2">
-      {#each sortedPosts as post (post._id)}
+      {#each sortedPosts as post (post.id)}
         <li><PostCard {post} /></li>
       {/each}
     </ul>
