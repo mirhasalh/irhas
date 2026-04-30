@@ -108,7 +108,7 @@
       {l('apps')}
     </h2>
     <ul class="list bg-base-100 rounded-box mx-4 shadow-md">
-      {#each mobileApps as app (app._id)}
+      {#each mobileApps as app (app.id)}
         {@const url = `/app/${app.slug}`}
         <li class="list-row">
           <div><img class="rounded-box size-10" src={`${website}/${app.icon}`} alt={app.title} /></div>
@@ -133,7 +133,7 @@
     {l('recentPosts')}
   </h2>
   <ul class="recent-posts-grid grid gap-4 px-4 md:grid-cols-2">
-    {#each sortedPosts as post (post._id)}
+    {#each sortedPosts as post (post.id)}
       <li><PostCard {post} /></li>
     {/each}
   </ul>

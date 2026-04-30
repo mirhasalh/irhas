@@ -42,14 +42,18 @@
   <h2 class="merriweather mx-4 mt-4 text-4xl font-bold">
     {l('recentPosts')}
   </h2>
-  <form class="m-4 filter">
-    <input class="btn btn-square" type="reset" value="×" />
-    {#each categories as c}
-      <input class="btn" type="radio" bind:group={selectedCategory} name="frameworks" aria-label={c} value={c} />
-    {/each}
-  </form>
+  <div class="w-full overflow-x-auto py-4">
+    <div class="flex w-max">
+      <form class="filter">
+        <input class="btn btn-square" type="reset" value="×" />
+        {#each categories as c}
+          <input class="btn" type="radio" bind:group={selectedCategory} name="frameworks" aria-label={c} value={c} />
+        {/each}
+      </form>
+    </div>
+  </div>
   <ul class="recent-posts-grid grid gap-4 px-4 md:grid-cols-2">
-    {#each sortedPostsToShow as post (post._id)}
+    {#each sortedPostsToShow as post (post.id)}
       <li>
         <PostCard {post} />
       </li>

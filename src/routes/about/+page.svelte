@@ -99,7 +99,7 @@
     </fieldset>
   </div>
   <ul class="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical px-4">
-    {#each works as work, i (work._id)}
+    {#each works as work, i (work.id)}
       {@const isEven = i % 2 == 0}
       {@const textStyle = isEven ? 'timeline-start mb-10 md:text-end' : 'timeline-end md:mb-10'}
       <li>
