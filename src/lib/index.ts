@@ -103,12 +103,9 @@ export const getPost = async (slug: string) => {
 }
 
 export const getTagged = async (tag: string, from = 0, to = 5): Promise<App.Post[]> => {
-  const param = `tagged=%22${tag}%22&perspective=drafts`
+  const param = `tag=%22${tag}%22&perspective=drafts`
   const res = await get(`${tagged}${from}...${to}${taggedQuery}${param}`)
-  const sorted = (res.result as App.Post[]).sort(
-    (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
-  )
-  return sorted
+  return res.result
 }
 
 export const getMobileApps = async (from: number, to: number): Promise<App.MobileApp[]> => {
