@@ -61,7 +61,7 @@
       <div class="indicator-item status status-success"></div>
       <div class="tooltip tooltip-left tooltip-success" data-tip="Open to work">
         <a class="btn btn-ghost btn-circle overflow-clip" href="https://github.com/mirhasalh" target="_blank" rel="noopener noreferrer" aria-describedby="open-in-new-tab" title="Go to mirhasalh GitHub">
-          <img src="https://github.com/mirhasalh.png" alt="mirhasalh" />
+          <img src="/load/image?url=https://github.com/mirhasalh.png" alt="mirhasalh" />
         </a>
       </div>
     </div>

@@ -139,3 +139,24 @@ export const formatDate = (input: string): string => {
 export const formatSlug = (str: string) => {
   return str[0].toLocaleUpperCase() + str.replaceAll('-', ' ').substring(1)
 }
+
+export const loadImage = async (imageUrl: string) => {
+  try {
+    const response = await fetch(imageUrl)
+
+    if (!response.ok) throw error(502, 'Failed to load image')
+
+    const contentType = response.headers.get('content-type') ?? 'image/jpeg'
+    const buffer = await response.arrayBuffer()
+
+    return new Response(buffer, {
+      headers: {
+        'Content-Type': contentType,
+        'Cache-Control': 'public, max-age=31536000'
+      }
+    })
+  } catch (err) {
+    console.error('Proxy error:', err)
+    throw error(500, 'Internal Server Error')
+  }
+}
