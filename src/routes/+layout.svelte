@@ -67,7 +67,9 @@
     </div>
   {/snippet}
 </AppBar>
-{@render children()}
+<main>
+  {@render children()}
+</main>
 <Footer>
   {#snippet trailing()}
     <LightSwitch onAuto={() => onLightSwitch('auto')} onDark={() => onLightSwitch('dark')} onLight={() => onLightSwitch('light')} />
