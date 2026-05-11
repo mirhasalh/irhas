@@ -3,7 +3,7 @@
   import { website } from '$lib'
   import { l } from '$lib/shared.svelte'
   import Tick from '$icons/Tick.svelte'
-  import Card3D from '$components/Card3D.svelte'
+  import Hover3DCard from '$components/Hover3DCard.svelte'
 
   const gitHubAccounts = [
     {
@@ -62,7 +62,7 @@
   <div class="hero-pattern-primary"></div>
   <div class="hero-overlay-gradient-tertiary reveal-blur animation-delay-500"></div>
   <div class="hero-content relative z-10 max-w-3xl flex-col lg:flex-row-reverse">
-    <Card3D />
+    <Hover3DCard src="https://irhas.site/IMG_20250501-170202.webp" alt="Irhas' dev" />
     <div>
       <h1 id="greetings" class="merriweather text-5xl font-bold">
         {l('greetings2')}
