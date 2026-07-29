@@ -10,6 +10,7 @@ import css from 'highlight.js/lib/languages/css'
 import scss from 'highlight.js/lib/languages/scss'
 import javascript from 'highlight.js/lib/languages/javascript'
 import typescript from 'highlight.js/lib/languages/typescript'
+import python from 'highlight.js/lib/languages/python'
 // NOTE: Use HTML, XML for svelte while 'highlight.svelte' is troublesome.
 // import svelte from 'highlight.svelte'
 
@@ -18,6 +19,7 @@ export class PostPageState {
     hljs.registerLanguage('html', html)
     hljs.registerLanguage('plaintext', plaintext)
     hljs.registerLanguage('powershell', powershell)
+    hljs.registerLanguage('python', python)
     hljs.registerLanguage('yaml', yaml)
     hljs.registerLanguage('json', json)
     hljs.registerLanguage('bash', bash)
@@ -26,7 +28,6 @@ export class PostPageState {
     hljs.registerLanguage('sass', scss)
     hljs.registerLanguage('javascript', javascript)
     hljs.registerLanguage('typescript', typescript)
-    // hljs.registerLanguage('svelte', svelte)
   }
 
   highlightElement = (htmlElement: HTMLElement) => {
