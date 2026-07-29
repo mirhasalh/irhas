@@ -121,16 +121,20 @@
     <div class="border-base-300 collapse border">
       <input type="checkbox" />
       <h4 class="merriweather collapse-title font-semibold">Table of contents</h4>
-      <div class="collapse-content text-sm">
-        <ul class="menu">
+      <div class="collapse-content p-0 text-sm">
+        <ul class="menu w-full overflow-x-auto">
           {#each toc as tocItem (tocItem.id)}
             <li>
-              <button class="link link-hover toc-item" type="button" onclick={() => pageState.onTocItem(tocItem.id)}>{tocItem.text}</button>
+              <button class="link link-hover toc-item" type="button" onclick={() => pageState.onTocItem(tocItem.id)}>
+                <span class="break-words">{tocItem.text}</span>
+              </button>
               {#if tocItem.children.length}
                 <ul>
                   {#each tocItem.children as item (item.id)}
                     <li>
-                      <button class="link link-hover toc-item" type="button" onclick={() => pageState.onTocItem(item.id)}>{item.text}</button>
+                      <button class="link link-hover toc-item" type="button" onclick={() => pageState.onTocItem(item.id)}>
+                        <span class="break-words">{item.text}</span>
+                      </button>
                     </li>
                   {/each}
                 </ul>
@@ -150,12 +154,16 @@
           <ul class="menu">
             {#each toc as tocItem (tocItem.id)}
               <li>
-                <button class="link link-hover toc-item" type="button" onclick={() => pageState.onTocItem(tocItem.id)}>{tocItem.text}</button>
+                <button class="link link-hover toc-item" type="button" onclick={() => pageState.onTocItem(tocItem.id)}>
+                  <span>{tocItem.text}</span>
+                </button>
                 {#if tocItem.children.length}
                   <ul>
                     {#each tocItem.children as item (item.id)}
                       <li>
-                        <button class="link link-hover toc-item" type="button" onclick={() => pageState.onTocItem(item.id)}>{item.text}</button>
+                        <button class="link link-hover toc-item" type="button" onclick={() => pageState.onTocItem(item.id)}>
+                          <span>{item.text}</span>
+                        </button>
                       </li>
                     {/each}
                   </ul>
