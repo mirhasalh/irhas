@@ -136,10 +136,6 @@ export const formatDate = (input: string): string => {
   return new Intl.DateTimeFormat('en-US', options).format(date);
 }
 
-export const formatSlug = (str: string) => {
-  return str[0].toLocaleUpperCase() + str.replaceAll('-', ' ').substring(1)
-}
-
 export const loadImage = async (imageUrl: string) => {
   try {
     const response = await fetch(imageUrl)

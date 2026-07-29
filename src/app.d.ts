@@ -52,6 +52,11 @@ declare global {
       year: number;
       urls: string[];
     }
+    interface TocItem {
+      id: string;
+      text: string;
+      children: TocItem[];
+    }
   }
 }
 

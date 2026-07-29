@@ -3,7 +3,7 @@
   import { onMount } from 'svelte'
   import type { PageData } from './$types'
   import 'highlight.js/styles/atom-one-dark.css'
-  import { formatDate, website, formatSlug } from '$lib'
+  import { formatDate, website } from '$lib'
   import { PostPageState } from './state.svelte'
   import Back from '$icons/tiny/Back.svelte'
   import Sanitized from '$components/Sanitized.svelte'
@@ -17,7 +17,7 @@
   let { data }: { data: PageData } = $props(),
     pageState = new PostPageState(),
     parsedEl: HTMLElement,
-    headings = $state<string[]>([])
+    toc = $state<App.TocItem[]>([])
 
   const keywords = $derived([data.post.title, ...data.post.tags]),
     f = $derived(`https://www.facebook.com/sharer/sharer.php?u=${website}/post/${data.post.slug}`),
@@ -46,7 +46,7 @@
     pageState.setTableHeaderStyle(parsedEl)
     pageState.setUnorderedListStyle(parsedEl)
     pageState.setOrderedListStyle(parsedEl)
-    headings = pageState.getHeadings(parsedEl)
+    toc = pageState.buildToc(parsedEl)
   }
 
   onMount(() => {
@@ -120,12 +120,21 @@
   <div class="mx-auto max-w-3xl px-4 xl:hidden">
     <div class="border-base-300 collapse border">
       <input type="checkbox" />
-      <div class="collapse-title font-semibold">Table of contents</div>
+      <h4 class="merriweather collapse-title font-semibold">Table of contents</h4>
       <div class="collapse-content text-sm">
-        <ul class="list list-mb-2">
-          {#each headings as heading (heading)}
+        <ul class="menu">
+          {#each toc as tocItem (tocItem.id)}
             <li>
-              <button class="link link-hover toc-item" type="button" onclick={() => pageState.onHeading(heading)}>{formatSlug(heading)}</button>
+              <button class="link link-hover toc-item" type="button" onclick={() => pageState.onTocItem(tocItem.id)}>{tocItem.text}</button>
+              {#if tocItem.children.length}
+                <ul>
+                  {#each tocItem.children as item (item.id)}
+                    <li>
+                      <button class="link link-hover toc-item" type="button" onclick={() => pageState.onTocItem(item.id)}>{item.text}</button>
+                    </li>
+                  {/each}
+                </ul>
+              {/if}
             </li>
           {/each}
         </ul>
@@ -136,12 +145,21 @@
     <div class="article-toc">
       <div class="border-base-300 collapse-open collapse border">
         <input type="checkbox" />
-        <div class="collapse-title font-semibold">Table of contents</div>
+        <h4 class="merriweather collapse-title font-semibold">Table of contents</h4>
         <div class="collapse-content text-sm">
-          <ul class="list list-mb-2">
-            {#each headings as heading (heading)}
+          <ul class="menu">
+            {#each toc as tocItem (tocItem.id)}
               <li>
-                <button class="link link-hover toc-item" type="button" onclick={() => pageState.onHeading(heading)}>{formatSlug(heading)}</button>
+                <button class="link link-hover toc-item" type="button" onclick={() => pageState.onTocItem(tocItem.id)}>{tocItem.text}</button>
+                {#if tocItem.children.length}
+                  <ul>
+                    {#each tocItem.children as item (item.id)}
+                      <li>
+                        <button class="link link-hover toc-item" type="button" onclick={() => pageState.onTocItem(item.id)}>{item.text}</button>
+                      </li>
+                    {/each}
+                  </ul>
+                {/if}
               </li>
             {/each}
           </ul>

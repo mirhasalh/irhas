@@ -24,6 +24,10 @@
     font-size: 24px;
 }
 
+.article-content h3 {
+    font-size: 20px;
+}
+
 .article-content h1 a span::before,
 .article-content h2 a span::before,
 .article-content h3 a span::before,
@@ -40,38 +44,6 @@
 
 .article-toc {
     display: none;
-}
-
-@media screen and (min-width: 1024px) {
-
-    .article-content h1,
-    .article-content h2,
-    .article-content h3,
-    .article-content h4,
-    .article-content h5,
-    .article-content h6 {
-        margin-left: -2rem;
-    }
-
-    .article-content h1 a span::before,
-    .article-content h2 a span::before,
-    .article-content h3 a span::before,
-    .article-content h4 a span::before,
-    .article-content h5 a span::before,
-    .article-content h6 a span::before {
-        content: "\1F517";
-        opacity: 0;
-        margin-right: 0.5rem;
-    }
-
-    .article-content h1:hover a span::before,
-    .article-content h2:hover a span::before,
-    .article-content h3:hover a span::before,
-    .article-content h4:hover a span::before,
-    .article-content h5:hover a span::before,
-    .article-content h6:hover a span::before {
-        opacity: 1;
-    }
 }
 
 @media screen and (min-width: 1280px) {

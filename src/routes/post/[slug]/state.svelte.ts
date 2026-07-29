@@ -94,7 +94,7 @@ export class PostPageState {
     })
   }
 
-  onHeading = (id: string) => {
+  onTocItem = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
       if (typeof element.focus === "function") {
@@ -107,12 +107,40 @@ export class PostPageState {
     }
   }
 
-  getHeadings = (htmlElement: HTMLElement): string[] => {
-    const headings: string[] = []
-    htmlElement.querySelectorAll('h2').forEach((headingEl) => {
-      const id = headingEl.getAttribute('id')
-      if (id) headings.push(id)
-    })
-    return headings
+  buildToc = (htmlElement: HTMLElement): App.TocItem[] => {
+    let toc = <App.TocItem[]>[]
+
+    const headings = [
+      ...htmlElement.querySelectorAll('h1, h2, h3, h4, h5, h6')
+    ] as HTMLHeadingElement[]
+
+    const root: App.TocItem[] = []
+    const stack: { level: number; node: App.TocItem }[] = []
+
+    for (const heading of headings) {
+      const level = Number(heading.tagName[1])
+      const node: App.TocItem = {
+        id: heading.id,
+        text: heading.textContent?.trim() ?? '',
+        children: []
+      };
+
+      // pop stack until top has a smaller level than current heading
+      while (stack.length && stack[stack.length - 1].level >= level) {
+        stack.pop()
+      }
+
+      if (stack.length === 0) {
+        root.push(node);
+      } else {
+        stack[stack.length - 1].node.children.push(node)
+      }
+
+      stack.push({ level, node });
+    }
+
+    toc = root
+    console.log(toc)
+    return toc
   }
 }
